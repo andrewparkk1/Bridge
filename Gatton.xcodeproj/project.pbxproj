@@ -3,23 +3,83 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492548AD25AC03EF00A82CD0 /* Final.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548AC25AC03EF00A82CD0 /* Final.swift */; };
+		492548B325AC082900A82CD0 /* Topbanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548B225AC082900A82CD0 /* Topbanner.swift */; };
+		492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548B525AC1ACE00A82CD0 /* PostView.swift */; };
+		4944001125AF707F006A36EA /* commetnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944001025AF707F006A36EA /* commetnts.swift */; };
+		496A406425C397A200C68D81 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A406325C397A200C68D81 /* SessionStore.swift */; };
+		496A406825C397F000C68D81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A406725C397F000C68D81 /* User.swift */; };
+		496A409F25C3BF7800C68D81 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A409E25C3BF7800C68D81 /* AuthenticationService.swift */; };
+		496A40A625C3D58500C68D81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 496A40A525C3D58500C68D81 /* GoogleService-Info.plist */; };
 		496B9C2925AB765100430AD3 /* GattonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C2825AB765100430AD3 /* GattonApp.swift */; };
 		496B9C2B25AB765100430AD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C2A25AB765100430AD3 /* ContentView.swift */; };
 		496B9C2D25AB765200430AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496B9C2C25AB765200430AD3 /* Assets.xcassets */; };
 		496B9C3025AB765200430AD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496B9C2F25AB765200430AD3 /* Preview Assets.xcassets */; };
+		496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5825AB9F4E00430AD3 /* Person.swift */; };
+		496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5E25AB9F9500430AD3 /* Research.swift */; };
+		496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C6625ABA46900430AD3 /* ClassProfessor.swift */; };
+		4980E8DF25C8FF2D00ED7390 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */; };
+		4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8EF25C9063D00ED7390 /* AddPost.swift */; };
+		4980E8F625C90AFD00ED7390 /* ContentViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8F525C90AFD00ED7390 /* ContentViewA.swift */; };
+		4980E8FC25C9193300ED7390 /* PostBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8FB25C9193300ED7390 /* PostBanner.swift */; };
+		49A678FB25C61A6D005CFFF4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FA25C61A6D005CFFF4 /* Database.swift */; };
+		49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */; };
+		49B0831B25B6953000EB653E /* comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0831A25B6953000EB653E /* comments.swift */; };
+		49DAB9E025B12C5F0052DBF1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB9DF25B12C5F0052DBF1 /* Post.swift */; };
+		49EFA06F25AE836F000E1DAF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA06E25AE836F000E1DAF /* Search.swift */; };
+		49EFA07325AE8382000E1DAF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07225AE8382000E1DAF /* Feed.swift */; };
+		49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07C25AE97E0000E1DAF /* LikedButton.swift */; };
+		49EFA08C25AEB603000E1DAF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA08B25AEB603000E1DAF /* ModelData.swift */; };
+		55E4F662B2CB1C1CF96299A3 /* Pods_Gatton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87BB765275562DBCF53C737 /* Pods_Gatton.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		492548AC25AC03EF00A82CD0 /* Final.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final.swift; sourceTree = "<group>"; };
+		492548B225AC082900A82CD0 /* Topbanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topbanner.swift; sourceTree = "<group>"; };
+		492548B525AC1ACE00A82CD0 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		4944001025AF707F006A36EA /* commetnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commetnts.swift; sourceTree = "<group>"; };
+		496A406325C397A200C68D81 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		496A406725C397F000C68D81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		496A409E25C3BF7800C68D81 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		496A40A525C3D58500C68D81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		496B9C2525AB765100430AD3 /* Gatton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gatton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496B9C2825AB765100430AD3 /* GattonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GattonApp.swift; sourceTree = "<group>"; };
 		496B9C2A25AB765100430AD3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		496B9C2C25AB765200430AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		496B9C2F25AB765200430AD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		496B9C3125AB765200430AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496B9C5825AB9F4E00430AD3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		496B9C5E25AB9F9500430AD3 /* Research.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Research.swift; sourceTree = "<group>"; };
+		496B9C6625ABA46900430AD3 /* ClassProfessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProfessor.swift; sourceTree = "<group>"; };
+		4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4980E8EF25C9063D00ED7390 /* AddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPost.swift; sourceTree = "<group>"; };
+		4980E8F525C90AFD00ED7390 /* ContentViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewA.swift; sourceTree = "<group>"; };
+		4980E8FB25C9193300ED7390 /* PostBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBanner.swift; sourceTree = "<group>"; };
+		49A678FA25C61A6D005CFFF4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUnit.swift; sourceTree = "<group>"; };
+		49A6790025C625E2005CFFF4 /* Raleway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Raleway.ttf; sourceTree = "<group>"; };
+		49A6790325C62795005CFFF4 /* Avenir.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.ttc; sourceTree = "<group>"; };
+		49A6790525C6288B005CFFF4 /* ArchitectsDaughter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArchitectsDaughter-Regular.ttf"; sourceTree = "<group>"; };
+		49A6790725C62A28005CFFF4 /* TW.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TW.ttf; sourceTree = "<group>"; };
+		49A6790825C62A5A005CFFF4 /* SF-Compact-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		49A6790925C62A6B005CFFF4 /* SF-Compact-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		49A6791125C632BB005CFFF4 /* ヒラギノ角ゴシック W5.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ヒラギノ角ゴシック W5.ttc"; sourceTree = "<group>"; };
+		49A6791225C632BC005CFFF4 /* ヒラギノ角ゴシック W0.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ヒラギノ角ゴシック W0.ttc"; sourceTree = "<group>"; };
+		49A6791625C633FE005CFFF4 /* Noteworthy.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Noteworthy.ttc; sourceTree = "<group>"; };
+		49A6791925C63678005CFFF4 /* Avenir Next Condensed.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir Next Condensed.ttc"; sourceTree = "<group>"; };
+		49B0831A25B6953000EB653E /* comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comments.swift; sourceTree = "<group>"; };
+		49DAB9DF25B12C5F0052DBF1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		49EFA06E25AE836F000E1DAF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		49EFA07225AE8382000E1DAF /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		49EFA07C25AE97E0000E1DAF /* LikedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedButton.swift; sourceTree = "<group>"; };
+		49EFA08B25AEB603000E1DAF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		E55F0DCB69C9882780315B8A /* Pods-Gatton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.release.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.release.xcconfig"; sourceTree = "<group>"; };
+		E962505776E36D0F4B06103A /* Pods-Gatton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.debug.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.debug.xcconfig"; sourceTree = "<group>"; };
+		F87BB765275562DBCF53C737 /* Pods_Gatton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gatton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +87,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E4F662B2CB1C1CF96299A3 /* Pods_Gatton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496A40A225C3D1BB00C68D81 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				496A409E25C3BF7800C68D81 /* AuthenticationService.swift */,
+				496A406325C397A200C68D81 /* SessionStore.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		496B9C1C25AB765000430AD3 = {
 			isa = PBXGroup;
 			children = (
 				496B9C2725AB765100430AD3 /* Gatton */,
 				496B9C2625AB765100430AD3 /* Products */,
+				653CEE6F99718E80FBD8FBE2 /* Pods */,
+				50767E7236EE0A091C138D53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +124,17 @@
 		496B9C2725AB765100430AD3 /* Gatton */ = {
 			isa = PBXGroup;
 			children = (
-				496B9C2825AB765100430AD3 /* GattonApp.swift */,
-				496B9C2A25AB765100430AD3 /* ContentView.swift */,
-				496B9C2C25AB765200430AD3 /* Assets.xcassets */,
-				496B9C3125AB765200430AD3 /* Info.plist */,
 				496B9C2E25AB765200430AD3 /* Preview Content */,
+				496B9C2825AB765100430AD3 /* GattonApp.swift */,
+				492548AC25AC03EF00A82CD0 /* Final.swift */,
+				496B9C6425AB9FBC00430AD3 /* Models */,
+				49DAB9E925B1375A0052DBF1 /* Views */,
+				49DAB9E225B12C9A0052DBF1 /* Helpers */,
+				496B9C2C25AB765200430AD3 /* Assets.xcassets */,
+				496B9C2A25AB765100430AD3 /* ContentView.swift */,
+				496B9C3125AB765200430AD3 /* Info.plist */,
+				496A40A525C3D58500C68D81 /* GoogleService-Info.plist */,
+				496A40A225C3D1BB00C68D81 /* Login */,
 			);
 			path = Gatton;
 			sourceTree = "<group>";
@@ -69,6 +147,105 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		496B9C6425AB9FBC00430AD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49EFA08B25AEB603000E1DAF /* ModelData.swift */,
+				49DAB9DF25B12C5F0052DBF1 /* Post.swift */,
+				496B9C5825AB9F4E00430AD3 /* Person.swift */,
+				496B9C5E25AB9F9500430AD3 /* Research.swift */,
+				496B9C6625ABA46900430AD3 /* ClassProfessor.swift */,
+				496A406725C397F000C68D81 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4980E90025C921BC00ED7390 /* z */ = {
+			isa = PBXGroup;
+			children = (
+				4944001025AF707F006A36EA /* commetnts.swift */,
+				49B0831A25B6953000EB653E /* comments.swift */,
+				4980E8F525C90AFD00ED7390 /* ContentViewA.swift */,
+			);
+			path = z;
+			sourceTree = "<group>";
+		};
+		49A6790A25C62A78005CFFF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				49A6791625C633FE005CFFF4 /* Noteworthy.ttc */,
+				49A6791225C632BC005CFFF4 /* ヒラギノ角ゴシック W0.ttc */,
+				49A6791125C632BB005CFFF4 /* ヒラギノ角ゴシック W5.ttc */,
+				49A6791925C63678005CFFF4 /* Avenir Next Condensed.ttc */,
+				49A6790325C62795005CFFF4 /* Avenir.ttc */,
+				49A6790E25C6319D005CFFF4 /* eh */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		49A6790E25C6319D005CFFF4 /* eh */ = {
+			isa = PBXGroup;
+			children = (
+				49A6790525C6288B005CFFF4 /* ArchitectsDaughter-Regular.ttf */,
+				49A6790025C625E2005CFFF4 /* Raleway.ttf */,
+				49A6790925C62A6B005CFFF4 /* SF-Compact-Rounded-Ultralight.otf */,
+				49A6790825C62A5A005CFFF4 /* SF-Compact-Display-Ultralight.otf */,
+				49A6790725C62A28005CFFF4 /* TW.ttf */,
+			);
+			path = eh;
+			sourceTree = "<group>";
+		};
+		49DAB9E225B12C9A0052DBF1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49A6790A25C62A78005CFFF4 /* Fonts */,
+				492548B225AC082900A82CD0 /* Topbanner.swift */,
+				4980E8FB25C9193300ED7390 /* PostBanner.swift */,
+				49EFA07C25AE97E0000E1DAF /* LikedButton.swift */,
+				4980E90025C921BC00ED7390 /* z */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49DAB9E925B1375A0052DBF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				492548B525AC1ACE00A82CD0 /* PostView.swift */,
+				49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */,
+				4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */,
+				4980E8EF25C9063D00ED7390 /* AddPost.swift */,
+				49EFA07525AE8386000E1DAF /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49EFA07525AE8386000E1DAF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				49EFA06E25AE836F000E1DAF /* Search.swift */,
+				49EFA07225AE8382000E1DAF /* Feed.swift */,
+				49A678FA25C61A6D005CFFF4 /* Database.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		50767E7236EE0A091C138D53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F87BB765275562DBCF53C737 /* Pods_Gatton.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		653CEE6F99718E80FBD8FBE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E962505776E36D0F4B06103A /* Pods-Gatton.debug.xcconfig */,
+				E55F0DCB69C9882780315B8A /* Pods-Gatton.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 496B9C3425AB765200430AD3 /* Build configuration list for PBXNativeTarget "Gatton" */;
 			buildPhases = (
+				8139D03DD0B2D1968272F663 /* [CP] Check Pods Manifest.lock */,
 				496B9C2125AB765100430AD3 /* Sources */,
 				496B9C2225AB765100430AD3 /* Frameworks */,
 				496B9C2325AB765100430AD3 /* Resources */,
+				B188E2BB49A5CA17F4F9C2BA /* [CP] Embed Pods Frameworks */,
+				7A80B0CFC16868C482C545B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -104,7 +284,7 @@
 				};
 			};
 			buildConfigurationList = 496B9C2025AB765000430AD3 /* Build configuration list for PBXProject "Gatton" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -128,18 +308,100 @@
 			files = (
 				496B9C3025AB765200430AD3 /* Preview Assets.xcassets in Resources */,
 				496B9C2D25AB765200430AD3 /* Assets.xcassets in Resources */,
+				496A40A625C3D58500C68D81 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A80B0CFC16868C482C545B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8139D03DD0B2D1968272F663 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gatton-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B188E2BB49A5CA17F4F9C2BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		496B9C2125AB765100430AD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EFA08C25AEB603000E1DAF /* ModelData.swift in Sources */,
+				49DAB9E025B12C5F0052DBF1 /* Post.swift in Sources */,
+				4980E8F625C90AFD00ED7390 /* ContentViewA.swift in Sources */,
+				49EFA06F25AE836F000E1DAF /* Search.swift in Sources */,
+				49EFA07325AE8382000E1DAF /* Feed.swift in Sources */,
 				496B9C2B25AB765100430AD3 /* ContentView.swift in Sources */,
+				496A406425C397A200C68D81 /* SessionStore.swift in Sources */,
+				496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */,
+				4980E8FC25C9193300ED7390 /* PostBanner.swift in Sources */,
+				496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */,
+				49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */,
+				492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */,
+				49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */,
+				492548B325AC082900A82CD0 /* Topbanner.swift in Sources */,
+				496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */,
+				4944001125AF707F006A36EA /* commetnts.swift in Sources */,
 				496B9C2925AB765100430AD3 /* GattonApp.swift in Sources */,
+				496A409F25C3BF7800C68D81 /* AuthenticationService.swift in Sources */,
+				492548AD25AC03EF00A82CD0 /* Final.swift in Sources */,
+				4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */,
+				49B0831B25B6953000EB653E /* comments.swift in Sources */,
+				4980E8DF25C8FF2D00ED7390 /* ProfileView.swift in Sources */,
+				49A678FB25C61A6D005CFFF4 /* Database.swift in Sources */,
+				496A406825C397F000C68D81 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +526,7 @@
 		};
 		496B9C3525AB765200430AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E962505776E36D0F4B06103A /* Pods-Gatton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -272,7 +535,7 @@
 				DEVELOPMENT_TEAM = RKCU7S6SV3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Gatton/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,6 +549,7 @@
 		};
 		496B9C3625AB765200430AD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E55F0DCB69C9882780315B8A /* Pods-Gatton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,7 +558,7 @@
 				DEVELOPMENT_TEAM = RKCU7S6SV3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Gatton/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

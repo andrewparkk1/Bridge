@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var fullScreen = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Button("Toggle Full Screen") {
+                self.fullScreen.toggle()
+            }
+            .navigationBarTitle("Full Screen")
+            .navigationBarHidden(fullScreen)
+        }
+        .statusBar(hidden: fullScreen)
     }
 }
 
