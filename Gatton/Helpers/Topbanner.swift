@@ -16,7 +16,6 @@ class Host: UIHostingController<ContentView> {
 struct Topbanner: View {
     @Binding var top: Int
     
-    
     var body: some View {
         //Rectangle().foregroundColor(.green)
         VStack() {

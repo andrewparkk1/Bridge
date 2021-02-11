@@ -11,7 +11,6 @@ import Firebase
 import FirebaseFirestore
 import FirebaseCore
 import FirebaseFirestoreSwift
-import FirebaseUI
 import FirebaseAuth
 
 @main

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4922829825D4EB3C002892AC /* ProfessorPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922829725D4EB3C002892AC /* ProfessorPosts.swift */; };
+		4922829B25D4EB78002892AC /* ClassesPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922829A25D4EB78002892AC /* ClassesPosts.swift */; };
 		492548AD25AC03EF00A82CD0 /* Final.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548AC25AC03EF00A82CD0 /* Final.swift */; };
 		492548B325AC082900A82CD0 /* Topbanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548B225AC082900A82CD0 /* Topbanner.swift */; };
 		492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548B525AC1ACE00A82CD0 /* PostView.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4922829725D4EB3C002892AC /* ProfessorPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorPosts.swift; sourceTree = "<group>"; };
+		4922829A25D4EB78002892AC /* ClassesPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesPosts.swift; sourceTree = "<group>"; };
 		492548AC25AC03EF00A82CD0 /* Final.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final.swift; sourceTree = "<group>"; };
 		492548B225AC082900A82CD0 /* Topbanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topbanner.swift; sourceTree = "<group>"; };
 		492548B525AC1ACE00A82CD0 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4922829E25D4EBE6002892AC /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				492548B525AC1ACE00A82CD0 /* PostView.swift */,
+				49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
 		496A40A225C3D1BB00C68D81 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,11 +223,10 @@
 		49DAB9E925B1375A0052DBF1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				492548B525AC1ACE00A82CD0 /* PostView.swift */,
-				49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */,
-				4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */,
-				4980E8EF25C9063D00ED7390 /* AddPost.swift */,
+				4922829E25D4EBE6002892AC /* Helper Views */,
 				49EFA07525AE8386000E1DAF /* Home */,
+				4922829725D4EB3C002892AC /* ProfessorPosts.swift */,
+				4922829A25D4EB78002892AC /* ClassesPosts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +234,8 @@
 		49EFA07525AE8386000E1DAF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */,
+				4980E8EF25C9063D00ED7390 /* AddPost.swift */,
 				49EFA06E25AE836F000E1DAF /* Search.swift */,
 				49EFA07225AE8382000E1DAF /* Feed.swift */,
 				49A678FA25C61A6D005CFFF4 /* Database.swift */,
@@ -258,7 +272,6 @@
 				496B9C2225AB765100430AD3 /* Frameworks */,
 				496B9C2325AB765100430AD3 /* Resources */,
 				B188E2BB49A5CA17F4F9C2BA /* [CP] Embed Pods Frameworks */,
-				7A80B0CFC16868C482C545B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,23 +328,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7A80B0CFC16868C482C545B2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8139D03DD0B2D1968272F663 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,8 +388,10 @@
 				492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */,
 				49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */,
 				492548B325AC082900A82CD0 /* Topbanner.swift in Sources */,
+				4922829B25D4EB78002892AC /* ClassesPosts.swift in Sources */,
 				496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */,
 				4944001125AF707F006A36EA /* commetnts.swift in Sources */,
+				4922829825D4EB3C002892AC /* ProfessorPosts.swift in Sources */,
 				496B9C2925AB765100430AD3 /* GattonApp.swift in Sources */,
 				496A409F25C3BF7800C68D81 /* AuthenticationService.swift in Sources */,
 				492548AD25AC03EF00A82CD0 /* Final.swift in Sources */,
