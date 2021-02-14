@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4922829825D4EB3C002892AC /* ProfessorPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922829725D4EB3C002892AC /* ProfessorPosts.swift */; };
-		4922829B25D4EB78002892AC /* ClassesPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922829A25D4EB78002892AC /* ClassesPosts.swift */; };
+		492282A625D4F111002892AC /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492282A525D4F111002892AC /* PostViewModel.swift */; };
 		492548AD25AC03EF00A82CD0 /* Final.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548AC25AC03EF00A82CD0 /* Final.swift */; };
 		492548B325AC082900A82CD0 /* Topbanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548B225AC082900A82CD0 /* Topbanner.swift */; };
 		492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492548B525AC1ACE00A82CD0 /* PostView.swift */; };
+		493D4C2625D5D38900C518E8 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D4C2525D5D38900C518E8 /* ProfileEdit.swift */; };
+		493D4C2925D5D7F400C518E8 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D4C2825D5D7F400C518E8 /* ProfileHost.swift */; };
 		4944001125AF707F006A36EA /* commetnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944001025AF707F006A36EA /* commetnts.swift */; };
 		496A406425C397A200C68D81 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A406325C397A200C68D81 /* SessionStore.swift */; };
 		496A406825C397F000C68D81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A406725C397F000C68D81 /* User.swift */; };
@@ -24,7 +25,8 @@
 		496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5825AB9F4E00430AD3 /* Person.swift */; };
 		496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5E25AB9F9500430AD3 /* Research.swift */; };
 		496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C6625ABA46900430AD3 /* ClassProfessor.swift */; };
-		4980E8DF25C8FF2D00ED7390 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */; };
+		497EECC725D8F937009C7599 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EECC625D8F937009C7599 /* Home.swift */; };
+		4980E8DF25C8FF2D00ED7390 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */; };
 		4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8EF25C9063D00ED7390 /* AddPost.swift */; };
 		4980E8F625C90AFD00ED7390 /* ContentViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8F525C90AFD00ED7390 /* ContentViewA.swift */; };
 		4980E8FC25C9193300ED7390 /* PostBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8FB25C9193300ED7390 /* PostBanner.swift */; };
@@ -40,11 +42,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4922829725D4EB3C002892AC /* ProfessorPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorPosts.swift; sourceTree = "<group>"; };
-		4922829A25D4EB78002892AC /* ClassesPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesPosts.swift; sourceTree = "<group>"; };
+		492282A525D4F111002892AC /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		492548AC25AC03EF00A82CD0 /* Final.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final.swift; sourceTree = "<group>"; };
 		492548B225AC082900A82CD0 /* Topbanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topbanner.swift; sourceTree = "<group>"; };
 		492548B525AC1ACE00A82CD0 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		493D4C2525D5D38900C518E8 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		493D4C2825D5D7F400C518E8 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		4944001025AF707F006A36EA /* commetnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commetnts.swift; sourceTree = "<group>"; };
 		496A406325C397A200C68D81 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		496A406725C397F000C68D81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -59,7 +62,8 @@
 		496B9C5825AB9F4E00430AD3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		496B9C5E25AB9F9500430AD3 /* Research.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Research.swift; sourceTree = "<group>"; };
 		496B9C6625ABA46900430AD3 /* ClassProfessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProfessor.swift; sourceTree = "<group>"; };
-		4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		497EECC625D8F937009C7599 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		4980E8EF25C9063D00ED7390 /* AddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPost.swift; sourceTree = "<group>"; };
 		4980E8F525C90AFD00ED7390 /* ContentViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewA.swift; sourceTree = "<group>"; };
 		4980E8FB25C9193300ED7390 /* PostBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBanner.swift; sourceTree = "<group>"; };
@@ -98,13 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4922829E25D4EBE6002892AC /* Helper Views */ = {
+		492282A825D4F11B002892AC /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				492548B525AC1ACE00A82CD0 /* PostView.swift */,
-				49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */,
+				492282A525D4F111002892AC /* PostViewModel.swift */,
 			);
-			path = "Helper Views";
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		493D4C2B25D5D7FE00C518E8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				493D4C2825D5D7F400C518E8 /* ProfileHost.swift */,
+				4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */,
+				493D4C2525D5D38900C518E8 /* ProfileEdit.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		496A40A225C3D1BB00C68D81 /* Login */ = {
@@ -140,6 +153,8 @@
 				496B9C2E25AB765200430AD3 /* Preview Content */,
 				496B9C2825AB765100430AD3 /* GattonApp.swift */,
 				492548AC25AC03EF00A82CD0 /* Final.swift */,
+				497EECC625D8F937009C7599 /* Home.swift */,
+				492282A825D4F11B002892AC /* View Models */,
 				496B9C6425AB9FBC00430AD3 /* Models */,
 				49DAB9E925B1375A0052DBF1 /* Views */,
 				49DAB9E225B12C9A0052DBF1 /* Helpers */,
@@ -171,6 +186,33 @@
 				496A406725C397F000C68D81 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		497EECBE25D8E96A009C7599 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				492548B525AC1ACE00A82CD0 /* PostView.swift */,
+				49EFA07225AE8382000E1DAF /* Feed.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		497EECBF25D8E97C009C7599 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */,
+				49A678FA25C61A6D005CFFF4 /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		497EECC225D8F6E5009C7599 /* Add Post */ = {
+			isa = PBXGroup;
+			children = (
+				4980E8EF25C9063D00ED7390 /* AddPost.swift */,
+				4980E8FB25C9193300ED7390 /* PostBanner.swift */,
+			);
+			path = "Add Post";
 			sourceTree = "<group>";
 		};
 		4980E90025C921BC00ED7390 /* z */ = {
@@ -213,7 +255,6 @@
 			children = (
 				49A6790A25C62A78005CFFF4 /* Fonts */,
 				492548B225AC082900A82CD0 /* Topbanner.swift */,
-				4980E8FB25C9193300ED7390 /* PostBanner.swift */,
 				49EFA07C25AE97E0000E1DAF /* LikedButton.swift */,
 				4980E90025C921BC00ED7390 /* z */,
 			);
@@ -223,24 +264,13 @@
 		49DAB9E925B1375A0052DBF1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4922829E25D4EBE6002892AC /* Helper Views */,
-				49EFA07525AE8386000E1DAF /* Home */,
-				4922829725D4EB3C002892AC /* ProfessorPosts.swift */,
-				4922829A25D4EB78002892AC /* ClassesPosts.swift */,
+				497EECBE25D8E96A009C7599 /* Posts */,
+				497EECBF25D8E97C009C7599 /* Database */,
+				493D4C2B25D5D7FE00C518E8 /* Profile */,
+				497EECC225D8F6E5009C7599 /* Add Post */,
+				49EFA06E25AE836F000E1DAF /* Search.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		49EFA07525AE8386000E1DAF /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				4980E8DE25C8FF2D00ED7390 /* ProfileView.swift */,
-				4980E8EF25C9063D00ED7390 /* AddPost.swift */,
-				49EFA06E25AE836F000E1DAF /* Search.swift */,
-				49EFA07225AE8382000E1DAF /* Feed.swift */,
-				49A678FA25C61A6D005CFFF4 /* Database.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		50767E7236EE0A091C138D53 /* Frameworks */ = {
@@ -380,24 +410,26 @@
 				49EFA06F25AE836F000E1DAF /* Search.swift in Sources */,
 				49EFA07325AE8382000E1DAF /* Feed.swift in Sources */,
 				496B9C2B25AB765100430AD3 /* ContentView.swift in Sources */,
+				497EECC725D8F937009C7599 /* Home.swift in Sources */,
 				496A406425C397A200C68D81 /* SessionStore.swift in Sources */,
 				496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */,
 				4980E8FC25C9193300ED7390 /* PostBanner.swift in Sources */,
 				496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */,
 				49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */,
+				493D4C2925D5D7F400C518E8 /* ProfileHost.swift in Sources */,
 				492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */,
 				49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */,
 				492548B325AC082900A82CD0 /* Topbanner.swift in Sources */,
-				4922829B25D4EB78002892AC /* ClassesPosts.swift in Sources */,
+				492282A625D4F111002892AC /* PostViewModel.swift in Sources */,
+				493D4C2625D5D38900C518E8 /* ProfileEdit.swift in Sources */,
 				496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */,
 				4944001125AF707F006A36EA /* commetnts.swift in Sources */,
-				4922829825D4EB3C002892AC /* ProfessorPosts.swift in Sources */,
 				496B9C2925AB765100430AD3 /* GattonApp.swift in Sources */,
 				496A409F25C3BF7800C68D81 /* AuthenticationService.swift in Sources */,
 				492548AD25AC03EF00A82CD0 /* Final.swift in Sources */,
 				4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */,
 				49B0831B25B6953000EB653E /* comments.swift in Sources */,
-				4980E8DF25C8FF2D00ED7390 /* ProfileView.swift in Sources */,
+				4980E8DF25C8FF2D00ED7390 /* ProfileSummary.swift in Sources */,
 				49A678FB25C61A6D005CFFF4 /* Database.swift in Sources */,
 				496A406825C397F000C68D81 /* User.swift in Sources */,
 			);

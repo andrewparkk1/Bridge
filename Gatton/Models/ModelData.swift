@@ -20,8 +20,10 @@ class ModelData: ObservableObject {
     //    private var listenerRegistration: ListenerRegistration
     
     @Published var people = personTestData
+
     @Published var research = researchTestData
     @Published var classprofessors = classProfessorsTestData
     
-    
+    @Published var posts = 
+        AndrewsPostTestData + DavidsPostTestData + CaseysPostTestData + JojisPostTestData + DonsPostTestData
 }

@@ -9,32 +9,14 @@ import SwiftUI
 
 struct Final: View {
     @EnvironmentObject var modelData: ModelData
-    @State var top = 1
-    
+
     
     var body: some View {
         GeometryReader { geometry in
             TabView {
                 
                 // HOME
-                NavigationView {
-                    VStack {
-                        Topbanner(top: $top)
-                        Divider()
-                        
-                        GeometryReader { _ in
-                            VStack {
-                                if self.top == 0 {
-                                    Search()
-                                } else if self.top == 1 {
-                                    Feed()
-                                }
-                            }
-                        }
-                    }
-                    //.edgesIgnoringSafeArea(.top)
-                    .navigationBarHidden(true)
-                }
+                Home()
                 .tabItem {
                     Image(systemName: "house.fill")
                 }
@@ -60,11 +42,12 @@ struct Final: View {
                 NavigationView {
                     VStack {
                         AddPost(person: modelData.people[0])
+                        
                     }
                     .navigationBarHidden(true)
                 }
                 .tabItem {
-                    Image(systemName: "plus.app")
+                    Image(systemName: "pencil.circle")
                     
                 }
                 
@@ -80,7 +63,7 @@ struct Final: View {
                 // PROFILE
                 NavigationView {
                     VStack {
-                        ProfileView(person: modelData.people[0])
+                        ProfileHost()
                     }
                     .navigationBarHidden(true)
                 }

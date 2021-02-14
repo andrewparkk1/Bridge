@@ -5,6 +5,7 @@
 //  Created by Andrew Park on 1/13/21.
 //
 
+import SwiftUI
 /*
 import SwiftUI
 
@@ -71,3 +72,34 @@ struct commetnts_Previews: PreviewProvider {
     }
 }
 */
+
+
+struct commetnts: View {
+    @State private var myArray: [String] = ["One", "Two", "Three"]
+    var body: some View {
+        NavigationView {
+            VStack {
+                Button("Insert item") {
+                    myArray.append("Other")
+                }
+                List {
+                    ForEach(myArray, id: \.self) { item in
+                        Text(item)
+                    }
+                    .onDelete { indexSet in
+                        myArray.remove(atOffsets: indexSet)
+                    }
+                }
+            }
+            .navigationBarTitle("Navigation")
+            .navigationBarItems(trailing: EditButton())
+        }
+    }
+}
+
+struct commetnts_Previews: PreviewProvider {
+    static var previews: some View {
+        commetnts()
+    }
+}
+

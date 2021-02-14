@@ -12,7 +12,7 @@ import FirebaseCore
 import Firebase
 import FirebaseFirestoreSwift
 
-enum target: String {
+enum target: String, CaseIterable {
     case general = "general", professors = "professors", classes = "classes", research = "research", qanda = "qanda", colleges = "colleges"
     func getTarget() -> String {
         return self.rawValue
@@ -21,29 +21,30 @@ enum target: String {
 
 
 var AndrewsPostTestData = [
-    Post(ttime: "3 months", description: "hello", target: target.general.getTarget()),
-    Post(ttime: "6 minutes", description: "i like my research", target: target.research.getTarget())
+    Post(title: "researhc", ttime: "3 months", description: "hello", target: target.general.getTarget()),
+    Post(title: "researhc", ttime: "6 minutes", description: "i like my researchalsjdnfjlasndjfnajsdnfojnasjodfnjoansdjonfojandsofn", target: target.research.getTarget())
 ]
 
 var DavidsPostTestData = [
-    Post(ttime: "2 hours", description: "i post vlogs", target: target.general.getTarget())
+    Post(title: "researhc", ttime: "2 hours", description: "i post vlogs", target: target.general.getTarget())
 ]
 
 var CaseysPostTestData = [
-    Post(ttime: "3 min", description: "Im the og", target: target.general.getTarget())
+    Post(title: "researhc", ttime: "3 min", description: "Im the og", target: target.general.getTarget())
 ]
 
 var JojisPostTestData = [
-    Post(ttime: "just now", description: "i like professor xing", target: target.professors.getTarget())
+    Post(title: "researhc", ttime: "just now", description: "i like professor xing", target: target.professors.getTarget())
 ]
 
 var DonsPostTestData = [
-    Post(ttime: "2 min", description: "why is cheryl so mean?", target: target.qanda.getTarget())
+    Post(title: "researhc", ttime: "2 min", description: "why is cheryl so mean?", target: target.qanda.getTarget())
 ]
 
-struct Post: Identifiable {
+struct Post: Identifiable { //Codable
     @DocumentID var id: String?
     @ServerTimestamp var time: Timestamp?
+    var title: String
     var ttime: String?
     var userId: Person.ID?
     var description: String

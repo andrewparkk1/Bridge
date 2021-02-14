@@ -39,6 +39,7 @@ struct Database: View {
             ) {
                 Section(header: Text("2022").font(.title).bold()) {
                     ForEach(ttstudents) { person in
+                        //Navigation link to specified person
                         DatabaseUnit(person: person)
                     }
                 }

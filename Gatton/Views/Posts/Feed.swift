@@ -10,12 +10,11 @@ import SwiftUI
 struct Feed: View {
     @EnvironmentObject var modelData: ModelData
     
-    
     var body: some View {
         ScrollView {
             ForEach(modelData.people) { person in
                 PostView(person: person, postNum: 0)
-                
+                Divider()
             }
         }
     }

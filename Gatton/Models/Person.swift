@@ -28,6 +28,8 @@ struct Person: Identifiable {
     var city: String
     var state: String
     var posts: [Post]?
+
+    
     
 }
 
