@@ -9,20 +9,46 @@ import SwiftUI
 
 struct AddPost: View {
     var person: Person
-    @State private var anonymous = false
-    @State private var cancel = false
-    @State private var posted = false
     @State private var title = ""
     @State private var description = ""
     @EnvironmentObject var modelData: ModelData
     @State private var isPresented = false
+
+    @Binding var anonymous: Bool
+    @Binding var posted: Bool
     
     
     var body: some View {
         
         
         VStack(alignment: .leading, spacing: 12){
-            PostBanner(anonymous: $anonymous, cancel: $cancel, posted: $posted, person: person)
+            HStack{
+//                Button(action: {
+//                    self.cancel = true
+//                }, label: {
+//                    Image(systemName: "xmark")
+//                        .foregroundColor(.gray)
+//                }).padding(.leading)
+//
+                Spacer()
+                Spacer()
+                
+                
+                Text(anonymous ? "Anonymous" : person.name)
+                    .foregroundColor(self.anonymous ? .gray : .green)
+                    .onTapGesture {
+                        self.anonymous.toggle()
+                    }
+                
+                Spacer()
+                
+                Button(action: {
+                    self.posted = true
+                }, label: {
+                    Text("Post")
+                }).padding(.trailing)
+
+            }
                 .padding(.top)
             
             Divider()
@@ -73,7 +99,7 @@ struct AddPost: View {
 
 struct AddPost_Previews: PreviewProvider {
     static var previews: some View {
-        AddPost(person: personTestData[0])
+        AddPost(person: personTestData[0], anonymous: .constant(false), posted: .constant(false))
     }
 }
 

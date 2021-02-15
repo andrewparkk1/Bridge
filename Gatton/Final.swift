@@ -9,17 +9,20 @@ import SwiftUI
 
 struct Final: View {
     @EnvironmentObject var modelData: ModelData
-
+    @State private var selectedTab = 1
+    @State var anonymous = false
+    @State var posted = false
+    
     
     var body: some View {
         GeometryReader { geometry in
-            TabView {
+            TabView(selection: $selectedTab) {
                 
                 // HOME
                 Home()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                }
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                    }.tag(1)
                 
                 
                 // NETWORK
@@ -35,44 +38,62 @@ struct Final: View {
                 }
                 .tabItem {
                     Image(systemName: "network")
-                    
-                }
+                }.tag(2)
                 
                 // POST
-                NavigationView {
-                    VStack {
-                        AddPost(person: modelData.people[0])
-                        
+                
+                AddPost(person: modelData.people[0], anonymous: $anonymous, posted: $posted)
+                    .tabItem {
+                        Image(systemName: "pencil.circle")
                     }
-                    .navigationBarHidden(true)
-                }
-                .tabItem {
-                    Image(systemName: "pencil.circle")
+                
+            //                VStack{
+            //                    Text("asdf")
+            //                    Text("andrew")
+            //                }
+            //                .onTapGesture{
+            //                    self.selectedTab = 1
+            //                }
+            //                .tabItem {
+            //                    Image(systemName: "pencil.circle")
+            //                }.tag(3)
+            //
+            //                Text("Tab 1")
+            //                    .onTapGesture {
+            //                        self.selectedTab = 1
+            //                    }
+            //                    .tabItem {
+            //                        Image(systemName: "star")
+            //                        Text("One")
+            //                    }
+            //                    .tag(0)
+            //
+            //                Text("ohohoho")
+            
+            
+            
+            // GROUP
+            NavigationView {
+                VStack {
                     
                 }
-                
-                // GROUP
-                NavigationView {
-                    VStack {
-                        
-                    }
-                }
-                .tabItem { Image(systemName: "person.3.fill") }
-                
-                
-                // PROFILE
-                NavigationView {
-                    VStack {
-                        ProfileHost()
-                    }
-                    .navigationBarHidden(true)
-                }
-                .tabItem { Image(systemName: "person") }
-                
             }
-            .ignoresSafeArea()
+            .tabItem { Image(systemName: "person.3.fill") }
+            
+            
+            // PROFILE
+            NavigationView {
+                VStack {
+                    ProfileHost()
+                }
+                .navigationBarHidden(true)
+            }
+            .tabItem { Image(systemName: "person") }
+            
         }
+        .ignoresSafeArea()
     }
+}
 }
 
 struct Final_Previews: PreviewProvider {

@@ -154,6 +154,7 @@
 				496B9C2825AB765100430AD3 /* GattonApp.swift */,
 				492548AC25AC03EF00A82CD0 /* Final.swift */,
 				497EECC625D8F937009C7599 /* Home.swift */,
+				492548B225AC082900A82CD0 /* Topbanner.swift */,
 				492282A825D4F11B002892AC /* View Models */,
 				496B9C6425AB9FBC00430AD3 /* Models */,
 				49DAB9E925B1375A0052DBF1 /* Views */,
@@ -254,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				49A6790A25C62A78005CFFF4 /* Fonts */,
-				492548B225AC082900A82CD0 /* Topbanner.swift */,
 				49EFA07C25AE97E0000E1DAF /* LikedButton.swift */,
 				4980E90025C921BC00ED7390 /* z */,
 			);
