@@ -9,35 +9,37 @@ import SwiftUI
 
 struct AddPost: View {
     var person: Person
+    @EnvironmentObject var modelData: ModelData
+    
     @State private var title = ""
     @State private var description = ""
-    @EnvironmentObject var modelData: ModelData
     @State private var isPresented = false
-
-    @Binding var anonymous: Bool
-    @Binding var posted: Bool
     
+    @State private var anonymous = false
+    @State private var posted = false
+    @State private var cancel = false
+    @Binding var selectedTab: Int
     
     var body: some View {
         
-        
         VStack(alignment: .leading, spacing: 12){
             HStack{
-//                Button(action: {
-//                    self.cancel = true
-//                }, label: {
-//                    Image(systemName: "xmark")
-//                        .foregroundColor(.gray)
-//                }).padding(.leading)
-//
-                Spacer()
+                Image(systemName: "xmark")
+                    .foregroundColor(.gray)
+                    .onTapGesture {
+                        cancel.toggle()
+                        selectedTab = 1
+                        title = ""
+                        description = ""
+                    } 
+                
                 Spacer()
                 
                 
                 Text(anonymous ? "Anonymous" : person.name)
-                    .foregroundColor(self.anonymous ? .gray : .green)
+                    .foregroundColor(anonymous ? .gray : .green)
                     .onTapGesture {
-                        self.anonymous.toggle()
+                        anonymous.toggle()
                     }
                 
                 Spacer()
@@ -46,10 +48,10 @@ struct AddPost: View {
                     self.posted = true
                 }, label: {
                     Text("Post")
-                }).padding(.trailing)
+                })
 
             }
-                .padding(.top)
+                .padding(.horizontal)
             
             Divider()
             
@@ -99,7 +101,7 @@ struct AddPost: View {
 
 struct AddPost_Previews: PreviewProvider {
     static var previews: some View {
-        AddPost(person: personTestData[0], anonymous: .constant(false), posted: .constant(false))
+        AddPost(person: personTestData[0], selectedTab: .constant(1))
     }
 }
 
