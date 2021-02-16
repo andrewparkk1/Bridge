@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home: View {
+struct MyHome: View {
     @State var top = 1
     
     var body: some View {
@@ -32,8 +32,8 @@ struct Home: View {
     }
 }
 
-struct Home_Previews: PreviewProvider {
+struct MyHome_Previews: PreviewProvider {
     static var previews: some View {
-        Home(top: 1)
+        MyHome(top: 1)
     }
 }

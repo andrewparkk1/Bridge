@@ -13,7 +13,7 @@ struct Login: View {
     var body: some View {
         VStack {
             HStack{
-                Text("login")
+                Text("Login")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
@@ -38,18 +38,24 @@ struct Login: View {
             .padding()
             .padding(.top, 10)
             
-            Button(action: loginData.verifyUser, label: {
-                Text("Verify")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(.vertical)
-                    .frame(width: UIScreen.main.bounds.width - 100)
-                    //.background(Color(UIColor(named: "blue")!))
-                    .clipShape(Capsule())
-                
-            })
-            .disabled(loginData.code == "" || loginData.number == "" ? true : false)
-            .opacity(loginData.code == "" || loginData.number == "" ? 0.5 : 1)
+            if loginData.isLoading{
+                ProgressView()
+                    .padding()
+            } else {
+                Button(action: loginData.verifyUser, label: {
+                    Text("Verify")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(.vertical)
+                        .frame(width: UIScreen.main.bounds.width - 100)
+                        //.background(Color(UIColor(named: "blue")!))
+                        .clipShape(Capsule())
+                    
+                })
+                .disabled(loginData.code == "" || loginData.number == "" ? true : false)
+                .opacity(loginData.code == "" || loginData.number == "" ? 0.5 : 1)
+            }
+            
             
             
             Spacer(minLength: 0)

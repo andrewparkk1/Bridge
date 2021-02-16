@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var fullScreen = false
+    @AppStorage("current_status") var status = false
     
     var body: some View {
         NavigationView {
-            Login()
+            
+            
+            VStack {
+                if status{Home()}
+                else{Login()}
+            }
                 .preferredColorScheme(.dark)
                 .navigationBarHidden(true)
+            
+            
         }
 
     }

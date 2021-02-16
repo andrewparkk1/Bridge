@@ -16,7 +16,7 @@ struct Final: View {
             TabView(selection: $selectedTab) {
                 
                 // HOME
-                Home()
+                MyHome()
                     .tabItem { Image(systemName: "house.fill") }
                     .tag(1)
                 

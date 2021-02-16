@@ -25,13 +25,17 @@
 		496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5825AB9F4E00430AD3 /* Person.swift */; };
 		496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5E25AB9F9500430AD3 /* Research.swift */; };
 		496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C6625ABA46900430AD3 /* ClassProfessor.swift */; };
-		497EECC725D8F937009C7599 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EECC625D8F937009C7599 /* Home.swift */; };
+		497EECC725D8F937009C7599 /* MyHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EECC625D8F937009C7599 /* MyHome.swift */; };
 		4980E8DF25C8FF2D00ED7390 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */; };
 		4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8EF25C9063D00ED7390 /* AddPost.swift */; };
 		4980E8F625C90AFD00ED7390 /* ContentViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8F525C90AFD00ED7390 /* ContentViewA.swift */; };
 		4993646025DB5ECB003E7832 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4993645F25DB5ECB003E7832 /* Login.swift */; };
 		4993646325DB5FAE003E7832 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4993646225DB5FAE003E7832 /* LoginViewModel.swift */; };
 		49967C3425DBA30D00F9104D /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3325DBA30D00F9104D /* Register.swift */; };
+		49967C3725DBA6F200F9104D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3625DBA6F200F9104D /* RegisterViewModel.swift */; };
+		49967C3A25DBA88A00F9104D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3925DBA88A00F9104D /* ImagePicker.swift */; };
+		49967C3D25DBACB300F9104D /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3C25DBACB300F9104D /* UploadImage.swift */; };
+		49967C4025DBAFEF00F9104D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3F25DBAFEE00F9104D /* Home.swift */; };
 		49A678FB25C61A6D005CFFF4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FA25C61A6D005CFFF4 /* Database.swift */; };
 		49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */; };
 		49B0831B25B6953000EB653E /* comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0831A25B6953000EB653E /* comments.swift */; };
@@ -64,13 +68,17 @@
 		496B9C5825AB9F4E00430AD3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		496B9C5E25AB9F9500430AD3 /* Research.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Research.swift; sourceTree = "<group>"; };
 		496B9C6625ABA46900430AD3 /* ClassProfessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProfessor.swift; sourceTree = "<group>"; };
-		497EECC625D8F937009C7599 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		497EECC625D8F937009C7599 /* MyHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHome.swift; sourceTree = "<group>"; };
 		4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		4980E8EF25C9063D00ED7390 /* AddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPost.swift; sourceTree = "<group>"; };
 		4980E8F525C90AFD00ED7390 /* ContentViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewA.swift; sourceTree = "<group>"; };
 		4993645F25DB5ECB003E7832 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4993646225DB5FAE003E7832 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		49967C3325DBA30D00F9104D /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		49967C3625DBA6F200F9104D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		49967C3925DBA88A00F9104D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		49967C3C25DBACB300F9104D /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
+		49967C3F25DBAFEE00F9104D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		49A678FA25C61A6D005CFFF4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUnit.swift; sourceTree = "<group>"; };
 		49A6790025C625E2005CFFF4 /* Raleway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Raleway.ttf; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				4993646225DB5FAE003E7832 /* LoginViewModel.swift */,
+				49967C3625DBA6F200F9104D /* RegisterViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 			children = (
 				4993645F25DB5ECB003E7832 /* Login.swift */,
 				49967C3325DBA30D00F9104D /* Register.swift */,
+				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
+				49967C3F25DBAFEE00F9104D /* Home.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -158,7 +169,7 @@
 				496B9C2825AB765100430AD3 /* GattonApp.swift */,
 				496B9C2A25AB765100430AD3 /* ContentView.swift */,
 				492548AC25AC03EF00A82CD0 /* Final.swift */,
-				497EECC625D8F937009C7599 /* Home.swift */,
+				497EECC625D8F937009C7599 /* MyHome.swift */,
 				492548B225AC082900A82CD0 /* Topbanner.swift */,
 				492282A825D4F11B002892AC /* View Models */,
 				496B9C6425AB9FBC00430AD3 /* Models */,
@@ -182,6 +193,7 @@
 		496B9C6425AB9FBC00430AD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49967C3C25DBACB300F9104D /* UploadImage.swift */,
 				49EFA08B25AEB603000E1DAF /* ModelData.swift */,
 				49DAB9DF25B12C5F0052DBF1 /* Post.swift */,
 				496B9C5825AB9F4E00430AD3 /* Person.swift */,
@@ -424,18 +436,22 @@
 				4993646025DB5ECB003E7832 /* Login.swift in Sources */,
 				49EFA06F25AE836F000E1DAF /* Search.swift in Sources */,
 				49EFA07325AE8382000E1DAF /* Feed.swift in Sources */,
+				49967C4025DBAFEF00F9104D /* Home.swift in Sources */,
 				496B9C2B25AB765100430AD3 /* ContentView.swift in Sources */,
-				497EECC725D8F937009C7599 /* Home.swift in Sources */,
+				497EECC725D8F937009C7599 /* MyHome.swift in Sources */,
 				4993646325DB5FAE003E7832 /* LoginViewModel.swift in Sources */,
 				496A406425C397A200C68D81 /* SessionStore.swift in Sources */,
 				496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */,
 				496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */,
 				49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */,
+				49967C3A25DBA88A00F9104D /* ImagePicker.swift in Sources */,
 				493D4C2925D5D7F400C518E8 /* ProfileHost.swift in Sources */,
 				492548B625AC1ACE00A82CD0 /* PostView.swift in Sources */,
+				49967C3D25DBACB300F9104D /* UploadImage.swift in Sources */,
 				49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */,
 				492548B325AC082900A82CD0 /* Topbanner.swift in Sources */,
 				492413C525DB4A9D009449B1 /* SearchPosts.swift in Sources */,
+				49967C3725DBA6F200F9104D /* RegisterViewModel.swift in Sources */,
 				493D4C2625D5D38900C518E8 /* ProfileEdit.swift in Sources */,
 				496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */,
 				4944001125AF707F006A36EA /* commetnts.swift in Sources */,
