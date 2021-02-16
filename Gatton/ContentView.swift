@@ -12,13 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            Button("Toggle Full Screen") {
-                self.fullScreen.toggle()
-            }
-            .navigationBarTitle("Full Screen")
-            .navigationBarHidden(fullScreen)
+            Login()
+                .preferredColorScheme(.dark)
+                .navigationBarHidden(true)
         }
-        .statusBar(hidden: fullScreen)
+
     }
 }
 
@@ -27,3 +25,13 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//sick animation
+//NavigationView {
+//    Button("Toggle Full Screen") {
+//        self.fullScreen.toggle()
+//    }
+//    .navigationBarTitle("Full Screen")
+//    .navigationBarHidden(fullScreen)
+//}
+//.statusBar(hidden: fullScreen)

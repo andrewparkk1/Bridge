@@ -14,6 +14,7 @@ target 'Gatton' do
  pod 'FirebaseFirestore'
 # pod 'FirebaseUI'
  pod 'Firebase/Auth'
+pod 'Firebase/Storage'
 # pod 'Firebase/DynamicLinks'
 # pod 'Firebase/Functions'
 

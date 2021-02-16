@@ -28,13 +28,7 @@ struct Person: Identifiable {
     var city: String
     var state: String
     var posts: [Post]?
-
-    
-    
 }
-
-
-
 
 //    init(name: String, imageName: String, year: Int, description: String, city: String, state: String, posts: [Post]?) {
 //        self.name = name
@@ -52,13 +46,7 @@ struct Person: Identifiable {
 //
 //    }
     
-var personTestData = [
-    Person(name: "Andrew Park", imageName: "andrew", year: 2022, description: "funny", city: "Crestwood", state: "KY", posts: AndrewsPostTestData),
-    Person(name: "casey", imageName: "casey", year: 2022, description: "hard working", city: "Crestwood", state: "KY", posts: CaseysPostTestData),
-    Person(name: "david", imageName: "david", year: 2021, description: "funnny", city: "la", state: "cali", posts: DavidsPostTestData),
-    Person(name: "joji", imageName: "joji", year: 1909, description: "artistic", city: "nyc", state: "new york", posts: JojisPostTestData),
-    Person(name: "don", imageName: "don", year: 2021, description: "cool kid", city: "buckner", state: "ky", posts: DonsPostTestData)
-]
+
 
 //@Published var people: [Person] = ModelData.createPersons()
 //

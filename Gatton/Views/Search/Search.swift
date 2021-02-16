@@ -12,11 +12,6 @@ struct Search: View {
     
     private let rows = Array(repeating: GridItem(.flexible(), spacing: 0), count: 6)
     
-    private var sortprof: [Post] {
-        modelData.posts.filter { post in
-            post.target == "professors"
-        }
-    }
     
     var body: some View {
         //ScrollView {
