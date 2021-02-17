@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    @StateObject var postData = PostViewModel()
     var body: some View {
         VStack{
             
@@ -24,8 +25,6 @@ struct PostView: View {
                         .font(.title)
                         .foregroundColor(.white)
                 })
-                
-                
             }
             .padding()
             .padding(.top, edges!.top)
@@ -33,8 +32,32 @@ struct PostView: View {
             .background(Color("bg"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
             
-            Spacer(minLength: 0)
+            if postData.posts.isEmpty{
+                Spacer(minLength: 0)
+                
+                if postData.noPosts{
+                    Text("No Posts")
+                } else {
+                    ProgressView()
+                }
+                Spacer(minLength: 0)
+            }
+            else {
+                ScrollView {
+                    VStack(spacing: 15) {
+                        ForEach(postData.posts) { post in
+                            PostRow(post: post, postData: postData)
+                        }
+                    }
+                    .padding()
+                    .padding(.bottom, 55)
+                }
+            }
+            
         }
+        .fullScreenCover(isPresented: $postData.newPost, content: {
+            NewPost(updateId: $postData.updateId)
+        })
     }
 }
 

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NewPost: View {
+    @StateObject var newPostData = NewPostModel()
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
