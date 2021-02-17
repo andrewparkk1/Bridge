@@ -18,7 +18,7 @@ class NewPostModel: ObservableObject {
     
     let uid = Auth.auth().currentUser!.uid
     
-    func post(updateId: String, present: Binding){
+    func post(updateId: String, present: Binding<PresentationMode>){
         //posting data
         isPosting = true
         

@@ -25,7 +25,7 @@ struct TabButton: View{
     var title: String
     @Binding var selectedTab: String
     var body: some View{
-        Button(action: {}, label: {
+        Button(action: {selectedTab = title}, label: {
             VStack(spacing: 5){
 //                Image(title)
 //                    .renderingMode(.template)

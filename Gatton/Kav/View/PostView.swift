@@ -20,10 +20,10 @@ struct PostView: View {
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
                 
-                Button(action: {}, label: {
+                Button(action: {postData.newPost.toggle()}, label: {
                     Image(systemName: "square.and.pencil")
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(.white) ipho
                 })
             }
             .padding()

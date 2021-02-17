@@ -30,7 +30,7 @@ class PostViewModel: ObservableObject {
                 return
             }
             
-            docs.documentChanges.forEach { doc in
+            docs.documentChanges.forEach { (doc) in
                 //check if doc is added
                 if doc.type == .added{
                     
@@ -46,7 +46,7 @@ class PostViewModel: ObservableObject {
                         
                         //sorting all model while reading docs
                         self.posts.sort { (p1, p2) -> Bool in
-                            return p1.time>p2.time
+                            return p1.time > p2.time
                         }
                     }
                 }
