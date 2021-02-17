@@ -42,7 +42,7 @@ class LoginViewModel: ObservableObject {
             }
             
             //if code sent successfully
-            self.alertView { (Code) in
+            alertView(msg: "Enter verification code") { Code in
                 let credential =
                     PhoneAuthProvider.provider().credential(withVerificationID: ID!, verificationCode: Code)
                 Auth.auth().signIn(with: credential) { (res, err) in
@@ -55,39 +55,8 @@ class LoginViewModel: ObservableObject {
                     self.checkUser()
                     
                 }
-                
-                
             }
-            
         }
-    }
-    
-    
-    func alertView(completion: @escaping (String) -> ()) {
-        
-        let alert = UIAlertController(title: "Verification", message: "Enter Code", preferredStyle: .alert)
-        
-        alert.addTextField { (txt) in
-            txt.placeholder = "123456"
-            
-        }
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
-       
-        alert.addAction(UIAlertAction(title: "Verify", style: .default, handler: { (_) in
-            
-            let code = alert.textFields![0].text ?? ""
-            
-            if code == "" {
-                UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
-                return
-            }
-            completion(code)
-        }))
-        
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
-
-        
     }
     
     func checkUser() {
@@ -103,7 +72,7 @@ class LoginViewModel: ObservableObject {
                 self.registerUser.toggle()
                 self.isLoading = false
                 return
-                 
+                
             }
             if snap!.documents.isEmpty {
                 self.registerUser.toggle()
@@ -113,6 +82,8 @@ class LoginViewModel: ObservableObject {
             self.status = true
         }
     }
-    
-    
+
 }
+
+
+

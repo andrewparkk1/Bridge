@@ -54,7 +54,7 @@ struct ProfileSummary: View {
   
                 LazyVStack {
                     ForEach(0..<person.posts!.count) { post in
-                        PostView(person: person, postNum: post)
+                        MyPostView(person: person, postNum: post)
                     }
                     
                 }

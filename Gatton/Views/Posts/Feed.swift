@@ -13,7 +13,7 @@ struct Feed: View {
     var body: some View {
         ScrollView {
             ForEach(modelData.people) { person in
-                PostView(person: person, postNum: 0)
+                MyPostView(person: person, postNum: 0)
                 Divider()
             }
         }

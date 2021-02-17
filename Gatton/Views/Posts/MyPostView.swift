@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostView: View {
+struct MyPostView: View {
     var person: Person
     var postNum: Int
     var liked = false
@@ -68,9 +68,9 @@ struct PostView: View {
     }
 }
 
-struct Post_Previews: PreviewProvider {
+struct MyPost_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(person: personTestData[0], postNum: 1)
+        MyPostView(person: personTestData[0], postNum: 1)
     }
 }
 
