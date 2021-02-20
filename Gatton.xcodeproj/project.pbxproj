@@ -39,7 +39,7 @@
 		49967C3A25DBA88A00F9104D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3925DBA88A00F9104D /* ImagePicker.swift */; };
 		49967C3D25DBACB300F9104D /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3C25DBACB300F9104D /* UploadImage.swift */; };
 		49967C4025DBAFEF00F9104D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3F25DBAFEE00F9104D /* Home.swift */; };
-		49A37D2A25DC53A9000A3658 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49A37D2925DC53A9000A3658 /* SDWebImageSwiftUI */; };
+		49A37D2A25DC53A9000A3658 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 49A37D2925DC53A9000A3658 /* SwiftPackageProductDependency */; };
 		49A37D3425DC896A000A3658 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D3325DC896A000A3658 /* PostView.swift */; };
 		49A37D3725DC8979000A3658 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D3625DC8979000A3658 /* SettingsView.swift */; };
 		49A37D3A25DC8990000A3658 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D3925DC8990000A3658 /* CustomTabbar.swift */; };
@@ -57,10 +57,11 @@
 		49EFA07325AE8382000E1DAF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07225AE8382000E1DAF /* Feed.swift */; };
 		49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07C25AE97E0000E1DAF /* LikedButton.swift */; };
 		49EFA08C25AEB603000E1DAF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA08B25AEB603000E1DAF /* ModelData.swift */; };
-		55E4F662B2CB1C1CF96299A3 /* Pods_Gatton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87BB765275562DBCF53C737 /* Pods_Gatton.framework */; };
+		B3C50A6139533542492962E5 /* Pods_Gatton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06297EF6579F1514372DD452 /* Pods_Gatton.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06297EF6579F1514372DD452 /* Pods_Gatton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gatton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492413C425DB4A9D009449B1 /* SearchPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPosts.swift; sourceTree = "<group>"; };
 		492548AC25AC03EF00A82CD0 /* Final.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final.swift; sourceTree = "<group>"; };
 		492548B225AC082900A82CD0 /* Topbanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topbanner.swift; sourceTree = "<group>"; };
@@ -122,9 +123,8 @@
 		49EFA07225AE8382000E1DAF /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		49EFA07C25AE97E0000E1DAF /* LikedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedButton.swift; sourceTree = "<group>"; };
 		49EFA08B25AEB603000E1DAF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		E55F0DCB69C9882780315B8A /* Pods-Gatton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.release.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.release.xcconfig"; sourceTree = "<group>"; };
-		E962505776E36D0F4B06103A /* Pods-Gatton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.debug.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.debug.xcconfig"; sourceTree = "<group>"; };
-		F87BB765275562DBCF53C737 /* Pods_Gatton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gatton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59864B00D54D39DD7D5C6C6E /* Pods-Gatton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.debug.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.debug.xcconfig"; sourceTree = "<group>"; };
+		A4E841EB0776D911158E2951 /* Pods-Gatton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.release.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A37D2A25DC53A9000A3658 /* SDWebImageSwiftUI in Frameworks */,
-				55E4F662B2CB1C1CF96299A3 /* Pods_Gatton.framework in Frameworks */,
+				49A37D2A25DC53A9000A3658 /* BuildFile in Frameworks */,
+				B3C50A6139533542492962E5 /* Pods_Gatton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +178,7 @@
 				496B9C2725AB765100430AD3 /* Gatton */,
 				496B9C2625AB765100430AD3 /* Products */,
 				653CEE6F99718E80FBD8FBE2 /* Pods */,
-				50767E7236EE0A091C138D53 /* Frameworks */,
+				8AC7D48FC0E2E8ABEC803B35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -361,21 +361,21 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		50767E7236EE0A091C138D53 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F87BB765275562DBCF53C737 /* Pods_Gatton.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		653CEE6F99718E80FBD8FBE2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E962505776E36D0F4B06103A /* Pods-Gatton.debug.xcconfig */,
-				E55F0DCB69C9882780315B8A /* Pods-Gatton.release.xcconfig */,
+				59864B00D54D39DD7D5C6C6E /* Pods-Gatton.debug.xcconfig */,
+				A4E841EB0776D911158E2951 /* Pods-Gatton.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8AC7D48FC0E2E8ABEC803B35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06297EF6579F1514372DD452 /* Pods_Gatton.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,11 +385,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 496B9C3425AB765200430AD3 /* Build configuration list for PBXNativeTarget "Gatton" */;
 			buildPhases = (
-				8139D03DD0B2D1968272F663 /* [CP] Check Pods Manifest.lock */,
+				AB9375419255BF09E160CD79 /* [CP] Check Pods Manifest.lock */,
 				496B9C2125AB765100430AD3 /* Sources */,
 				496B9C2225AB765100430AD3 /* Frameworks */,
 				496B9C2325AB765100430AD3 /* Resources */,
-				B188E2BB49A5CA17F4F9C2BA /* [CP] Embed Pods Frameworks */,
+				E15621EA6806D9333D60477B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,7 +397,7 @@
 			);
 			name = Gatton;
 			packageProductDependencies = (
-				49A37D2925DC53A9000A3658 /* SDWebImageSwiftUI */,
+				49A37D2925DC53A9000A3658 /* SwiftPackageProductDependency */,
 			);
 			productName = Gatton;
 			productReference = 496B9C2525AB765100430AD3 /* Gatton.app */;
@@ -427,7 +427,7 @@
 			);
 			mainGroup = 496B9C1C25AB765000430AD3;
 			packageReferences = (
-				49A37D2825DC53A9000A3658 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				49A37D2825DC53A9000A3658 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 496B9C2625AB765100430AD3 /* Products */;
 			projectDirPath = "";
@@ -452,7 +452,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8139D03DD0B2D1968272F663 /* [CP] Check Pods Manifest.lock */ = {
+		AB9375419255BF09E160CD79 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,7 +474,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B188E2BB49A5CA17F4F9C2BA /* [CP] Embed Pods Frameworks */ = {
+		E15621EA6806D9333D60477B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -668,7 +668,7 @@
 		};
 		496B9C3525AB765200430AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E962505776E36D0F4B06103A /* Pods-Gatton.debug.xcconfig */;
+			baseConfigurationReference = 59864B00D54D39DD7D5C6C6E /* Pods-Gatton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -691,7 +691,7 @@
 		};
 		496B9C3625AB765200430AD3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E55F0DCB69C9882780315B8A /* Pods-Gatton.release.xcconfig */;
+			baseConfigurationReference = A4E841EB0776D911158E2951 /* Pods-Gatton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -736,7 +736,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		49A37D2825DC53A9000A3658 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		49A37D2825DC53A9000A3658 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -747,9 +747,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		49A37D2925DC53A9000A3658 /* SDWebImageSwiftUI */ = {
+		49A37D2925DC53A9000A3658 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 49A37D2825DC53A9000A3658 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = 49A37D2825DC53A9000A3658 /* RemoteSwiftPackageReference */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

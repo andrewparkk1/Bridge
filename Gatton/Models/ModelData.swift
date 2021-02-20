@@ -7,9 +7,9 @@
 
 import Foundation
 import Firebase
-import FirebaseCore
-import FirebaseAnalytics
-import FirebaseFirestore
+//import FirebaseCore
+//import FirebaseAnalytics
+//import FirebaseFirestore
 
 class ModelData: ObservableObject {
     //    @Published var people = [Person]()
@@ -34,11 +34,11 @@ var personTestData = [
 ]
 
 var postsTestData = [
-    Post(title: "researhc", ttime: "3 months", description: "hello", target: target.general.getTarget()),
-    Post(title: "researhc", ttime: "6 minutes", description: "i like my researchalsjdnfjlasndjfnajsdnfojnasjodfnjoansdjonfojandsofn", target: target.research.getTarget()),
-    Post(title: "researhc", ttime: "2 hours", description: "i post vlogs", target: target.general.getTarget()),
-    Post(title: "researhc", ttime: "3 min", description: "Im the og", target: target.general.getTarget()),
-    Post(title: "researhc", ttime: "just now", description: "i like professor xing", target: target.professors.getTarget()),
-    Post(title: "researhc", ttime: "2 min", description: "why is cheryl so mean?", target: target.qanda.getTarget())
+    Post(time: "asdf", title: "researhc", ttime: "3 months", description: "hello", target: target.general.getTarget()),
+    Post(time: "adsf", title: "researhc", ttime: "6 minutes", description: "i like my researchalsjdnfjlasndjfnajsdnfojnasjodfnjoansdjonfojandsofn", target: target.research.getTarget()),
+    Post(time: "asdf", title: "researhc", ttime: "2 hours", description: "i post vlogs", target: target.general.getTarget()),
+    Post(time: "adsf", title: "researhc",ttime: "3 min", description: "Im the og", target: target.general.getTarget()),
+    Post(time: "adsf", title: "researhc",ttime: "just now", description: "i like professor xing", target: target.professors.getTarget()),
+    Post(time: "adsf", title: "researhc",ttime: "2 min", description: "why is cheryl so mean?", target: target.qanda.getTarget())
 ]
 

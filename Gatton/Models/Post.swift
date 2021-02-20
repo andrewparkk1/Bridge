@@ -4,13 +4,12 @@
 //
 //  Created by Andrew Park on 1/14/21.
 //
-
+import Firebase
 import SwiftUI
 import Foundation
 import FirebaseFirestore
 import FirebaseCore
-import Firebase
-import FirebaseFirestoreSwift
+//import FirebaseFirestoreSwift
 
 enum target: String, CaseIterable {
     case general = "general", professors = "professors", classes = "classes", research = "research", qanda = "qanda", colleges = "colleges"
@@ -21,8 +20,10 @@ enum target: String, CaseIterable {
 
 
 struct Post: Identifiable { //Codable
-    @DocumentID var id: String?
-    @ServerTimestamp var time: Timestamp?
+//    @DocumentID
+    var id: String?
+//    @ServerTimestamp Timestamp?
+    var time: String
     var title: String
     var ttime: String?
     var userId: Person.ID?

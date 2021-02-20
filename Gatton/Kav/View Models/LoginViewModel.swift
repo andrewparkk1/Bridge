@@ -5,9 +5,8 @@
 //  Created by Andrew Park on 2/15/21.
 //
 
-import Foundation
-import Firebase
 import SwiftUI
+import Firebase
 
 class LoginViewModel: ObservableObject {
     @Published var code = ""
@@ -31,8 +30,7 @@ class LoginViewModel: ObservableObject {
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         
         let phoneNumber = "+" + code + number
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) {
-            (ID, err) in
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (ID, err) in
             
             if err != nil {
                 self.errorMsg = err!.localizedDescription
@@ -42,7 +40,7 @@ class LoginViewModel: ObservableObject {
             }
             
             //if code sent successfully
-            alertView(msg: "Enter verification code") { Code in
+            alertView(msg: "Enter Verification Code") { (Code) in
                 let credential =
                     PhoneAuthProvider.provider().credential(withVerificationID: ID!, verificationCode: Code)
                 Auth.auth().signIn(with: credential) { (res, err) in

@@ -23,7 +23,7 @@ struct PostView: View {
                 Button(action: {postData.newPost.toggle()}, label: {
                     Image(systemName: "square.and.pencil")
                         .font(.title)
-                        .foregroundColor(.white) ipho
+                        .foregroundColor(.white)
                 })
             }
             .padding()

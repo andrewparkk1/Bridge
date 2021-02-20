@@ -56,8 +56,6 @@ struct Login: View {
                 .opacity(loginData.code == "" || loginData.number == "" ? 0.5 : 1)
             }
             
-            
-            
             Spacer(minLength: 0)
         }
         .background(Color(UIColor(named: "green")!).ignoresSafeArea(.all, edges: .all))
@@ -65,7 +63,7 @@ struct Login: View {
         
         // displaying alert
         .alert(isPresented: $loginData.error, content: {
-            Alert(title: Text("error"), message: Text(loginData.errorMsg), dismissButton: .destructive(Text("OK")))
+            Alert(title: Text("Error"), message: Text(loginData.errorMsg), dismissButton: .destructive(Text("OK")))
         })
         .fullScreenCover(isPresented: $loginData.registerUser, content: {
             Register()
