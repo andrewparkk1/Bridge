@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/17/21.
 //
 
+//CHECKED
+
 import SwiftUI
 
 struct NewPost: View {
@@ -43,7 +45,7 @@ struct NewPost: View {
                         .padding(.vertical, 10)
                         .padding(.horizontal, 25)
                         .background(Color(.green))
-                        .clipShape(Circle())
+                        .clipShape(Capsule())
                 })
                 .disabled(newPostData.postTxt == "" ? true: false)
                 .opacity(newPostData.postTxt == "" ? 0.5: 1)

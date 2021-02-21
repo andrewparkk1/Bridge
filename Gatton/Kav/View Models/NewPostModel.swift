@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/17/21.
 //
 
+//CHECKED
+
 import SwiftUI
 import Firebase
 
@@ -40,7 +42,7 @@ class NewPostModel: ObservableObject {
                 "title" : self.postTxt,
                 "url": "",
                 "ref": ref.collection("Users").document(self.uid),
-                "time": Data()
+                "time": Date()
                 
             ]) { err in
                 if err != nil{
@@ -57,9 +59,9 @@ class NewPostModel: ObservableObject {
             UploadImage(imageData: img_Data, path: "post_Pics") { url in
                 ref.collection("Posts").document().setData([
                     "title" : self.postTxt,
-                    "url": "",
+                    "url": url,
                     "ref": ref.collection("Users").document(self.uid),
-                    "time": Data()
+                    "time": Date()
                     
                 ]) { err in
                     if err != nil{

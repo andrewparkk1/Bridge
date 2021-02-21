@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/15/21.
 //
 
+//CHECKED
+
 import SwiftUI
 
 struct Login: View {

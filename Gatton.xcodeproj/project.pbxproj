@@ -57,11 +57,10 @@
 		49EFA07325AE8382000E1DAF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07225AE8382000E1DAF /* Feed.swift */; };
 		49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07C25AE97E0000E1DAF /* LikedButton.swift */; };
 		49EFA08C25AEB603000E1DAF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA08B25AEB603000E1DAF /* ModelData.swift */; };
-		B3C50A6139533542492962E5 /* Pods_Gatton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06297EF6579F1514372DD452 /* Pods_Gatton.framework */; };
+		D6672E5243290DFBB45252A3 /* Pods_Gatton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F578980EFACDA81C10FBB95A /* Pods_Gatton.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06297EF6579F1514372DD452 /* Pods_Gatton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gatton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492413C425DB4A9D009449B1 /* SearchPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPosts.swift; sourceTree = "<group>"; };
 		492548AC25AC03EF00A82CD0 /* Final.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final.swift; sourceTree = "<group>"; };
 		492548B225AC082900A82CD0 /* Topbanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topbanner.swift; sourceTree = "<group>"; };
@@ -123,8 +122,9 @@
 		49EFA07225AE8382000E1DAF /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		49EFA07C25AE97E0000E1DAF /* LikedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedButton.swift; sourceTree = "<group>"; };
 		49EFA08B25AEB603000E1DAF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		59864B00D54D39DD7D5C6C6E /* Pods-Gatton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.debug.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.debug.xcconfig"; sourceTree = "<group>"; };
-		A4E841EB0776D911158E2951 /* Pods-Gatton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.release.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.release.xcconfig"; sourceTree = "<group>"; };
+		A8B3D179D50584E2C050A0F5 /* Pods-Gatton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.release.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.release.xcconfig"; sourceTree = "<group>"; };
+		F0553858C93D02137C6B1AC1 /* Pods-Gatton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.debug.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.debug.xcconfig"; sourceTree = "<group>"; };
+		F578980EFACDA81C10FBB95A /* Pods_Gatton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gatton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A37D2A25DC53A9000A3658 /* BuildFile in Frameworks */,
-				B3C50A6139533542492962E5 /* Pods_Gatton.framework in Frameworks */,
+				D6672E5243290DFBB45252A3 /* Pods_Gatton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +178,7 @@
 				496B9C2725AB765100430AD3 /* Gatton */,
 				496B9C2625AB765100430AD3 /* Products */,
 				653CEE6F99718E80FBD8FBE2 /* Pods */,
-				8AC7D48FC0E2E8ABEC803B35 /* Frameworks */,
+				76E567BCCD949B1EE66DA37F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -364,16 +364,16 @@
 		653CEE6F99718E80FBD8FBE2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				59864B00D54D39DD7D5C6C6E /* Pods-Gatton.debug.xcconfig */,
-				A4E841EB0776D911158E2951 /* Pods-Gatton.release.xcconfig */,
+				F0553858C93D02137C6B1AC1 /* Pods-Gatton.debug.xcconfig */,
+				A8B3D179D50584E2C050A0F5 /* Pods-Gatton.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		8AC7D48FC0E2E8ABEC803B35 /* Frameworks */ = {
+		76E567BCCD949B1EE66DA37F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06297EF6579F1514372DD452 /* Pods_Gatton.framework */,
+				F578980EFACDA81C10FBB95A /* Pods_Gatton.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -385,11 +385,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 496B9C3425AB765200430AD3 /* Build configuration list for PBXNativeTarget "Gatton" */;
 			buildPhases = (
-				AB9375419255BF09E160CD79 /* [CP] Check Pods Manifest.lock */,
+				A7904CD5E3BADD6948D88B30 /* [CP] Check Pods Manifest.lock */,
 				496B9C2125AB765100430AD3 /* Sources */,
 				496B9C2225AB765100430AD3 /* Frameworks */,
 				496B9C2325AB765100430AD3 /* Resources */,
-				E15621EA6806D9333D60477B /* [CP] Embed Pods Frameworks */,
+				905BC94CF6F25C36C8FA3AB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -452,7 +452,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AB9375419255BF09E160CD79 /* [CP] Check Pods Manifest.lock */ = {
+		905BC94CF6F25C36C8FA3AB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7904CD5E3BADD6948D88B30 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -472,23 +489,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E15621EA6806D9333D60477B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gatton/Pods-Gatton-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -668,7 +668,7 @@
 		};
 		496B9C3525AB765200430AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59864B00D54D39DD7D5C6C6E /* Pods-Gatton.debug.xcconfig */;
+			baseConfigurationReference = F0553858C93D02137C6B1AC1 /* Pods-Gatton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -691,7 +691,7 @@
 		};
 		496B9C3625AB765200430AD3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4E841EB0776D911158E2951 /* Pods-Gatton.release.xcconfig */;
+			baseConfigurationReference = A8B3D179D50584E2C050A0F5 /* Pods-Gatton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

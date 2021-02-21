@@ -7,30 +7,29 @@ target 'Gatton' do
 
   # Pods for Gatton
 
- pod 'FirebaseCore'
+ #pod 'FirebaseCore'
  pod 'Firebase/Auth'
-pod 'Firebase/Storage'
-pod 'Firebase/Firestore'
+ pod 'Firebase/Storage'
+ pod 'Firebase/Firestore'
+
 
 
 # pod 'Firebase/Analytics'
 # pod 'FirebaseFirestoreSwift'
 # pod 'FirebaseFirestore'
 # pod 'FirebaseUI'
-
-
 # pod 'Firebase/DynamicLinks'
 # pod 'Firebase/Functions'
 # pod 'Resolver'
 # pod 'Disk'
  
-post_install do |pi|
-    pi.pods_project.targets.each do |t|
-      t.build_configurations.each do |config|
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.3'
-      end
-    end
-end
+#post_install do |pi|
+ #   pi.pods_project.targets.each do |t|
+#      t.build_configurations.each do |config|
+#        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.3'
+ #     end
+ #   end
+#end
 
 
 
