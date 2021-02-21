@@ -5,7 +5,9 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
-import Foundation
+//CHECKED
+
+
 import SwiftUI
 import PhotosUI
 
@@ -17,7 +19,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         return ImagePicker.Coordinator(parent: self)
     }
     
-    func makeUIViewController(context: Context) -> some UIViewController {
+    func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration()
         config.selectionLimit = 1
         

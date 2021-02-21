@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/15/21.
 //
 
+//checked
+
 import SwiftUI
 import Firebase
 
@@ -61,8 +63,7 @@ class LoginViewModel: ObservableObject {
         let ref = Firestore.firestore()
         let uid = Auth.auth().currentUser!.uid
         
-        ref.collection("Users").whereField("uid", arrayContains: uid).getDocuments {
-            (snap, err) in
+        ref.collection("Users").whereField("uid", isEqualTo: uid).getDocuments { (snap, err) in
             
             if err != nil{
                 //no documnets

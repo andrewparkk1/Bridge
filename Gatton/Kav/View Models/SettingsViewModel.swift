@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
+//checked
+
 import SwiftUI
 import Firebase
 
@@ -54,7 +56,7 @@ class SettingsViewModel: ObservableObject {
     }
     
     func updateDetails(field: String) {
-        alertView(msg: "Update  \(field)") { txt in
+        alertView(msg: "Update \(field)") { txt in
             if txt != "" {
                 self.updateBio(id: field == "Name" ? "username" : "bio", value: txt)
             }
@@ -73,8 +75,6 @@ class SettingsViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }
 
 

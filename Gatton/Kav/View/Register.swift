@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
+//checked
+
 import SwiftUI
 
 struct Register: View {
@@ -22,7 +24,7 @@ struct Register: View {
             
             ZStack {
                 
-                if registerData.image_data.count == 0 {
+                if registerData.image_Data.count == 0 {
                     Image(systemName: "person")
                         .font(.system(size:65))
                         .foregroundColor(.black)
@@ -32,7 +34,7 @@ struct Register: View {
                     
                 }
                 else {
-                    Image(uiImage: UIImage(data: registerData.image_data)!)
+                    Image(uiImage: UIImage(data: registerData.image_Data)!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 115, height: 115)
@@ -42,7 +44,7 @@ struct Register: View {
             .padding(.top)
             .onTapGesture(perform: {
                 registerData.picker.toggle()
-        })
+            })
             
             
             HStack(spacing: 15) {
@@ -50,7 +52,7 @@ struct Register: View {
                 TextField("Name", text: $registerData.name)
                     .padding()
                     .keyboardType(.numberPad)
-                    .background(Color.white.opacity(0.1))
+                    .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }
             .padding()
@@ -60,10 +62,11 @@ struct Register: View {
                 TextField("Bio", text: $registerData.bio)
                     .padding()
                     .keyboardType(.numberPad)
-                    .background(Color.white.opacity(0.1))
+                    .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom)
             
             if registerData.isLoading{
                 ProgressView()
@@ -79,8 +82,8 @@ struct Register: View {
                         .clipShape(Capsule())
                     
                 })
-                .disabled(registerData.image_data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
-                .opacity(registerData.image_data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1)
+                .disabled(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
+                .opacity(registerData.image_Data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1)
             }
             
             
@@ -88,7 +91,7 @@ struct Register: View {
         }
         .background(Color(UIColor(named: "green")!).ignoresSafeArea(.all, edges: .all))
         .sheet(isPresented: $registerData.picker, content: {
-            ImagePicker(picker: $registerData.picker, img_Data: $registerData.image_data)
+            ImagePicker(picker: $registerData.picker, img_Data: $registerData.image_Data)
         })
     }
 }

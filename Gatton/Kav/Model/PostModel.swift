@@ -5,6 +5,9 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
+//CHECKED
+
+
 import SwiftUI
 
 struct PostModel: Identifiable {

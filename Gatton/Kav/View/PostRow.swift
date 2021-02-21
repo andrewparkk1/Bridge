@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/17/21.
 //
 
+//CHECKED
+
 import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
@@ -51,11 +53,11 @@ struct PostRow: View {
             }
             
             if post.pic != "" {
-                WebImage(url: URL(string: post.user.pic)!)
+                WebImage(url: URL(string: post.pic)!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: UIScreen.main.bounds.width - 60, height: 250)
-                    .clipShape(Circle())
+                    .cornerRadius(15)
             }
             
             HStack{
@@ -82,9 +84,3 @@ struct PostRow: View {
         .cornerRadius(15)
     }
 }
-
-//struct PostRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostRow()
-//    }
-//}

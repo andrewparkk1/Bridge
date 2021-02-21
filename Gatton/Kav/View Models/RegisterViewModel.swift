@@ -5,14 +5,15 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
-import Foundation
+//checked
+
 import SwiftUI
 import Firebase
 
 class RegisterViewModel: ObservableObject{
     @Published var name = ""
     @Published var bio = ""
-    @Published var image_data = Data(count: 0)
+    @Published var image_Data = Data(count: 0)
     @Published var picker = false
     let ref = Firestore.firestore()
     
@@ -27,7 +28,7 @@ class RegisterViewModel: ObservableObject{
         //setting user data to firestore
         let uid = Auth.auth().currentUser!.uid
         
-        UploadImage(imageData: image_data, path: "profile_Photos") { (url) in
+        UploadImage(imageData: image_Data, path: "profile_Photos") { (url) in
             self.ref.collection("Users").document(uid).setData([
                 "uid": uid,
                 "imageurl": url,

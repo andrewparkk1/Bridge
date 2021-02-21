@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
+//checked
+
 import SwiftUI
 
 struct Home: View {
@@ -24,7 +26,7 @@ struct Home: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             CustomTabbar(selectedTab: $selectedTab)
-                .padding(.bottom, edges!.bottom == 0 ? 15:0)
+                .padding(.bottom, edges!.bottom == 0 ? 15 : 0)
             
         }
         .background(Color("bg").ignoresSafeArea(.all, edges: .all))

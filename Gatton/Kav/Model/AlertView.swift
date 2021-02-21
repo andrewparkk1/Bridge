@@ -5,11 +5,13 @@
 //  Created by Andrew Park on 2/16/21.
 //
 
+//CHECKED
+
 import SwiftUI
 
 func alertView(msg: String, completion: @escaping (String) -> ()) {
     
-    let alert = UIAlertController(title: "Message", message: "msg", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Message", message: msg, preferredStyle: .alert)
     
     alert.addTextField { (txt) in
         txt.placeholder = msg.contains("Verification") ? "123456" : ""
