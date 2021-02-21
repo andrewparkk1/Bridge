@@ -13,8 +13,9 @@ struct MyPostView: View {
     var liked = false
     
     private let columns: [GridItem] = [
-        GridItem(.fixed(50), spacing: 5, alignment: .leading),
-        GridItem(.fixed(100), alignment: .leading)
+        GridItem(alignment: .center),
+        GridItem(alignment: .center),
+        GridItem(alignment: .center)
     ]
     
     
@@ -32,16 +33,36 @@ struct MyPostView: View {
                     .frame(width: 30)
                     .clipShape(Circle())
             }
-            .padding(.trailing)
+            .padding(.horizontal)
             
-            
-            HStack{
-                Text("by")
-                Text(person.name)
-                Text(" | ")
-                Text((person.posts?[postNum].ttime!)!)
-                Text(" |  G:/")
-                Text((person.posts?[postNum].target)!)
+            LazyHGrid(
+                rows: columns,
+                alignment: .center,
+                spacing: 0
+            ) {
+                Section() {
+                    HStack{
+                        Text("by")
+                        Text(person.name)
+                        Text(" |")
+                    }
+                }
+                
+                Section() {
+                    HStack{
+                        Text(" ")
+                        Text((person.posts?[postNum].ttime!)!)
+                        Text(" |")
+                    }
+                }
+                
+                Section() {
+                    HStack{
+                        Text(" G:/")
+                        Text((person.posts?[postNum].target)!)
+                        Text(" ")
+                    } 
+                }
             }
             
             Text((person.posts?[postNum].description)!)
@@ -62,9 +83,7 @@ struct MyPostView: View {
                 Spacer()
                 Image(systemName: "tuningfork")
             }
-            .padding(.horizontal)
-        }.padding()
-        
+        }
     }
 }
 

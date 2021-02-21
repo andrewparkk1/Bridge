@@ -35,20 +35,22 @@ struct PostRow: View {
                 //displaying only posted user
                 if post.user.uid == uid{
                     Menu(content: {
-                        Button(action: {postData.editPost(id: post.id)}, label: {
+                        Button(action: {postData.editPost(id: post.id)}) {
                             Text("Edit")
-                        })
+                        }
                         
-                        Button(action: {postData.deletePost(id: post.id)}, label: {
+                        Button(action: {postData.deletePost(id: post.id)}) {
                             Text("Delete")
-                        })
+                        }
                     }, label: {
-                        Image("menu")
+                        Image(systemName: "ellipsis")
                             .renderingMode(.template)
                             .resizable()
+                            .rotationEffect(.degrees(90))
                             .frame(width: 18, height: 18)
                             .foregroundColor(.white)
                     })
+                    .foregroundColor(.white)
                 }
             }
             
@@ -81,6 +83,6 @@ struct PostRow: View {
         }
         .padding()
         .background(Color.white.opacity(0.06))
-        .cornerRadius(15)
+        //.cornerRadius(15)
     }
 }

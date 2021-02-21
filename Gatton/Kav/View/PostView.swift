@@ -22,11 +22,11 @@ struct PostView: View {
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
                 
-                Button(action: {postData.newPost.toggle()}, label: {
+                Button(action: {postData.newPost.toggle()}) {
                     Image(systemName: "square.and.pencil")
                         .font(.title)
                         .foregroundColor(.white)
-                })
+                }
             }
             .padding()
             .padding(.top, edges!.top)
@@ -49,6 +49,7 @@ struct PostView: View {
                     VStack(spacing: 15) {
                         ForEach(postData.posts) { post in
                             PostRow(post: post, postData: postData)
+                            Divider()
                         }
                     }
                     .padding()
