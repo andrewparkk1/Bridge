@@ -49,7 +49,7 @@ struct PostView: View {
                     VStack(spacing: 15) {
                         ForEach(postData.posts) { post in
                             PostRow(post: post, postData: postData)
-                            Divider()
+                            Divider().ignoresSafeArea()
                         }
                     }
                     .padding()

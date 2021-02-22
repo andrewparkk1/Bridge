@@ -15,7 +15,7 @@ struct LikedButton: View {
             isSet.toggle()
         }) {
             Image(systemName: isSet ? "heart.fill" : "heart")
-                .foregroundColor(isSet ? Color.red : Color.black)
+                .foregroundColor(isSet ? Color.red : Color.white)
         }
     }
 }
