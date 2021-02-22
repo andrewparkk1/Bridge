@@ -10,17 +10,13 @@ import SwiftUI
 struct MyPostView: View {
     var person: Person
     var postNum: Int
-    var liked = false
+    @State var liked = false
     
-    private let columns: [GridItem] = [
-        GridItem(alignment: .center),
-        GridItem(alignment: .center),
-        GridItem(alignment: .center)
-    ]
+    private let columns: [GridItem] = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
     
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12){
+        VStack(alignment: .leading, spacing: 15){
             
             HStack {
                 Text((person.posts?[postNum].title)!)
@@ -33,13 +29,9 @@ struct MyPostView: View {
                     .frame(width: 30)
                     .clipShape(Circle())
             }
-            .padding(.horizontal)
+            .padding(.trailing)
             
-            LazyHGrid(
-                rows: columns,
-                alignment: .center,
-                spacing: 0
-            ) {
+            LazyHGrid(rows: columns) {
                 Section() {
                     HStack{
                         Text("by")
@@ -60,8 +52,7 @@ struct MyPostView: View {
                     HStack{
                         Text(" G:/")
                         Text((person.posts?[postNum].target)!)
-                        Text(" ")
-                    } 
+                    }
                 }
             }
             
@@ -84,6 +75,7 @@ struct MyPostView: View {
                 Image(systemName: "tuningfork")
             }
         }
+        .padding()
     }
 }
 

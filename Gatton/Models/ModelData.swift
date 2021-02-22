@@ -27,10 +27,10 @@ class ModelData: ObservableObject {
 
 var personTestData = [
     Person(name: "Andrew Park", imageName: "andrew", year: 2022, description: "funny", city: "Crestwood", state: "KY", posts: postsTestData),
-    Person(name: "casey", imageName: "casey", year: 2022, description: "hard working", city: "Crestwood", state: "KY"),
-    Person(name: "david", imageName: "david", year: 2021, description: "funnny", city: "la", state: "cali"),
-    Person(name: "joji", imageName: "joji", year: 1909, description: "artistic", city: "nyc", state: "new york"),
-    Person(name: "don", imageName: "don", year: 2021, description: "cool kid", city: "buckner", state: "ky")
+    Person(name: "casey", imageName: "casey", year: 2022, description: "hard working", city: "Crestwood", state: "KY", posts: postsTestData),
+    Person(name: "david", imageName: "david", year: 2021, description: "funnny", city: "la", state: "cali", posts: postsTestData),
+    Person(name: "joji", imageName: "joji", year: 1909, description: "artistic", city: "nyc", state: "new york", posts: postsTestData),
+    Person(name: "don", imageName: "don", year: 2021, description: "cool kid", city: "buckner", state: "ky", posts: postsTestData)
 ]
 
 var postsTestData = [
