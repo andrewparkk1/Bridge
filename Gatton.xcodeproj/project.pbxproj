@@ -28,6 +28,7 @@
 		496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5825AB9F4E00430AD3 /* Person.swift */; };
 		496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C5E25AB9F9500430AD3 /* Research.swift */; };
 		496B9C6725ABA46900430AD3 /* ClassProfessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9C6625ABA46900430AD3 /* ClassProfessor.swift */; };
+		497EDB3225E33E1B007CD638 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EDB3125E33E1B007CD638 /* ProfileView.swift */; };
 		497EECC725D8F937009C7599 /* MyHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EECC625D8F937009C7599 /* MyHome.swift */; };
 		4980E8DF25C8FF2D00ED7390 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */; };
 		4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4980E8EF25C9063D00ED7390 /* AddPost.swift */; };
@@ -39,7 +40,7 @@
 		49967C3A25DBA88A00F9104D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3925DBA88A00F9104D /* ImagePicker.swift */; };
 		49967C3D25DBACB300F9104D /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3C25DBACB300F9104D /* UploadImage.swift */; };
 		49967C4025DBAFEF00F9104D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49967C3F25DBAFEE00F9104D /* Home.swift */; };
-		49A37D2A25DC53A9000A3658 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 49A37D2925DC53A9000A3658 /* SwiftPackageProductDependency */; };
+		49A37D2A25DC53A9000A3658 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49A37D2925DC53A9000A3658 /* SDWebImageSwiftUI */; };
 		49A37D3425DC896A000A3658 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D3325DC896A000A3658 /* PostView.swift */; };
 		49A37D3725DC8979000A3658 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D3625DC8979000A3658 /* SettingsView.swift */; };
 		49A37D3A25DC8990000A3658 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D3925DC8990000A3658 /* CustomTabbar.swift */; };
@@ -84,6 +85,7 @@
 		496B9C5825AB9F4E00430AD3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		496B9C5E25AB9F9500430AD3 /* Research.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Research.swift; sourceTree = "<group>"; };
 		496B9C6625ABA46900430AD3 /* ClassProfessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProfessor.swift; sourceTree = "<group>"; };
+		497EDB3125E33E1B007CD638 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		497EECC625D8F937009C7599 /* MyHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHome.swift; sourceTree = "<group>"; };
 		4980E8DE25C8FF2D00ED7390 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		4980E8EF25C9063D00ED7390 /* AddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPost.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A37D2A25DC53A9000A3658 /* BuildFile in Frameworks */,
+				49A37D2A25DC53A9000A3658 /* SDWebImageSwiftUI in Frameworks */,
 				D6672E5243290DFBB45252A3 /* Pods_Gatton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,12 +304,13 @@
 				4993645F25DB5ECB003E7832 /* Login.swift */,
 				49967C3325DBA30D00F9104D /* Register.swift */,
 				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
+				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
 				49967C3F25DBAFEE00F9104D /* Home.swift */,
 				49A37D3325DC896A000A3658 /* PostView.swift */,
 				49A37D3625DC8979000A3658 /* SettingsView.swift */,
-				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
-				493F204825DCEA7E002B2F27 /* PostRow.swift */,
+				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
 				493F204525DCEA71002B2F27 /* NewPost.swift */,
+				493F204825DCEA7E002B2F27 /* PostRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,7 +400,7 @@
 			);
 			name = Gatton;
 			packageProductDependencies = (
-				49A37D2925DC53A9000A3658 /* SwiftPackageProductDependency */,
+				49A37D2925DC53A9000A3658 /* SDWebImageSwiftUI */,
 			);
 			productName = Gatton;
 			productReference = 496B9C2525AB765100430AD3 /* Gatton.app */;
@@ -427,7 +430,7 @@
 			);
 			mainGroup = 496B9C1C25AB765000430AD3;
 			packageReferences = (
-				49A37D2825DC53A9000A3658 /* RemoteSwiftPackageReference */,
+				49A37D2825DC53A9000A3658 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 496B9C2625AB765100430AD3 /* Products */;
 			projectDirPath = "";
@@ -502,6 +505,7 @@
 				49DAB9E025B12C5F0052DBF1 /* Post.swift in Sources */,
 				49A37D5125DCA2BB000A3658 /* PostViewModel.swift in Sources */,
 				4980E8F625C90AFD00ED7390 /* ContentViewA.swift in Sources */,
+				497EDB3225E33E1B007CD638 /* ProfileView.swift in Sources */,
 				4993646025DB5ECB003E7832 /* Login.swift in Sources */,
 				49EFA06F25AE836F000E1DAF /* Search.swift in Sources */,
 				49A37D4425DC9ED4000A3658 /* AlertView.swift in Sources */,
@@ -736,7 +740,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		49A37D2825DC53A9000A3658 /* RemoteSwiftPackageReference */ = {
+		49A37D2825DC53A9000A3658 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -747,9 +751,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		49A37D2925DC53A9000A3658 /* SwiftPackageProductDependency */ = {
+		49A37D2925DC53A9000A3658 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 49A37D2825DC53A9000A3658 /* RemoteSwiftPackageReference */;
+			package = 49A37D2825DC53A9000A3658 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

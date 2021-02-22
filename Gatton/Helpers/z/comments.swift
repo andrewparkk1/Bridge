@@ -89,7 +89,7 @@ struct comments: View {
 
 struct commentpreview: PreviewProvider {
     static var previews: some View {
-        comments()
+        Text("Hello, World!").padding(EdgeInsets())
     }
 }
 

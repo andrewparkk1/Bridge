@@ -82,7 +82,6 @@ struct PostRow: View {
             }
         }
         .padding()
-        .background(Color.white.opacity(0.06))
         //.cornerRadius(15)
     }
 }

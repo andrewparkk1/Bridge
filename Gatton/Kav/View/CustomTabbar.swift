@@ -12,9 +12,11 @@ import SwiftUI
 struct CustomTabbar: View {
     @Binding var selectedTab: String
     var body: some View {
-        HStack(spacing: 65) {
+        HStack() {
             TabButton(title: "Posts", selectedTab: $selectedTab)
             TabButton(title: "Settings", selectedTab: $selectedTab)
+            TabButton(title: "Profile", selectedTab: $selectedTab)
+            
 
         }
         .padding(.horizontal)
@@ -28,7 +30,7 @@ struct TabButton: View{
     @Binding var selectedTab: String
     var body: some View{
         Button(action: {selectedTab = title}, label: {
-            VStack(spacing: 5){
+            VStack(){
 //                Image(title)
 //                    .renderingMode(.template)
                 
@@ -45,6 +47,6 @@ struct TabButton: View{
 
 struct CustomTabbar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabbar(selectedTab: .constant("Settings"))
+        CustomTabbar(selectedTab: .constant("Profile"))
     }
 }

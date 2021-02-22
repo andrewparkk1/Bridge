@@ -8,14 +8,27 @@
 //CHECKED
 
 import SwiftUI
+import Firebase
 import SDWebImageSwiftUI
 
 struct SettingsView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var settingsData = SettingsViewModel()
+    @StateObject var postData = PostViewModel()
+    
+    //@ObservedObject var postData: PostViewModel
+    let uid = Auth.auth().currentUser!.uid
+    
+    private var personalPosts: [PostModel] {
+        postData.posts.filter { post in
+            post.user.uid == uid
+        }
+    }
+    
     var body: some View {
         VStack{
             
+            //BANNER
             HStack{
                 Text("Settings")
                     .font(.largeTitle)
@@ -28,6 +41,7 @@ struct SettingsView: View {
             .background(Color("bg"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
             
+            //PROFILE PICTURE
             if settingsData.userInfo.pic != "" {
                 ZStack{
                     WebImage(url: URL(string: settingsData.userInfo.pic)!)
@@ -47,6 +61,7 @@ struct SettingsView: View {
                 }
             }
             
+            //NAME
             HStack(spacing: 15) {
                 Text(settingsData.userInfo.username)
                     .font(.title)
@@ -62,6 +77,7 @@ struct SettingsView: View {
             }
             .padding()
             
+            //BIO
             HStack(spacing: 15) {
                 Text(settingsData.userInfo.bio)
                     .foregroundColor(.white)
@@ -74,21 +90,28 @@ struct SettingsView: View {
                 }
             }
             
-            //logout button
+            //LOGOUT BUTTON
             Button(action: settingsData.logOut) {
                 Text("Logout")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .padding(.vertical)
                     .frame(width: UIScreen.main.bounds.width - 100)
-                    .background(Color(.blue))
-                    .clipShape(Circle())
             }
             .padding()
             .padding(.top, 10)
             
-            Spacer(minLength: 0)
-            
+            //POSTS
+            ScrollView {
+                VStack(spacing: 15) {
+                    ForEach(personalPosts) { post in
+                        PostRow(post: post, postData: postData)
+                        Divider()
+                    }
+                }
+                .padding()
+                .padding(.bottom, 55)
+            }
         }
         .sheet(isPresented: $settingsData.picker, content: {
             ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)
