@@ -11,12 +11,12 @@ import FirebaseFirestore
 import FirebaseCore
 //import FirebaseFirestoreSwift
 
-enum target: String, CaseIterable {
-    case general = "general", professors = "professors", classes = "classes", research = "research", qanda = "qanda", colleges = "colleges"
-    func getTarget() -> String {
-        return self.rawValue
-    }
-}
+//enum target: String, CaseIterable {
+//    case general = "general", professors = "professors", classes = "classes", research = "research", qanda = "qanda", colleges = "colleges"
+//    func getTarget() -> String {
+//        return self.rawValue
+//    }
+//}
 
 
 struct Post: Identifiable { //Codable

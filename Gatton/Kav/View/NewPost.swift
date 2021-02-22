@@ -14,6 +14,7 @@ struct NewPost: View {
     @Environment(\.presentationMode) var present
     @Binding var updateId: String
     
+    
     var body: some View {
         VStack{
             HStack(spacing: 15){
@@ -49,14 +50,36 @@ struct NewPost: View {
                 })
                 .disabled(newPostData.postTxt == "" ? true: false)
                 .opacity(newPostData.postTxt == "" ? 0.5: 1)
+                .disabled(newPostData.postTxtHead == "" ? true: false)
+                .opacity(newPostData.postTxtHead == "" ? 0.5: 1)
+                .disabled(newPostData.postTxtTarget == "" ? true: false)
+                .opacity(newPostData.postTxtTarget == "" ? 0.5: 1)
+                
                 
             }
             .padding()
             .opacity(newPostData.isPosting ? 0.5: 1)
             .disabled(newPostData.isPosting ? true: false)
             
+            //HEADER
+            TextEditor(text: $newPostData.postTxtHead)
+                .foregroundColor(.black)
+                .accentColor(.white)
+                .frame(width: 100, height: 100, alignment: .center)
+                .cornerRadius(15)
+                .padding()
+                .opacity(newPostData.isPosting ? 0.5 : 1)
+                .disabled(newPostData.isPosting ? true : false)
             
+            //TARGET
+            TextEditor(text: $newPostData.postTxtTarget)
+                .cornerRadius(15)
+                .frame(width: 100, height: 100, alignment: .center)
+                .padding()
+                .opacity(newPostData.isPosting ? 0.5 : 1)
+                .disabled(newPostData.isPosting ? true : false)
             
+            //INFO
             TextEditor(text: $newPostData.postTxt)
                 .cornerRadius(15)
                 .padding()

@@ -37,14 +37,18 @@ class PostViewModel: ObservableObject {
                 if doc.type == .added{
                     
                     //retrieving and appending
+
                     let title = doc.document.data()["title"] as! String
-                    let time = doc.document.data()["time"] as! Timestamp
                     let pic = doc.document.data()["url"] as! String
                     let userRef = doc.document.data()["ref"] as! DocumentReference
+                    let time = doc.document.data()["time"] as! Timestamp
+                    
+                    let target = doc.document.data()["target"] as! String
+                    let header = doc.document.data()["header"] as! String
                     
                     //getting user data
                     fetchUser(uid: userRef.documentID) { user in
-                        self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), user: user))
+                        self.posts.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
                         
                         //sorting all model while reading docs
                         self.posts.sort { (p1, p2) -> Bool in
@@ -67,8 +71,9 @@ class PostViewModel: ObservableObject {
                     //updating doc
                     let id = doc.document.documentID
                     let title = doc.document.data()["title"] as! String
+                    let target = doc.document.data()["target"] as! String
+                    let header = doc.document.data()["header"] as! String
 
-                    
                     let index = self.posts.firstIndex { post -> Bool in
                         return post.id == id
                     } ?? -1
@@ -77,6 +82,8 @@ class PostViewModel: ObservableObject {
                     
                     if index != -1 {
                         self.posts[index].title = title
+                        self.posts[index].target = target
+                        self.posts[index].header = header
                         self.updateId = ""
                     }
                 }
@@ -98,7 +105,5 @@ class PostViewModel: ObservableObject {
         updateId = id
         newPost.toggle()
     }
-    
-    
     
 }

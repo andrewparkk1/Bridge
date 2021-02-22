@@ -11,6 +11,83 @@ import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
 
+struct PostRow: View {
+    var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    
+    var post: PostModel
+    @ObservedObject var postData: PostViewModel
+    let uid = Auth.auth().currentUser!.uid
+    
+    @State var liked = false
+    
+    //private let columns: [GridItem] = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+    
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 15){
+            
+            HStack {
+                Text(post.header)
+                    .font(.title)
+                    .fontWeight(.heavy)
+                    .padding(.trailing, 2)
+                Text(" G:/")
+                Text(post.target)
+                Spacer()
+                WebImage(url: URL(string: post.user.pic)!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 30)
+                    .clipShape(Circle())
+            }
+            
+            HStack() {
+                Text("by")
+                Text(post.user.username)
+                Text(" | ")
+                Text(post.time, style: .date)
+                
+            }
+            
+            Text(post.title)
+            
+            HStack {
+                LikedButton(isSet: liked)
+                Spacer()
+//                Image(systemName: "plus.bubble")
+//                Spacer()
+//                Image(systemName: "paperplane")
+//                Spacer()
+//                Image(systemName: "bookmark")
+//                Spacer()
+                Image(systemName: "tuningfork")
+                Spacer()
+                //displaying only posted user
+                if post.user.uid == uid {
+                    Menu(content: {
+                        Button(action: {postData.editPost(id: post.id)}) {
+                            Text("Edit")
+                        }
+                        
+                        Button(action: {postData.deletePost(id: post.id)}) {
+                            Text("Delete")
+                        }
+                    }, label: {
+                        Image(systemName: "ellipsis")
+                            .resizable()
+                            .frame(width: 18, height: 18)
+                            .foregroundColor(.white)
+                    })
+                    .foregroundColor(.white)
+                }
+            }
+        }
+        .padding(.all, 5)
+    }
+}
+
+
+
 //struct PostRow: View {
 //
 //    var post: PostModel
@@ -87,77 +164,3 @@ import Firebase
 //}
 
 
-struct PostRow: View {
-    var edges = UIApplication.shared.windows.first?.safeAreaInsets
-    
-    var post: PostModel
-    @ObservedObject var postData: PostViewModel
-    let uid = Auth.auth().currentUser!.uid
-    
-    @State var liked = false
-    
-    //private let columns: [GridItem] = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
-    
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 15){
-            
-            HStack {
-                Text("TITLE")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .padding(.trailing, 2)
-                Text(" G:/")
-                Text("target")
-                Spacer()
-                WebImage(url: URL(string: post.user.pic)!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 30)
-                    .clipShape(Circle())
-            }
-            
-            HStack() {
-                Text("by")
-                Text(post.user.username)
-                Text(" | ")
-                Text(post.time, style: .date)
-                
-            }
-            
-            Text(post.title)
-            
-            HStack {
-                LikedButton(isSet: liked)
-                Spacer()
-//                Image(systemName: "plus.bubble")
-//                Spacer()
-//                Image(systemName: "paperplane")
-//                Spacer()
-//                Image(systemName: "bookmark")
-//                Spacer()
-                Image(systemName: "tuningfork")
-                Spacer()
-                //displaying only posted user
-                if post.user.uid == uid {
-                    Menu(content: {
-                        Button(action: {postData.editPost(id: post.id)}) {
-                            Text("Edit")
-                        }
-                        
-                        Button(action: {postData.deletePost(id: post.id)}) {
-                            Text("Delete")
-                        }
-                    }, label: {
-                        Image(systemName: "ellipsis")
-                            .resizable()
-                            .frame(width: 18, height: 18)
-                            .foregroundColor(.white)
-                    })
-                    .foregroundColor(.white)
-                }
-            }
-        }
-        .padding(.all, 5)
-    }
-}

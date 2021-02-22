@@ -309,8 +309,8 @@
 				49A37D3325DC896A000A3658 /* PostView.swift */,
 				49A37D3625DC8979000A3658 /* SettingsView.swift */,
 				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
-				493F204525DCEA71002B2F27 /* NewPost.swift */,
 				493F204825DCEA7E002B2F27 /* PostRow.swift */,
+				493F204525DCEA71002B2F27 /* NewPost.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

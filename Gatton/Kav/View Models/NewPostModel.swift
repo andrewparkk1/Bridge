@@ -12,12 +12,14 @@ import Firebase
 
 class NewPostModel: ObservableObject {
     @Published var postTxt = ""
+    @Published var postTxtHead = ""
+    @Published var postTxtTarget = ""
+    
     //image picker
     @Published var picker = false
     @Published var img_Data = Data(count: 0)
-    
+   
     @Published var isPosting = false
-    
     let uid = Auth.auth().currentUser!.uid
     
     func post(updateId: String, present: Binding<PresentationMode>){
@@ -27,6 +29,8 @@ class NewPostModel: ObservableObject {
         if updateId != ""{
             //updating data
             ref.collection("Posts").document(updateId).updateData([
+                "header": postTxtHead,
+                "target": postTxtTarget,
                 "title": postTxt
             ]) { err in
                 self.isPosting = false
@@ -39,11 +43,12 @@ class NewPostModel: ObservableObject {
         
         if img_Data.count == 0 {
             ref.collection("Posts").document().setData([
+                "header" : self.postTxtHead,
                 "title" : self.postTxt,
+                "target" : self.postTxtTarget,
                 "url": "",
                 "ref": ref.collection("Users").document(self.uid),
                 "time": Date()
-                
             ]) { err in
                 if err != nil{
                     self.isPosting = false
@@ -58,6 +63,8 @@ class NewPostModel: ObservableObject {
         else {
             UploadImage(imageData: img_Data, path: "post_Pics") { url in
                 ref.collection("Posts").document().setData([
+                    "header" : self.postTxtHead,
+                    "target" : self.postTxtTarget,
                     "title" : self.postTxt,
                     "url": url,
                     "ref": ref.collection("Users").document(self.uid),
