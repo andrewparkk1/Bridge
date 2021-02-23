@@ -20,7 +20,7 @@ struct ProfileView: View {
     var body: some View {
         VStack{
             
-            Button(action: profileData.userInfo.switchEdit) {
+            Button(action: profileData.switchEdit) {
                 Text("Edit")
             }
             
@@ -40,7 +40,7 @@ struct ProfileView: View {
             HStack {
                 VStack() {
                     Text(profileData.userInfo.username)
-                    Text("2022")
+                    Text(String(profileData.userInfo.year))
                     //                        Text(String(settingsData.userInfo.year))
                     //                            .font(.title)
                     //                            .fontWeight(.bold)
@@ -65,6 +65,7 @@ struct ProfileView: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         }
                     }
+                    .padding(.horizontal, 0.5)
                 }
                 
                 
