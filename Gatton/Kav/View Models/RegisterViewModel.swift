@@ -13,6 +13,12 @@ import Firebase
 class RegisterViewModel: ObservableObject{
     @Published var name = ""
     @Published var bio = ""
+    @Published var year = 0
+    @Published var city = ""
+    @Published var state = ""
+    @Published var interests = ""
+    
+    
     @Published var image_Data = Data(count: 0)
     @Published var picker = false
     let ref = Firestore.firestore()
@@ -34,7 +40,11 @@ class RegisterViewModel: ObservableObject{
                 "imageurl": url,
                 "username": self.name,
                 "bio": self.bio,
-                "dateCreated": Date()
+                "dateCreated": Date(),
+                "year": self.year,
+                "city": self.city,
+                "state": self.state,
+                "interests": self.interests
             ]) { (err) in
                 
                 if err != nil {
@@ -50,3 +60,5 @@ class RegisterViewModel: ObservableObject{
         
     }
 }
+
+

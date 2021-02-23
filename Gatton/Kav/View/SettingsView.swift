@@ -90,6 +90,58 @@ struct SettingsView: View {
                 }
             }
             
+            //YEAR
+            HStack(spacing: 15) {
+                Text(String(settingsData.userInfo.year))
+                    .foregroundColor(.white)
+                
+                //edit button
+//                Button(action: {settingsData.updateDetails(field: "Year")}) {
+//                    Image(systemName: "pencil.circle.fill")
+//                        .font(.system(size: 24))
+//                        .foregroundColor(.white)
+//                }
+            }
+            
+            //CITY
+            HStack(spacing: 15) {
+                Text(settingsData.userInfo.city)
+                    .foregroundColor(.white)
+                
+                //edit button
+                Button(action: {settingsData.updateDetails(field: "City")}) {
+                    Image(systemName: "pencil.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(.white)
+                }
+            }
+            
+            //STATE
+            HStack(spacing: 15) {
+                Text(settingsData.userInfo.state)
+                    .foregroundColor(.white)
+                
+                //edit button
+                Button(action: {settingsData.updateDetails(field: "State")}) {
+                    Image(systemName: "pencil.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(.white)
+                }
+            }
+            
+            //INTERESTS
+            HStack(spacing: 15) {
+                Text(settingsData.userInfo.interests)
+                    .foregroundColor(.white)
+                
+                //edit button
+                Button(action: {settingsData.updateDetails(field: "Interests")}) {
+                    Image(systemName: "pencil.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(.white)
+                }
+            }
+            
             //LOGOUT BUTTON
             Button(action: settingsData.logOut) {
                 Text("Logout")

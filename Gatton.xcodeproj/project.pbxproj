@@ -50,6 +50,7 @@
 		49A37D4725DCA1C7000A3658 /* FetchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D4625DCA1C7000A3658 /* FetchUser.swift */; };
 		49A37D4A25DCA24B000A3658 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D4925DCA24B000A3658 /* PostModel.swift */; };
 		49A37D5125DCA2BB000A3658 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D5025DCA2BB000A3658 /* PostViewModel.swift */; };
+		49A5A78325E4CD08009ACAD5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */; };
 		49A678FB25C61A6D005CFFF4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FA25C61A6D005CFFF4 /* Database.swift */; };
 		49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */; };
 		49B0831B25B6953000EB653E /* comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0831A25B6953000EB653E /* comments.swift */; };
@@ -106,6 +107,7 @@
 		49A37D4625DCA1C7000A3658 /* FetchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUser.swift; sourceTree = "<group>"; };
 		49A37D4925DCA24B000A3658 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		49A37D5025DCA2BB000A3658 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		49A678FA25C61A6D005CFFF4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUnit.swift; sourceTree = "<group>"; };
 		49A6790025C625E2005CFFF4 /* Raleway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Raleway.ttf; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
 				49A37D5025DCA2BB000A3658 /* PostViewModel.swift */,
 				493F204C25DCEAA2002B2F27 /* NewPostModel.swift */,
+				49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -303,16 +306,32 @@
 			children = (
 				4993645F25DB5ECB003E7832 /* Login.swift */,
 				49967C3325DBA30D00F9104D /* Register.swift */,
-				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
-				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
-				49967C3F25DBAFEE00F9104D /* Home.swift */,
-				49A37D3325DC896A000A3658 /* PostView.swift */,
 				49A37D3625DC8979000A3658 /* SettingsView.swift */,
-				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
-				493F204825DCEA7E002B2F27 /* PostRow.swift */,
+				49A5A78625E4CD22009ACAD5 /* PostView */,
 				493F204525DCEA71002B2F27 /* NewPost.swift */,
+				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
+				49A5A78925E4CD39009ACAD5 /* Home */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49A5A78625E4CD22009ACAD5 /* PostView */ = {
+			isa = PBXGroup;
+			children = (
+				49A37D3325DC896A000A3658 /* PostView.swift */,
+				493F204825DCEA7E002B2F27 /* PostRow.swift */,
+			);
+			path = PostView;
+			sourceTree = "<group>";
+		};
+		49A5A78925E4CD39009ACAD5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				49967C3F25DBAFEE00F9104D /* Home.swift */,
+				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
+				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		49A6790A25C62A78005CFFF4 /* Fonts */ = {
@@ -531,6 +550,7 @@
 				492413C525DB4A9D009449B1 /* SearchPosts.swift in Sources */,
 				49A37D3725DC8979000A3658 /* SettingsView.swift in Sources */,
 				49967C3725DBA6F200F9104D /* RegisterViewModel.swift in Sources */,
+				49A5A78325E4CD08009ACAD5 /* ProfileViewModel.swift in Sources */,
 				493D4C2625D5D38900C518E8 /* ProfileEdit.swift in Sources */,
 				496B9C5F25AB9F9500430AD3 /* Research.swift in Sources */,
 				4944001125AF707F006A36EA /* commetnts.swift in Sources */,

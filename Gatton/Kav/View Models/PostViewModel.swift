@@ -42,7 +42,6 @@ class PostViewModel: ObservableObject {
                     let pic = doc.document.data()["url"] as! String
                     let userRef = doc.document.data()["ref"] as! DocumentReference
                     let time = doc.document.data()["time"] as! Timestamp
-                    
                     let target = doc.document.data()["target"] as! String
                     let header = doc.document.data()["header"] as! String
                     

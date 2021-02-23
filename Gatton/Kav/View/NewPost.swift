@@ -65,7 +65,7 @@ struct NewPost: View {
             TextEditor(text: $newPostData.postTxtHead)
                 .foregroundColor(.black)
                 .accentColor(.white)
-                .frame(width: 100, height: 100, alignment: .center)
+                .frame(height: 40, alignment: .center)
                 .cornerRadius(15)
                 .padding()
                 .opacity(newPostData.isPosting ? 0.5 : 1)
@@ -74,7 +74,7 @@ struct NewPost: View {
             //TARGET
             TextEditor(text: $newPostData.postTxtTarget)
                 .cornerRadius(15)
-                .frame(width: 100, height: 100, alignment: .center)
+                .frame(height: 40, alignment: .center)
                 .padding()
                 .opacity(newPostData.isPosting ? 0.5 : 1)
                 .disabled(newPostData.isPosting ? true : false)

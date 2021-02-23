@@ -12,7 +12,7 @@ import Firebase
 
 class SettingsViewModel: ObservableObject {
     
-    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
+    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "", year : 0, city: "", state: "", interests: "")
     @AppStorage("current_status") var status = false
     
     //image picker for updating image
@@ -58,7 +58,26 @@ class SettingsViewModel: ObservableObject {
     func updateDetails(field: String) {
         alertView(msg: "Update \(field)") { txt in
             if txt != "" {
-                self.updateBio(id: field == "Name" ? "username" : "bio", value: txt)
+                if field == "Name" {
+                    self.updateBio(id: "username", value: txt)
+                }
+                
+                if field == "Bio" {
+                    self.updateBio(id: "bio", value: txt)
+                }
+                
+                if field == "City" {
+                    self.updateBio(id: "city", value: txt)
+                }
+                
+                if field == "State" {
+                    self.updateBio(id: "state", value: txt)
+                }
+                
+                if field == "Interests" {
+                    self.updateBio(id: "interests", value: txt)
+                }
+                
             }
         }
     }
