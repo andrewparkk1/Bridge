@@ -14,7 +14,7 @@ struct CustomTabbar: View {
     var body: some View {
         HStack() {
             TabButton(title: "Posts", selectedTab: $selectedTab)
-            TabButton(title: "Settings", selectedTab: $selectedTab)
+//            TabButton(title: "Settings", selectedTab: $selectedTab)
             TabButton(title: "Profile", selectedTab: $selectedTab)
             
 

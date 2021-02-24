@@ -14,30 +14,32 @@ import SDWebImageSwiftUI
 struct SettingsView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var settingsData = SettingsViewModel()
-    @StateObject var postData = PostViewModel()
-    
-    //@ObservedObject var postData: PostViewModel
-    let uid = Auth.auth().currentUser!.uid
-    
-    private var personalPosts: [PostModel] {
-        postData.posts.filter { post in
-            post.user.uid == uid
-        }
-    }
-    
+    @Environment(\.presentationMode) var pres
+
     var body: some View {
+        
         VStack{
             
             //BANNER
             HStack{
                 Text("Settings")
+                    
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
+                
                 Spacer(minLength: 0)
+
+                Button(action: {
+                    pres.wrappedValue.dismiss()
+                }, label: {
+                    Text("Cancel")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                })
             }
             .padding()
-            .padding(.top, edges!.top)
+            .padding(.top,edges!.top)
             .background(Color("bg"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
             
@@ -61,86 +63,96 @@ struct SettingsView: View {
                 }
             }
             
-            //NAME
-            HStack(spacing: 15) {
-                Text(settingsData.userInfo.username)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                
-                //edit button
-                Button(action: {settingsData.updateDetails(field: "Name")}) {
-                    Image(systemName: "pencil.circle.fill")
-                        .font(.system(size: 24))
+            VStack {
+                //NAME
+                HStack(spacing: 15) {
+                    Text(settingsData.userInfo.username)
+                        .font(.title)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
+                    
+                    //edit button
+                    Button(action: {settingsData.updateDetails(field: "Name")}) {
+                        Image(systemName: "pencil.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.white)
+                    }
                 }
-            }
-            .padding()
-            
-            //BIO
-            HStack(spacing: 15) {
-                Text(settingsData.userInfo.bio)
-                    .foregroundColor(.white)
+                .padding()
                 
-                //edit button
-                Button(action: {settingsData.updateDetails(field: "Bio")}) {
-                    Image(systemName: "pencil.circle.fill")
-                        .font(.system(size: 24))
+                //YEAR
+                HStack(spacing: 15) {
+                    Text(String(settingsData.userInfo.year))
                         .foregroundColor(.white)
+                    
+                    //edit button
+    //                Button(action: {settingsData.updateDetails(field: "Year")}) {
+    //                    Image(systemName: "pencil.circle.fill")
+    //                        .font(.system(size: 24))
+    //                        .foregroundColor(.white)
+    //                }
                 }
-            }
-            
-            //YEAR
-            HStack(spacing: 15) {
-                Text(String(settingsData.userInfo.year))
-                    .foregroundColor(.white)
                 
-                //edit button
-//                Button(action: {settingsData.updateDetails(field: "Year")}) {
-//                    Image(systemName: "pencil.circle.fill")
-//                        .font(.system(size: 24))
-//                        .foregroundColor(.white)
-//                }
             }
             
-            //CITY
-            HStack(spacing: 15) {
-                Text(settingsData.userInfo.city)
-                    .foregroundColor(.white)
-                
-                //edit button
-                Button(action: {settingsData.updateDetails(field: "City")}) {
-                    Image(systemName: "pencil.circle.fill")
-                        .font(.system(size: 24))
+            VStack{
+                //CITY
+                HStack(spacing: 15) {
+                    Text(settingsData.userInfo.city)
                         .foregroundColor(.white)
+                    
+                    //edit button
+                    Button(action: {settingsData.updateDetails(field: "City")}) {
+                        Image(systemName: "pencil.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.white)
+                    }
                 }
+                
+                //STATE
+                HStack(spacing: 15) {
+                    Text(settingsData.userInfo.state)
+                        .foregroundColor(.white)
+                    
+                    //edit button
+                    Button(action: {settingsData.updateDetails(field: "State")}) {
+                        Image(systemName: "pencil.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.white)
+                    }
+                }
+                
             }
             
-            //STATE
-            HStack(spacing: 15) {
-                Text(settingsData.userInfo.state)
-                    .foregroundColor(.white)
-                
-                //edit button
-                Button(action: {settingsData.updateDetails(field: "State")}) {
-                    Image(systemName: "pencil.circle.fill")
-                        .font(.system(size: 24))
+            VStack {
+                //BIO
+                HStack(spacing: 15) {
+                    Text(settingsData.userInfo.bio)
                         .foregroundColor(.white)
+                    
+                    //edit button
+                    Button(action: {settingsData.updateDetails(field: "Bio")}) {
+                        Image(systemName: "pencil.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.white)
+                    }
                 }
+                
+                //INTERESTS
+                HStack(spacing: 15) {
+                    Text(settingsData.userInfo.interests)
+                        .foregroundColor(.white)
+                    
+                    //edit button
+                    Button(action: {settingsData.updateDetails(field: "Interests")}) {
+                        Image(systemName: "pencil.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.white)
+                    }
+                }
+                
             }
             
-            //INTERESTS
-            HStack(spacing: 15) {
-                Text(settingsData.userInfo.interests)
-                    .foregroundColor(.white)
-                
-                //edit button
-                Button(action: {settingsData.updateDetails(field: "Interests")}) {
-                    Image(systemName: "pencil.circle.fill")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                }
-            }
             
             //LOGOUT BUTTON
             Button(action: settingsData.logOut) {
@@ -153,18 +165,10 @@ struct SettingsView: View {
             .padding()
             .padding(.top, 10)
             
-            //POSTS
-            ScrollView {
-                VStack(spacing: 15) {
-                    ForEach(personalPosts) { post in
-                        PostRow(post: post, postData: postData)
-                        Divider()
-                    }
-                }
-                .padding()
-                .padding(.bottom, 55)
-            }
+            Spacer()
+            
         }
+        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         .sheet(isPresented: $settingsData.picker, content: {
             ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)
         })

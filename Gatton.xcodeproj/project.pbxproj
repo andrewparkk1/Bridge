@@ -149,10 +149,10 @@
 			children = (
 				4993646225DB5FAE003E7832 /* LoginViewModel.swift */,
 				49967C3625DBA6F200F9104D /* RegisterViewModel.swift */,
-				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
 				49A37D5025DCA2BB000A3658 /* PostViewModel.swift */,
 				493F204C25DCEAA2002B2F27 /* NewPostModel.swift */,
 				49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */,
+				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -172,6 +172,7 @@
 			children = (
 				492282A825D4F11B002892AC /* View Models */,
 				49A37D3125DC893A000A3658 /* View */,
+				49967C3F25DBAFEE00F9104D /* Home.swift */,
 				49A37D2E25DC892B000A3658 /* Model */,
 			);
 			path = Kav;
@@ -306,32 +307,23 @@
 			children = (
 				4993645F25DB5ECB003E7832 /* Login.swift */,
 				49967C3325DBA30D00F9104D /* Register.swift */,
-				49A37D3625DC8979000A3658 /* SettingsView.swift */,
-				49A5A78625E4CD22009ACAD5 /* PostView */,
+				49A37D3325DC896A000A3658 /* PostView.swift */,
 				493F204525DCEA71002B2F27 /* NewPost.swift */,
 				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
-				49A5A78925E4CD39009ACAD5 /* Home */,
+				49A37D3625DC8979000A3658 /* SettingsView.swift */,
+				49A5A78925E4CD39009ACAD5 /* helpers */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		49A5A78625E4CD22009ACAD5 /* PostView */ = {
+		49A5A78925E4CD39009ACAD5 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				49A37D3325DC896A000A3658 /* PostView.swift */,
 				493F204825DCEA7E002B2F27 /* PostRow.swift */,
-			);
-			path = PostView;
-			sourceTree = "<group>";
-		};
-		49A5A78925E4CD39009ACAD5 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				49967C3F25DBAFEE00F9104D /* Home.swift */,
 				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
 				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
 			);
-			path = Home;
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		49A6790A25C62A78005CFFF4 /* Fonts */ = {

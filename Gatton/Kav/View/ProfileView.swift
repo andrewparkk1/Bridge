@@ -10,20 +10,24 @@
 
 
 import SwiftUI
+import Firebase
 import SDWebImageSwiftUI
 
 struct ProfileView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var profileData = ProfileViewModel()
+    @StateObject var postData = PostViewModel()
+    let uid = Auth.auth().currentUser!.uid
+    
+    private var personalPosts: [PostModel] {
+        postData.posts.filter { post in
+            post.user.uid == uid
+        }
+    }
     
     
     var body: some View {
         VStack{
-            
-            Button(action: profileData.switchEdit) {
-                Text("Edit")
-            }
-            
             //BANNER
             HStack{
                 Text("Profile")
@@ -31,6 +35,11 @@ struct ProfileView: View {
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
+                Button(action: {profileData.isEditing.toggle()}) {
+                    Text("Edit")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                }
             }
             .padding()
             .padding(.top, edges!.top)
@@ -41,12 +50,8 @@ struct ProfileView: View {
                 VStack() {
                     Text(profileData.userInfo.username)
                     Text(String(profileData.userInfo.year))
-                    //                        Text(String(settingsData.userInfo.year))
-                    //                            .font(.title)
-                    //                            .fontWeight(.bold)
-                    //                            .foregroundColor(.white)
                 }
-                .padding(.leading, 1)
+                .padding(.leading, 0.5)
                 .multilineTextAlignment(.center)
                 
                 if profileData.userInfo.pic != "" {
@@ -65,7 +70,7 @@ struct ProfileView: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         }
                     }
-                    .padding(.horizontal, 0.5)
+                    .padding(.horizontal, 1.2)
                 }
                 
                 
@@ -73,9 +78,10 @@ struct ProfileView: View {
                     Text(profileData.userInfo.city)
                     Text(profileData.userInfo.state)
                 }
-                .padding(.trailing, 1)
+                .padding(.trailing, 0.5)
                 .multilineTextAlignment(.center)
             }
+            
             Text(profileData.userInfo.bio)
                 .padding(.top, 2)
                 .foregroundColor(.white)
@@ -86,12 +92,27 @@ struct ProfileView: View {
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
             
-            Spacer(minLength: 0)
+            
+            Divider()
+            
+            ScrollView {
+                VStack(spacing: 15) {
+                    ForEach(personalPosts) { post in
+                        PostRow(post: post, postData: postData)
+                        Divider()
+                    }
+                }
+                .padding()
+                .padding(.bottom, 55)
+            }
+            
         }
-        .padding()
+        .fullScreenCover(isPresented: $profileData.isEditing, content: {
+            SettingsView()
+        })
     }
-    
 }
+
 
 
 

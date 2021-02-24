@@ -36,7 +36,6 @@ struct NewPost: View {
                             .font(.title)
                             .foregroundColor(.green)
                     })
-                    
                 }
                 
                 Button(action: {newPostData.post(updateId: updateId, present: present)}, label: {
