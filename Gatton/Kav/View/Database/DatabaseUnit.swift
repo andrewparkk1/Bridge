@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct DatabaseUnit: View {
     var person: UserModel
@@ -18,8 +19,9 @@ struct DatabaseUnit: View {
                 .frame(width: 180, height: 180)
                 .clipped()
             
-            Image(person.pic)
+            WebImage(url: URL(string: person.pic)!)
                 .resizable()
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 110, height: 110, alignment: .center)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 2))

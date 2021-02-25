@@ -51,7 +51,7 @@ struct ProfileView: View {
                     Text(profileData.userInfo.username)
                     Text(String(profileData.userInfo.year))
                 }
-                .padding(.leading, 0.5)
+                .padding(.horizontal, 1)
                 .multilineTextAlignment(.center)
                 
                 if profileData.userInfo.pic != "" {
@@ -64,13 +64,13 @@ struct ProfileView: View {
                             .overlay(Circle().stroke(Color.white, lineWidth: 2))
                             .shadow(radius: 20)
                             .padding(.vertical)
+                            .padding(.horizontal, 1)
                         
                         if profileData.isLoading {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         }
                     }
-                    .padding(.horizontal, 1.2)
                 }
                 
                 
@@ -78,7 +78,7 @@ struct ProfileView: View {
                     Text(profileData.userInfo.city)
                     Text(profileData.userInfo.state)
                 }
-                .padding(.trailing, 0.5)
+                .padding(.horizontal, 1)
                 .multilineTextAlignment(.center)
             }
             
