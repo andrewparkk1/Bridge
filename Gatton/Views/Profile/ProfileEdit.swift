@@ -30,10 +30,10 @@ struct ProfileEdit: View {
                 Button(action: {
                     isPresented.toggle()
                 }) {
-                    Text(String(person.year))
+                    Text(String(person.year)).foregroundColor(.black)
                 }
                 .sheet(isPresented: $isPresented, content: {
-                    Picker(selection: $person.year, label: Text("Year")) {
+                    Picker(selection: $person.year, label: Text("Year").foregroundColor(.black)) {
                         ForEach(1990 ..< 2022) { num in
                             Text(String(num))
                         }

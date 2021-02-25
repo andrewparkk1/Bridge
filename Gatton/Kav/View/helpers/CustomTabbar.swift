@@ -22,6 +22,9 @@ struct CustomTabbar: View {
             TabButton(title: "Profile", selectedTab: $selectedTab)
 
             TabButton(title: "Settings", selectedTab: $selectedTab)
+            
+//            TabButton(title: "ProfileHost", selectedTab: $selectedTab)
+
 
             
 

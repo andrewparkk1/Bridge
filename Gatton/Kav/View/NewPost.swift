@@ -60,27 +60,32 @@ struct NewPost: View {
             .opacity(newPostData.isPosting ? 0.5: 1)
             .disabled(newPostData.isPosting ? true: false)
             
+            
             //HEADER
-            TextEditor(text: $newPostData.postTxtHead)
-                .foregroundColor(.black)
+            TextField("text something", text: $newPostData.postTxtHead)
+                .foregroundColor(.white)
                 .accentColor(.white)
                 .frame(height: 40, alignment: .center)
                 .cornerRadius(15)
                 .padding()
-                .opacity(newPostData.isPosting ? 0.5 : 1)
+                .opacity(newPostData.isPosting ? 0.75 : 1)
                 .disabled(newPostData.isPosting ? true : false)
             
             //TARGET
-            TextEditor(text: $newPostData.postTxtTarget)
+            TextField("Target", text: $newPostData.postTxtTarget)
+                .foregroundColor(.white)
+                .accentColor(.white)
                 .cornerRadius(15)
                 .frame(height: 40, alignment: .center)
                 .padding()
-                .opacity(newPostData.isPosting ? 0.5 : 1)
+                .opacity(newPostData.isPosting ? 0.75 : 1)
                 .disabled(newPostData.isPosting ? true : false)
             
             //INFO
             TextEditor(text: $newPostData.postTxt)
+                .foregroundColor(.black)
                 .cornerRadius(15)
+                .frame(minHeight: 40, alignment: .center)
                 .padding()
                 .opacity(newPostData.isPosting ? 0.5 : 1)
                 .disabled(newPostData.isPosting ? true : false)
@@ -118,7 +123,6 @@ struct NewPost: View {
 }
 
 
-//
 //struct NewPost_Previews: PreviewProvider {
 //    static var previews: some View {
 //        NewPost(, updateId: Binding<String>)

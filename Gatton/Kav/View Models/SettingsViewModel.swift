@@ -21,6 +21,8 @@ class SettingsViewModel: ObservableObject {
     
     //loading view
     @Published var isLoading = false
+    @Published var editing = false
+
     
     let ref = Firestore.firestore()
     let uid = Auth.auth().currentUser!.uid
@@ -56,6 +58,7 @@ class SettingsViewModel: ObservableObject {
     }
     
     func updateDetails(field: String) {
+
         alertView(msg: "Update \(field)") { txt in
             if txt != "" {
                 if field == "Name" {
@@ -79,10 +82,26 @@ class SettingsViewModel: ObservableObject {
                 }
                 
             }
+            
         }
     }
     
+    
+    
     func updateBio(id: String, value: String) {
+        ref.collection("Users").document(uid).updateData([
+            id: value,
+        ]) { err in
+            if err != nil{return}
+            
+            //refreshing view
+            fetchUser(uid: self.uid) { user in
+                self.userInfo = user
+            }
+        }
+    }
+    
+    func updateYear(id: String, value: Int) {
         ref.collection("Users").document(uid).updateData([
             id: value,
         ]) { err in

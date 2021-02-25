@@ -28,6 +28,10 @@ struct Home: View {
                 
                 Database()
                     .opacity(selectedTab == "Database" ? 1 : 0)
+                
+//                ProfileHost()
+//                    .opacity(selectedTab == "ProfileHost" ? 1 : 0)
+
 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

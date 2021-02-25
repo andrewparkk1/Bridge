@@ -8,10 +8,10 @@
 
 //WITHOUT GRIDS
 
-
+import SDWebImageSwiftUI
 import SwiftUI
 import Firebase
-import SDWebImageSwiftUI
+
 
 struct ProfileView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
@@ -26,6 +26,7 @@ struct ProfileView: View {
     }
     
     
+    
     var body: some View {
         VStack{
             //BANNER
@@ -35,11 +36,14 @@ struct ProfileView: View {
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
-                Button(action: {profileData.isEditing.toggle()}) {
-                    Text("Edit")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                }
+                    NavigationLink(
+                        destination: SettingsView(),
+                        label: {
+                            Text("Edit")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        })
+                        .navigationBarHidden(true)
             }
             .padding()
             .padding(.top, edges!.top)
@@ -107,8 +111,8 @@ struct ProfileView: View {
             }
             
         }
-        .fullScreenCover(isPresented: $profileData.isEditing, content: {
-            SettingsView()
+        .fullScreenCover(isPresented: $postData.newPost, content: {
+            NewPost(updateId: $postData.updateId)
         })
     }
 }

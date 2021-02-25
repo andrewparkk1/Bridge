@@ -50,7 +50,6 @@ struct ProfileSummary: View {
                     }
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
-                    .frame(width: UIScreen.main.bounds.width - 100)
                 }
   
                 LazyVStack {
