@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DatabaseUnit: View {
-    var person: Person
+    var person: UserModel
     var body: some View {
         
         ZStack {
@@ -18,7 +18,7 @@ struct DatabaseUnit: View {
                 .frame(width: 180, height: 180)
                 .clipped()
             
-            Image(person.imageName)
+            Image(person.pic)
                 .resizable()
                 .frame(width: 110, height: 110, alignment: .center)
                 .clipShape(Circle())
@@ -27,7 +27,7 @@ struct DatabaseUnit: View {
                 .offset(x: 0, y: -80.0)
             
             VStack {
-                Text(person.name)
+                Text(person.username)
                     .font(Font.custom("Avenir Next Condensed", size: 30)).bold()
                     //.font(Font.custom("ヒラギノ角ゴシック W5", size: 20))
                 Text(String(person.year))
@@ -48,12 +48,3 @@ struct DatabaseUnit: View {
     }
 }
 
-struct DatabaseUnit_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            DatabaseUnit(person: personTestData[3])
-            //DatabaseUnit(person: personTestData[1])
-        }//.previewLayout(.fixed(width: 200, height: 300))//
-
-    }
-}

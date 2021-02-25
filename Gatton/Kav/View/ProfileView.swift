@@ -21,7 +21,7 @@ struct ProfileView: View {
     
     private var personalPosts: [PostModel] {
         postData.posts.filter { post in
-            post.user.uid == uid
+            post.user.id == uid
         }
     }
     

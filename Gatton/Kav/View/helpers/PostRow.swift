@@ -63,7 +63,7 @@ struct PostRow: View {
                 Image(systemName: "tuningfork")
                 Spacer()
                 //displaying only posted user
-                if post.user.uid == uid {
+                if post.user.id == uid {
                     Menu(content: {
                         Button(action: {postData.editPost(id: post.id)}) {
                             Text("Edit")

@@ -14,8 +14,15 @@ struct CustomTabbar: View {
     var body: some View {
         HStack() {
             TabButton(title: "Posts", selectedTab: $selectedTab)
-//            TabButton(title: "Settings", selectedTab: $selectedTab)
+            
+            TabButton(title: "Database", selectedTab: $selectedTab)
+            
+            //TabButton(title: "Post", selectedTab: $selectedTab)
+            
             TabButton(title: "Profile", selectedTab: $selectedTab)
+
+            TabButton(title: "Settings", selectedTab: $selectedTab)
+
             
 
         }
@@ -40,7 +47,7 @@ struct TabButton: View{
             }
             .foregroundColor(selectedTab == title ? .blue : .gray)
             .padding(.horizontal)
-            .padding(.vertical, 10)
+            .padding(.vertical, 5)
         })
     }
 }

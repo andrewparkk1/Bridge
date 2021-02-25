@@ -11,7 +11,7 @@ import Firebase
 
 class ProfileViewModel: ObservableObject {
     
-    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "", year : 0, city: "", state: "", interests: "")
+    @Published var userInfo = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")
     @Published var isEditing = false
 
 //    @AppStorage("current_status") var status = false

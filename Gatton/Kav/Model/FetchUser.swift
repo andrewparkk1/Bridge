@@ -19,7 +19,7 @@ func fetchUser(uid: String, completion: @escaping (UserModel) -> ()){
         let username = user.data()?["username"] as! String
         let pic = user.data()?["imageurl"] as! String
         let bio = user.data()?["bio"] as! String
-        let uid = user.documentID
+        let id = user.documentID
         
         let year = user.data()?["year"] as! Int
         let city = user.data()?["city"] as! String
@@ -30,7 +30,7 @@ func fetchUser(uid: String, completion: @escaping (UserModel) -> ()){
         
         
         DispatchQueue.main.async {
-            completion(UserModel(username: username, pic: pic, bio: bio, uid: uid, year: year, city: city, state: state, interests: interests))
+            completion(UserModel(id: id, username: username, pic: pic, bio: bio, year: year, city: city, state: state, interests: interests))
         }
 
     }

@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct Database: View {
-    @EnvironmentObject var modelData: ModelData
-    
-    private var ttstudents: [Person] {
-        modelData.people.filter { person in
-            person.year == 2022
-        }
-    }
-    private var tostudents: [Person] {
-        modelData.people.filter { person in
-            person.year == 2021
-        }
-    }
-    private var alumni: [Person] {
-        modelData.people.filter { person in
-            person.year < 2021
-        }
-    }
+    @StateObject var databaseData = DatabaseViewModel()
+
+//    private var ttstudents: [UserModel] {
+//        databaseData.users.filter { person in
+//            person.year == 2022
+//        }
+//    }
+//    private var tostudents: [UserModel] {
+//        databaseData.users.filter { person in
+//            person.year == 2021
+//        }
+//    }
+//    private var alumni: [UserModel] {
+//        databaseData.users.filter { person in
+//            person.year < 2021
+//        }
+//    }
     
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 2)
     
@@ -38,7 +38,7 @@ struct Database: View {
                 pinnedViews: [.sectionHeaders, .sectionFooters]
             ) {
                 Section(header: Text("2022").font(.title).bold()) {
-                    ForEach(ttstudents) { person in
+                    ForEach(databaseData.user2022) { person in
                         //Navigation link to specified person
                         DatabaseUnit(person: person)
                     }
@@ -49,7 +49,7 @@ struct Database: View {
         
         
                 Section(header: Text("2021").font(.title).bold()) {
-                    ForEach(tostudents) { person in
+                    ForEach(databaseData.user2021) { person in
                         DatabaseUnit(person: person)
                     }
                 }
@@ -58,7 +58,7 @@ struct Database: View {
                 Divider().background(Color.gray).frame(height: 50)
         
                 Section(header: Text("Alumni").font(.title).bold()) {
-                    ForEach(alumni) { person in
+                    ForEach(databaseData.alumni) { person in
                         DatabaseUnit(person: person)
                     }
                 }
@@ -70,8 +70,3 @@ struct Database: View {
 }
 
 
-struct Database_Previews: PreviewProvider {
-    static var previews: some View {
-        Database().environmentObject(ModelData())
-    }
-}

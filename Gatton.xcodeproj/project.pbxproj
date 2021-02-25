@@ -59,6 +59,7 @@
 		49EFA07325AE8382000E1DAF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07225AE8382000E1DAF /* Feed.swift */; };
 		49EFA07D25AE97E0000E1DAF /* LikedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA07C25AE97E0000E1DAF /* LikedButton.swift */; };
 		49EFA08C25AEB603000E1DAF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFA08B25AEB603000E1DAF /* ModelData.swift */; };
+		49F41A3F25E6C0BE007FDFC6 /* DatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F41A3E25E6C0BE007FDFC6 /* DatabaseViewModel.swift */; };
 		D6672E5243290DFBB45252A3 /* Pods_Gatton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F578980EFACDA81C10FBB95A /* Pods_Gatton.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		49EFA07225AE8382000E1DAF /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		49EFA07C25AE97E0000E1DAF /* LikedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedButton.swift; sourceTree = "<group>"; };
 		49EFA08B25AEB603000E1DAF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		49F41A3E25E6C0BE007FDFC6 /* DatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewModel.swift; sourceTree = "<group>"; };
 		A8B3D179D50584E2C050A0F5 /* Pods-Gatton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.release.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.release.xcconfig"; sourceTree = "<group>"; };
 		F0553858C93D02137C6B1AC1 /* Pods-Gatton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatton.debug.xcconfig"; path = "Target Support Files/Pods-Gatton/Pods-Gatton.debug.xcconfig"; sourceTree = "<group>"; };
 		F578980EFACDA81C10FBB95A /* Pods_Gatton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gatton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				493F204C25DCEAA2002B2F27 /* NewPostModel.swift */,
 				49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */,
 				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
+				49F41A3E25E6C0BE007FDFC6 /* DatabaseViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				493F204525DCEA71002B2F27 /* NewPost.swift */,
 				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
 				49A37D3625DC8979000A3658 /* SettingsView.swift */,
+				497EECBF25D8E97C009C7599 /* Database */,
 				49A5A78925E4CD39009ACAD5 /* helpers */,
 			);
 			path = View;
@@ -367,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				497EECBE25D8E96A009C7599 /* Posts */,
-				497EECBF25D8E97C009C7599 /* Database */,
 				493D4C2B25D5D7FE00C518E8 /* Profile */,
 				497EECC225D8F6E5009C7599 /* Add Post */,
 				4993646525DB61A1003E7832 /* Search */,
@@ -552,6 +555,7 @@
 				49A37D4A25DCA24B000A3658 /* PostModel.swift in Sources */,
 				49A37D3A25DC8990000A3658 /* CustomTabbar.swift in Sources */,
 				49A37D4125DC954F000A3658 /* UserModel.swift in Sources */,
+				49F41A3F25E6C0BE007FDFC6 /* DatabaseViewModel.swift in Sources */,
 				49A37D3425DC896A000A3658 /* PostView.swift in Sources */,
 				49967C3425DBA30D00F9104D /* Register.swift in Sources */,
 				4980E8F025C9063D00ED7390 /* AddPost.swift in Sources */,
