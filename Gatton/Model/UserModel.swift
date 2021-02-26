@@ -8,10 +8,10 @@
 //CHECKED
 
 import SwiftUI
+import Firebase
 
 struct UserModel: Identifiable {
     var id: String
-
     var username: String
     var pic: String
     var bio: String
@@ -20,5 +20,6 @@ struct UserModel: Identifiable {
     var city: String
     var state: String
     var interests: String
+
     
 }

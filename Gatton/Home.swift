@@ -12,8 +12,10 @@ import SwiftUI
 struct Home: View {
     @State var selectedTab = "Posts"
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
-
+    @StateObject var set = SettingsViewModel()
+    
     var body: some View {
+        
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
             ZStack{
@@ -29,8 +31,12 @@ struct Home: View {
                 Database()
                     .opacity(selectedTab == "Database" ? 1 : 0)
                 
-//                ProfileHost()
-//                    .opacity(selectedTab == "ProfileHost" ? 1 : 0)
+                ProfileEditView()
+                    .opacity(selectedTab == "ProfileEditView" ? 1 : 0)
+                
+                ProfileDetailsView(user: set.userInfo)
+                    .opacity(selectedTab == "ProfileDetailsView" ? 1 : 0)
+  
 
 
             }

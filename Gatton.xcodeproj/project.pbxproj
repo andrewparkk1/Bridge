@@ -52,6 +52,7 @@
 		49A37D5125DCA2BB000A3658 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A37D5025DCA2BB000A3658 /* PostViewModel.swift */; };
 		49A4BDAA25E85ED200646E0A /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4BDA925E85ED200646E0A /* ProfileEditView.swift */; };
 		49A4BDAD25E85EEF00646E0A /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4BDAC25E85EEF00646E0A /* ProfileEditViewModel.swift */; };
+		49A4BDC125E86FDF00646E0A /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4BDC025E86FDF00646E0A /* ProfileDetailsView.swift */; };
 		49A5A78325E4CD08009ACAD5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */; };
 		49A678FB25C61A6D005CFFF4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FA25C61A6D005CFFF4 /* Database.swift */; };
 		49A678FE25C61B1D005CFFF4 /* DatabaseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */; };
@@ -112,6 +113,7 @@
 		49A37D5025DCA2BB000A3658 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		49A4BDA925E85ED200646E0A /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		49A4BDAC25E85EEF00646E0A /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
+		49A4BDC025E86FDF00646E0A /* ProfileDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileDetailsView.swift; path = ../../../../Documents/ProfileDetailsView.swift; sourceTree = "<group>"; };
 		49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		49A678FA25C61A6D005CFFF4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		49A678FD25C61B1D005CFFF4 /* DatabaseUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUnit.swift; sourceTree = "<group>"; };
@@ -157,8 +159,8 @@
 				49967C3625DBA6F200F9104D /* RegisterViewModel.swift */,
 				49A37D5025DCA2BB000A3658 /* PostViewModel.swift */,
 				493F204C25DCEAA2002B2F27 /* NewPostModel.swift */,
-				49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */,
 				49F41A3E25E6C0BE007FDFC6 /* DatabaseViewModel.swift */,
+				49A5A78225E4CD08009ACAD5 /* ProfileViewModel.swift */,
 				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
 				49A4BDAC25E85EEF00646E0A /* ProfileEditViewModel.swift */,
 			);
@@ -173,16 +175,6 @@
 				493D4C2525D5D38900C518E8 /* ProfileEdit.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		496A40A225C3D1BB00C68D81 /* Kav */ = {
-			isa = PBXGroup;
-			children = (
-				492282A825D4F11B002892AC /* View Models */,
-				49A37D3125DC893A000A3658 /* View */,
-				49A37D2E25DC892B000A3658 /* Model */,
-			);
-			path = Kav;
 			sourceTree = "<group>";
 		};
 		496B9C1C25AB765000430AD3 = {
@@ -209,17 +201,17 @@
 				496B9C2E25AB765200430AD3 /* Preview Content */,
 				496B9C2825AB765100430AD3 /* GattonApp.swift */,
 				496B9C2A25AB765100430AD3 /* ContentView.swift */,
-				492548AC25AC03EF00A82CD0 /* Final.swift */,
-				496B9C2C25AB765200430AD3 /* Assets.xcassets */,
-				49A37D2D25DC88DA000A3658 /* My home */,
+				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
 				49967C3F25DBAFEE00F9104D /* Home.swift */,
-				496A40A225C3D1BB00C68D81 /* Kav */,
-				496A406725C397F000C68D81 /* User.swift */,
-				496B9C6425AB9FBC00430AD3 /* Models */,
-				49DAB9E925B1375A0052DBF1 /* Views */,
-				49DAB9E225B12C9A0052DBF1 /* Helpers */,
+				492282A825D4F11B002892AC /* View Models */,
+				49A37D3125DC893A000A3658 /* View */,
+				49A37D2E25DC892B000A3658 /* Model */,
+				49A5A78925E4CD39009ACAD5 /* helpers */,
 				496B9C3125AB765200430AD3 /* Info.plist */,
+				496B9C2C25AB765200430AD3 /* Assets.xcassets */,
 				496A40A525C3D58500C68D81 /* GoogleService-Info.plist */,
+				496A406725C397F000C68D81 /* User.swift */,
+				49A4BDBD25E8670B00646E0A /* mine */,
 			);
 			path = Gatton;
 			sourceTree = "<group>";
@@ -317,20 +309,31 @@
 				49967C3325DBA30D00F9104D /* Register.swift */,
 				49A37D3325DC896A000A3658 /* PostView.swift */,
 				493F204525DCEA71002B2F27 /* NewPost.swift */,
+				497EECBF25D8E97C009C7599 /* Database */,
 				497EDB3125E33E1B007CD638 /* ProfileView.swift */,
 				49A37D3625DC8979000A3658 /* SettingsView.swift */,
 				49A4BDA925E85ED200646E0A /* ProfileEditView.swift */,
-				497EECBF25D8E97C009C7599 /* Database */,
-				49A5A78925E4CD39009ACAD5 /* helpers */,
+				49A4BDC025E86FDF00646E0A /* ProfileDetailsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49A4BDBD25E8670B00646E0A /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				492548AC25AC03EF00A82CD0 /* Final.swift */,
+				49A37D2D25DC88DA000A3658 /* My home */,
+				496B9C6425AB9FBC00430AD3 /* Models */,
+				49DAB9E925B1375A0052DBF1 /* Views */,
+				49DAB9E225B12C9A0052DBF1 /* Helpers */,
+			);
+			path = mine;
 			sourceTree = "<group>";
 		};
 		49A5A78925E4CD39009ACAD5 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
 				493F204825DCEA7E002B2F27 /* PostRow.swift */,
-				49A37D3925DC8990000A3658 /* CustomTabbar.swift */,
 				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
 			);
 			path = helpers;
@@ -538,6 +541,7 @@
 				49967C4025DBAFEF00F9104D /* Home.swift in Sources */,
 				496B9C2B25AB765100430AD3 /* ContentView.swift in Sources */,
 				497EECC725D8F937009C7599 /* MyHome.swift in Sources */,
+				49A4BDC125E86FDF00646E0A /* ProfileDetailsView.swift in Sources */,
 				4993646325DB5FAE003E7832 /* LoginViewModel.swift in Sources */,
 				496A406425C397A200C68D81 /* SessionStore.swift in Sources */,
 				496B9C5925AB9F4E00430AD3 /* Person.swift in Sources */,

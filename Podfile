@@ -16,7 +16,7 @@ target 'Gatton' do
 
 # pod 'Firebase/Analytics'
 # pod 'FirebaseFirestoreSwift'
-# pod 'FirebaseFirestore'
+ pod 'FirebaseFirestore'
 # pod 'FirebaseUI'
 # pod 'Firebase/DynamicLinks'
 # pod 'Firebase/Functions'
