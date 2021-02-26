@@ -12,6 +12,7 @@ import SwiftUI
 struct PostView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
+    
     var body: some View {
         VStack{
             
@@ -59,13 +60,13 @@ struct PostView: View {
             
         }
         .fullScreenCover(isPresented: $postData.newPost, content: {
-            NewPost(updateId: $postData.updateId)
+            NewPostHome(updateId: $postData.updateId)
         })
     }
 }
 
-struct PostView_Previews: PreviewProvider {
-    static var previews: some View {
-        PostView()
-    }
-}
+//struct PostView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PostView()
+//    }
+//}

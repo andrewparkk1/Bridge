@@ -9,9 +9,10 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestoreSwift
 
-struct UserModel: Identifiable {
-    var id: String
+struct UserModel: Identifiable, Codable {
+    @DocumentID var id: String?
     var username: String
     var pic: String
     var bio: String
@@ -20,6 +21,17 @@ struct UserModel: Identifiable {
     var city: String
     var state: String
     var interests: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case username
+        case pic
+        case bio
+        case year = "year"
+        case city
+        case state
+        case interests
+    }
 
     
 }

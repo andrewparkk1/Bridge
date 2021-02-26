@@ -5,6 +5,8 @@
 //  Created by Andrew Park on 2/25/21.
 //
 
+//my draft
+
 import SwiftUI
 
 enum Action {
@@ -19,7 +21,7 @@ struct ProfileEditView: View {
     
     // MARK: - State (Initialiser-modifiable)
     
-    @ObservedObject var viewModel = ProfileEditViewModel()
+    @StateObject var viewModel = ProfileEditViewModel()
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
     // MARK: - UI Components
@@ -66,7 +68,7 @@ struct ProfileEditView: View {
                 }
                 
             }
-            .navigationTitle(viewModel.user.username)
+            .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(
                 leading: cancelButton,

@@ -27,34 +27,35 @@ struct SettingsView: View {
                     settingsData.editing.toggle()
                     pres.wrappedValue.dismiss()
                 }, label: {
-                    Text("Cancel")
+                    Text("Back")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 })
                 Spacer()
                 
                 Text("Settings")
-                    
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
                 
                 Spacer()
                 
-                Button(action: {
-                    settingsData.editing.toggle()
-                    
-                }, label: {
-                    Text("Done")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                })
+                Text("    ")
+                
+//                Button(action: {
+//                    settingsData.editing.toggle()
+//
+//                }, label: {
+//                    Text("Done")
+//                        .fontWeight(.bold)
+//                        .foregroundColor(.white)
+//                })
             }
             .padding()
             .padding(.top, edges!.top)
             .background(Color("bg"))
-            .shadow(color: Color.white.opacity(0.06), radius:5)
-            
+            .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
+
             
             //HSTACK PROFILE
             HStack {
@@ -171,8 +172,8 @@ struct SettingsView: View {
             
             //LOGOUT BUTTON
             Button(action: settingsData.logOut) {
-                Text("Logout")
-                    .foregroundColor(.white)
+                Text("LOGOUT")
+                    .foregroundColor(.red)
                     .fontWeight(.bold)
                     .padding(.vertical)
                     .frame(width: UIScreen.main.bounds.width - 100)
@@ -183,6 +184,8 @@ struct SettingsView: View {
             Spacer()
             
         }
+        .navigationBarHidden(true)
+        .ignoresSafeArea().edgesIgnoringSafeArea(.top)
         .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         .sheet(isPresented: $settingsData.picker, content: {
             ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)

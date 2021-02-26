@@ -10,9 +10,10 @@
 import SwiftUI
 
 struct Home: View {
-    @State var selectedTab = "Posts"
+    @State var selectedTab = "house.fill"
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var set = SettingsViewModel()
+    
     
     var body: some View {
         
@@ -20,30 +21,27 @@ struct Home: View {
             
             ZStack{
                 PostView()
-                    .opacity(selectedTab == "Posts" ? 1 : 0)
-                
-                SettingsView()
-                    .opacity(selectedTab == "Settings" ? 1 : 0)
-                
-                ProfileView()
-                    .opacity(selectedTab == "Profile" ? 1 : 0)
+                    .opacity(selectedTab == "house.fill" ? 1 : 0)
                 
                 Database()
-                    .opacity(selectedTab == "Database" ? 1 : 0)
+                    .opacity(selectedTab == "network" ? 1 : 0)
                 
-                ProfileEditView()
-                    .opacity(selectedTab == "ProfileEditView" ? 1 : 0)
+                NewPost(selectedTab: $selectedTab)
+                .opacity(selectedTab == "pencil.circle" ? 1 : 0)
                 
-                ProfileDetailsView(user: set.userInfo)
-                    .opacity(selectedTab == "ProfileDetailsView" ? 1 : 0)
-  
+//                SearchTarget()
+//                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
 
-
+                ProfileView()
+                    .opacity(selectedTab == "person" ? 1 : 0)
+                
             }
+
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             CustomTabbar(selectedTab: $selectedTab)
                 .padding(.bottom, edges!.bottom == 0 ? 15 : 0)
+                .padding(.horizontal)
             
         }
         .background(Color("bg").ignoresSafeArea(.all, edges: .all))
@@ -51,8 +49,162 @@ struct Home: View {
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
+
+struct CustomTabbar: View {
+    @Binding var selectedTab: String
+    var edges = UIApplication.shared.windows.first?.safeAreaInsets
+
+    var body: some View {
+        HStack(spacing: 10) {
+            TabButton(image: "house.fill", selectedTab: $selectedTab)
+            
+            Spacer()
+//            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
+//            Spacer()
+            TabButton(image: "network", selectedTab: $selectedTab)
+            Spacer()
+            
+            TabButton(image: "pencil.circle", selectedTab: $selectedTab)
+            Spacer()
+            
+            TabButton(image: "person", selectedTab: $selectedTab)
+            
+        }
+        .padding(.horizontal)
+        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
+        .clipShape(Capsule())
     }
 }
+
+struct TabButton: View{
+    var image: String
+    @Binding var selectedTab: String
+    var body: some View{
+        Button(action: {
+            selectedTab = image
+        }, label: {
+            Image(systemName: image)
+                .font(.title2)
+                .foregroundColor(selectedTab == image ? .blue: .white)
+                .padding(.horizontal)
+                .padding(.vertical, 7)
+        })
+    }
+}
+//
+//struct a: View {
+//    @State var selectedTab = "Posts"
+//    var edges = UIApplication.shared.windows.first?.safeAreaInsets
+//    @StateObject var postData = PostViewModel()
+//    @State var posting = false
+//
+//    //    init() {
+//    //        UITabBar.appearance().isHidden = true
+//    //    }
+//
+//    var body: some View {
+//        TabView(selection: $selectedTab) {
+//            PostView()
+//                .tag("house.fill")
+//
+//            Database()
+//                .tag("network")
+//
+//            NewPost(updateId: $postData.updateId, selectedTab: $selectedTab)
+//                .tag("pencil.circle")
+//
+//            ProfileView(selectedTab: $selectedTab)
+//                .tag("person")
+//
+//        }
+//        .overlay (
+//            VStack(spacing: 12) {
+//                Divider()
+//                    .padding(.horizontal, -15)
+//
+//                HStack {
+//                    TabBarButton(image: "house.fill", selectedTab: $selectedTab)
+//                        .frame(maxWidth: .infinity)
+//                    TabBarButton(image: "network", selectedTab: $selectedTab)
+//                        .frame(maxWidth: .infinity)
+//                    TabBarButton(image: "pencil.circle", selectedTab: $selectedTab)
+//                        .frame(maxWidth: .infinity)
+//                    TabBarButton(image: "person", selectedTab: $selectedTab)
+//                        .frame(maxWidth: .infinity)
+//
+//                }
+//            }
+//            ,alignment: .bottom
+//        )
+//        .padding(.bottom, edges!.bottom == 0 ? 15: 0)
+//        .background(Color("bg")).ignoresSafeArea(.all, edges: .all)
+//        .ignoresSafeArea(.all, edges: .top)
+//    }
+//}
+//
+//
+//
+//struct TabBarButton: View {
+//    var image: String
+//    @Binding var selectedTab: String
+//    var body: some View {
+//        Button(action: {
+//            selectedTab = image
+//        }, label: {
+//            Image(systemName: image)
+//                .font(.title2)
+//                .foregroundColor(selectedTab == image ? .primary: .gray)
+//
+//        })
+//
+//    }
+//}
+
+
+//
+//struct da: View {
+//    var edges = UIApplication.shared.windows.first?.safeAreaInsets
+//
+//    @State private var selectedTab = 1
+//    @StateObject var postData = PostViewModel()
+//
+//    var body: some View {
+//        TabView(selection: $selectedTab) {
+//            // HOME
+//            PostView()
+//                .tabItem { Image(systemName: "house.fill") }
+//                .tag(1)
+//
+//
+//            // NETWORK
+//
+//            Database()
+//                .tabItem { Image(systemName: "network")}
+//                .tag(2)
+//
+//
+//            // POST
+//            NewPost(updateId: $postData.updateId, selectedTab: $selectedTab)
+//                .tabItem { Image(systemName: "pencil.circle")}
+//                .tag(3)
+//
+//            //
+//            //                // GROUP
+//            //                NavigationView {
+//            //                    VStack {
+//            //
+//            //                    }
+//            //                }
+//            //                .tabItem { Image(systemName: "person.3.fill") }
+//            //
+//
+//            // PROFILE
+//            ProfileView(selectedTab: $selectedTab)
+//                .tabItem { Image(systemName: "person") }
+//                .tag(4)
+//
+//        }
+//        .padding(.top, edges!.top)
+//    }
+//
+//}

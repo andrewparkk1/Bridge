@@ -26,8 +26,6 @@ func fetchUser(uid: String, completion: @escaping (UserModel) -> ()){
         let state = user.data()?["state"] as! String
         let interests = user.data()?["interests"] as! String
 
-
-        
         
         DispatchQueue.main.async {
             completion(UserModel(id: id, username: username, pic: pic, bio: bio, year: year, city: city, state: state, interests: interests))

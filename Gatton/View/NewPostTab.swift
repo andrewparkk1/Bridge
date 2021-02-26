@@ -9,10 +9,12 @@
 
 import SwiftUI
 
-struct NewPost: View {
+struct NewPostTab: View {
     @StateObject var newPostData = NewPostModel()
+    
     @Environment(\.presentationMode) var present
     @Binding var updateId: String
+    @Binding var selectedTab: String
     
     
     var body: some View {
@@ -20,6 +22,7 @@ struct NewPost: View {
             HStack(spacing: 15){
                 Button(action: {
                     self.updateId = ""
+                    selectedTab = "house.fill"
                     present.wrappedValue.dismiss()
                 }, label: {
                     Text("Cancel")

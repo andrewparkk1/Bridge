@@ -75,8 +75,8 @@ struct ProfileView: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         }
                     }
+                    .padding(.horizontal, 3)
                 }
-                
                 
                 VStack() {
                     Text(profileData.userInfo.city)
@@ -112,7 +112,7 @@ struct ProfileView: View {
             
         }
         .fullScreenCover(isPresented: $postData.newPost, content: {
-            NewPost(updateId: $postData.updateId)
+            NewPostHome(updateId: $postData.updateId)
         })
     }
 }

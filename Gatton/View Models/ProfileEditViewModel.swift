@@ -5,30 +5,13 @@
 //  Created by Andrew Park on 2/25/21.
 //
 
+//my draft
+
 import SwiftUI
 import Foundation
 import Combine
 import Firebase
 import FirebaseFirestore
-
-//class ProfileEditViewModel: ObservableObject {
-//    @Published var user = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")
-//
-//    @Published var modified = false
-//    private var cancellables = Set<AnyCancellable>()
-//
-//    let ref = Firestore.firestore()
-//    let uid = Auth.auth().currentUser!.uid
-//
-//    init() {
-//        fetchUser(uid: uid) { (user) in
-//            self.user = user
-//        }
-//    }
-//
-//
-//}
-
 
 class ProfileEditViewModel: ObservableObject {
     
@@ -36,37 +19,55 @@ class ProfileEditViewModel: ObservableObject {
     
     @Published var user: UserModel = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")
     @Published var modified = false
-    
-    // MARK: - Internal properties
-    
-    private var cancellables = Set<AnyCancellable>()
+    @Published var isLoading = false
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser!.uid
     
+    private var cancellables = Set<AnyCancellable>()
+
     init() {
         fetchUser(uid: uid) { (user) in
             self.user = user
         }
     }
     
+//    init(user: UserModel = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")) {
+//      self.user = user
+//
+//      self.$user
+//        .dropFirst()
+//        .sink { [weak self] book in
+//          self?.modified = true
+//        }
+//        .store(in: &self.cancellables)
+//    }
     
-    private func updateUser(user: UserModel) {
-        let ref = db.collection("Users").document(user.id)
-        ref.updateData([
-            "username" : true
-        ]) { err in
-            if let err = err {
-                print("Error updating document: \(err)")
-            } else {
-                print("Document successfully updated")
-            }
+    
+//    private func updateUser(_ user: UserModel) {
+//        if let documentId = user.id {
+//          do {
+//            try db.collection("Users").document(documentId).setData(from: user)
+//          }
+//          catch {
+//            print(error)
+//          }
+//        }
+//      }
+    
+    private func updateUser(_ user: UserModel) {
+        guard let userId = user.id else {return}
+
+        do {
+            try db.collection("Users").document(userId).setData(from: user)
+        } catch {
+            fatalError("Unable to update card: \(error.localizedDescription).")
         }
-        // [END update_document]
-    }
-    
-    private func removeUser(user: UserModel) {
+      }
+
+
+    private func removeUser() {
             // [START delete_document]
-        db.collection("Users").document(user.id).delete() { err in
+        db.collection("Users").document(user.id!).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
@@ -76,13 +77,22 @@ class ProfileEditViewModel: ObservableObject {
             // [END delete_document]
         }
     
+//    private func updateUserNow() {
+//      if let _ = user.id {
+//        self.updateUser(self.user)
+//      }
+//    }
+    
+    func update(user: UserModel) {
+        self.updateUser(user)
+    }
     
     func handleDoneTapped() {
-        self.updateUser(user: user)
+        self.update(user: self.user)
     }
     
     func handleDeleteTapped() {
-        self.removeUser(user: user)
+        self.removeUser()
     }
     
 }

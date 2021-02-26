@@ -7,16 +7,17 @@ target 'Gatton' do
 
   # Pods for Gatton
 
- #pod 'FirebaseCore'
+ pod 'FirebaseCore'
  pod 'Firebase/Auth'
  pod 'Firebase/Storage'
  pod 'Firebase/Firestore'
+ pod 'FirebaseFirestoreSwift'
+
 
 
 
 # pod 'Firebase/Analytics'
-# pod 'FirebaseFirestoreSwift'
- pod 'FirebaseFirestore'
+# pod 'FirebaseFirestore'
 # pod 'FirebaseUI'
 # pod 'Firebase/DynamicLinks'
 # pod 'Firebase/Functions'

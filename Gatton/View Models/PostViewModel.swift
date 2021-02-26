@@ -15,7 +15,9 @@ class PostViewModel: ObservableObject {
     @Published var noPosts = false
     @Published var newPost = false
     @Published var updateId = ""
-
+    @Published var professors : [PostModel] = []
+    
+    
     init() {
         getAllPosts()
     }
@@ -37,7 +39,7 @@ class PostViewModel: ObservableObject {
                 if doc.type == .added{
                     
                     //retrieving and appending
-
+                    
                     let title = doc.document.data()["title"] as! String
                     let pic = doc.document.data()["url"] as! String
                     let userRef = doc.document.data()["ref"] as! DocumentReference
@@ -47,11 +49,20 @@ class PostViewModel: ObservableObject {
                     
                     //getting user data
                     fetchUser(uid: userRef.documentID) { user in
-                        self.posts.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
                         
+                        self.posts.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
                         //sorting all model while reading docs
                         self.posts.sort { (p1, p2) -> Bool in
                             return p1.time > p2.time
+                        }
+                        
+                        
+                        if target == "Professors" {
+                            self.professors.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.professors.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
                         }
                     }
                 }
@@ -72,7 +83,7 @@ class PostViewModel: ObservableObject {
                     let title = doc.document.data()["title"] as! String
                     let target = doc.document.data()["target"] as! String
                     let header = doc.document.data()["header"] as! String
-
+                    
                     let index = self.posts.firstIndex { post -> Bool in
                         return post.id == id
                     } ?? -1
@@ -89,6 +100,7 @@ class PostViewModel: ObservableObject {
             }
         }
     }
+    
     
     func deletePost(id: String) {
         ref.collection("Posts").document(id).delete { err in
