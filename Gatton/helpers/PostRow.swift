@@ -12,7 +12,6 @@ import SDWebImageSwiftUI
 import Firebase
 
 struct PostRow: View {
-    var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
     var post: PostModel
     @ObservedObject var postData: PostViewModel

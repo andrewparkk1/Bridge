@@ -40,17 +40,7 @@ class Appdelegate : NSObject, UIApplicationDelegate {
         return true
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
     }
-    
-
 }
 
 
-
-//    let authUI = FUIAuth.defaultAuthUI()
-//    authUI.delegate = self
-//    let providers: [FUIAuthProvider] = [
-//      FUIEmailAuth()
-//    ]
-//    self.authUI.providers = providers

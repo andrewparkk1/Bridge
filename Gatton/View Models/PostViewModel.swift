@@ -16,6 +16,11 @@ class PostViewModel: ObservableObject {
     @Published var newPost = false
     @Published var updateId = ""
     @Published var professors : [PostModel] = []
+    @Published var classes : [PostModel] = []
+    @Published var research : [PostModel] = []
+    @Published var qanda : [PostModel] = []
+    @Published var colleges : [PostModel] = []
+
     
     
     init() {
@@ -64,6 +69,36 @@ class PostViewModel: ObservableObject {
                                 return p1.time > p2.time
                             }
                         }
+                        
+                        if target == "Classes" {
+                            self.classes.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.classes.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
+                        }
+                        if target == "Research" {
+                            self.research.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.research.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
+                        }
+                        if target == "QandA" {
+                            self.qanda.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.qanda.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
+                        }
+                        if target == "Colleges" {
+                            self.colleges.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.colleges.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
+                        }  
+                        
                     }
                 }
                 

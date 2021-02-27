@@ -11,8 +11,8 @@ import SwiftUI
 
 struct Home: View {
     @State var selectedTab = "house.fill"
-    var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var set = SettingsViewModel()
+    @State var color = Color(.red)
     
     
     var body: some View {
@@ -27,20 +27,18 @@ struct Home: View {
                     .opacity(selectedTab == "network" ? 1 : 0)
                 
                 NewPost(selectedTab: $selectedTab)
-                .opacity(selectedTab == "pencil.circle" ? 1 : 0)
-                
-//                SearchTarget()
-//                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
+                    .opacity(selectedTab == "pencil.circle" ? 1 : 0)
+
+                SearchTarget(color: $color)
+                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
 
                 ProfileView()
                     .opacity(selectedTab == "person" ? 1 : 0)
                 
             }
-
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             CustomTabbar(selectedTab: $selectedTab)
-                .padding(.bottom, edges!.bottom == 0 ? 15 : 0)
                 .padding(.horizontal)
             
         }
@@ -52,26 +50,23 @@ struct Home: View {
 
 struct CustomTabbar: View {
     @Binding var selectedTab: String
-    var edges = UIApplication.shared.windows.first?.safeAreaInsets
 
     var body: some View {
         HStack(spacing: 10) {
             TabButton(image: "house.fill", selectedTab: $selectedTab)
             
-            Spacer()
-//            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
-//            Spacer()
+            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
+            
             TabButton(image: "network", selectedTab: $selectedTab)
-            Spacer()
             
             TabButton(image: "pencil.circle", selectedTab: $selectedTab)
-            Spacer()
-            
+
             TabButton(image: "person", selectedTab: $selectedTab)
             
         }
         .padding(.horizontal)
-        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
+        .padding(.vertical, 5)
+        .background(Color(.black).ignoresSafeArea(.all, edges: .all))
         .clipShape(Capsule())
     }
 }

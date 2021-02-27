@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Database: View {
-    @StateObject var databaseData = DatabaseViewModel()
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
+
+    @StateObject var databaseData = DatabaseViewModel()
 
     
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 2)
