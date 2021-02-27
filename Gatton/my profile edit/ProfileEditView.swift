@@ -7,7 +7,11 @@
 
 //my draft
 
+
 import SwiftUI
+import Firebase
+import SDWebImageSwiftUI
+
 
 enum Action {
     case delete
@@ -18,13 +22,10 @@ enum Action {
 struct ProfileEditView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State var presentActionSheet = false
-    
-    // MARK: - State (Initialiser-modifiable)
-    
     @StateObject var viewModel = ProfileEditViewModel()
+
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
-    // MARK: - UI Components
     
     var cancelButton: some View {
         Button(action: { self.handleCancelTapped() }) {
@@ -36,7 +37,7 @@ struct ProfileEditView: View {
         Button(action: { self.handleDoneTapped() }) {
             Text("Done")
         }
-        .disabled(!viewModel.modified)
+        //.disabled(!viewModel.modified)
     }
     
     
@@ -60,6 +61,26 @@ struct ProfileEditView: View {
                 }
                 Section(header: Text("Interests")) { // (3)
                     TextField("Name", text: $viewModel.user.interests) // (4)
+                }
+                Section(header: Text("Profile Picture")) {
+                    if viewModel.user.pic != "" {
+                        ZStack{
+                            WebImage(url: URL(string: viewModel.user.pic)!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 125, height: 125)
+                                .clipShape(Circle())
+                            
+                            if viewModel.isLoading {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                            }
+                        }
+                        .padding(.top, 25)
+                        .onTapGesture {
+                            viewModel.picker.toggle()
+                        }
+                    }
                 }
                 
                 Section {

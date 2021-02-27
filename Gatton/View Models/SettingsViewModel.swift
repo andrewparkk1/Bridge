@@ -87,7 +87,6 @@ class SettingsViewModel: ObservableObject {
     }
     
     
-    
     func updateBio(id: String, value: String) {
         ref.collection("Users").document(uid).updateData([
             id: value,

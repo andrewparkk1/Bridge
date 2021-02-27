@@ -19,7 +19,15 @@ class ProfileEditViewModel: ObservableObject {
     
     @Published var user: UserModel = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")
     @Published var modified = false
+    
+    //image picker for updating image
+    @Published var picker = false
+    @Published var img_data = Data(count: 0)
+    
+    //loading view
     @Published var isLoading = false
+    @Published var editing = false
+    
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser!.uid
     
@@ -31,29 +39,14 @@ class ProfileEditViewModel: ObservableObject {
         }
     }
     
-//    init(user: UserModel = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")) {
-//      self.user = user
-//
-//      self.$user
-//        .dropFirst()
-//        .sink { [weak self] book in
-//          self?.modified = true
-//        }
-//        .store(in: &self.cancellables)
-//    }
+    func handleDoneTapped() {
+        self.update(user: self.user)
+    }
     
-    
-//    private func updateUser(_ user: UserModel) {
-//        if let documentId = user.id {
-//          do {
-//            try db.collection("Users").document(documentId).setData(from: user)
-//          }
-//          catch {
-//            print(error)
-//          }
-//        }
-//      }
-    
+    func update(user: UserModel) {
+        self.updateUser(user)
+    }
+
     private func updateUser(_ user: UserModel) {
         guard let userId = user.id else {return}
 
@@ -62,11 +55,43 @@ class ProfileEditViewModel: ObservableObject {
         } catch {
             fatalError("Unable to update card: \(error.localizedDescription).")
         }
+        
+        //refreshing view
+        fetchUser(uid: self.uid) { user in
+            self.user = user
+        }
+        
       }
+    
+    func updateImage() {
+        isLoading = true
+        
+        UploadImage(imageData: img_data, path: "profile_Photos") { (url) in
+            self.db.collection("Users").document(self.uid).updateData([
+                "imageurl": url,
+            ]) { (err) in
+                if err != nil{return}
+                
+                //updating view
+                self.isLoading = false
+                fetchUser(uid: self.uid) { (user) in
+                    self.user = user
+                }
+            }
+        }
+    }
+    
 
-
+    
+    //DELETE ACCOUNT
+    func handleDeleteTapped() {
+        self.removeUser()
+    }
+    
     private func removeUser() {
             // [START delete_document]
+//        try! Auth.auth().signOut()
+//        status = false
         db.collection("Users").document(user.id!).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
@@ -76,24 +101,7 @@ class ProfileEditViewModel: ObservableObject {
             }
             // [END delete_document]
         }
-    
-//    private func updateUserNow() {
-//      if let _ = user.id {
-//        self.updateUser(self.user)
-//      }
-//    }
-    
-    func update(user: UserModel) {
-        self.updateUser(user)
-    }
-    
-    func handleDoneTapped() {
-        self.update(user: self.user)
-    }
-    
-    func handleDeleteTapped() {
-        self.removeUser()
-    }
+
     
 }
 
