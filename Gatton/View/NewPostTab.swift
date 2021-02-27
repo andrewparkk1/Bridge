@@ -27,7 +27,7 @@ struct NewPostTab: View {
                 }, label: {
                     Text("Cancel")
                         .fontWeight(.bold)
-                        .foregroundColor(.green)
+                        .foregroundColor(.white)
                 })
                 
                 Spacer(minLength: 0)
@@ -37,7 +37,7 @@ struct NewPostTab: View {
                     Button(action: {newPostData.picker.toggle()}, label: {
                         Image(systemName: "photo.fill")
                             .font(.title)
-                            .foregroundColor(.green)
+                            .foregroundColor(.white)
                     })
                 }
                 
@@ -64,25 +64,92 @@ struct NewPostTab: View {
             .disabled(newPostData.isPosting ? true: false)
             
             
-            //HEADER
-            TextField("text something", text: $newPostData.postTxtHead)
-                .foregroundColor(.white)
-                .accentColor(.white)
-                .frame(height: 40, alignment: .center)
-                .cornerRadius(15)
-                .padding()
-                .opacity(newPostData.isPosting ? 0.75 : 1)
-                .disabled(newPostData.isPosting ? true : false)
             
-            //TARGET
-            TextField("Target", text: $newPostData.postTxtTarget)
-                .foregroundColor(.white)
-                .accentColor(.white)
-                .cornerRadius(15)
-                .frame(height: 40, alignment: .center)
-                .padding()
-                .opacity(newPostData.isPosting ? 0.75 : 1)
-                .disabled(newPostData.isPosting ? true : false)
+            //HEADER
+            HStack(spacing: 20) {
+                Text("Title")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .bold()
+                    .frame(alignment: .leading)
+                
+                
+                TextField("Title?", text: $newPostData.postTxtHead)
+                    .foregroundColor(.black)
+                    .frame(height: 40, alignment: .center)
+                    .cornerRadius(15)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .modifier(ClearButton(text: $newPostData.postTxtHead))
+                    .opacity(newPostData.isPosting ? 0.9 : 1)
+                    .disabled(newPostData.isPosting ? true : false)
+            }
+            .padding()
+            
+            
+            HStack(spacing: 20) {
+                VStack(spacing: 20) {
+                    
+                    Button(action: {
+                        newPostData.postTxtTarget = "General"
+                    }) {
+                        Text("General")
+                            .bold()
+                            .foregroundColor(newPostData.postTxtTarget == "General" ? .green : .gray)
+                    }
+                    
+                    
+                    Button(action: {
+                        newPostData.postTxtTarget = "Professors"
+                    }) {
+                        Text("Professors")
+                            .bold()
+                            .foregroundColor(newPostData.postTxtTarget == "Professors" ? .green : .gray)
+                    }
+                }
+                
+                VStack(spacing: 20) {
+                    Button(action: {
+                        newPostData.postTxtTarget = "Classes"
+                    }) {
+                        Text("Classes")
+                            .bold()
+                            .foregroundColor(newPostData.postTxtTarget == "Classes" ? .green : .gray)
+                    }
+                    
+                    Button(action: {
+                        newPostData.postTxtTarget = "Research"
+                    }) {
+                        Text("Research").bold()
+                            .foregroundColor(newPostData.postTxtTarget == "Research" ? .green : .gray)
+                    }
+                }
+                VStack(spacing: 20) {
+                    
+                    Button(action: {
+                        newPostData.postTxtTarget = "QandA"
+                    }) {
+                        Text("QandA").bold()
+                            .foregroundColor(newPostData.postTxtTarget == "QandA" ? .green : .gray)
+                    }
+                    
+                    Button(action: {
+                        newPostData.postTxtTarget = "Colleges"
+                    }) {
+                        Text("Colleges").bold()
+                            .foregroundColor(newPostData.postTxtTarget == "Colleges" ? .green : .gray)
+                    }
+                }
+                
+                Text("Target")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .bold()
+                    .frame(alignment: .trailing)
+                
+            }
+            .padding()
+            
             
             //INFO
             TextEditor(text: $newPostData.postTxt)
@@ -122,6 +189,27 @@ struct NewPostTab: View {
             ImagePicker(picker: $newPostData.picker, img_Data: $newPostData.img_Data)
         }
         
+    }
+    
+    
+    public struct ClearButton: ViewModifier {
+        @Binding var text: String
+        
+        public init(text: Binding<String>) {
+            self._text = text
+        }
+        
+        public func body(content: Content) -> some View {
+            HStack(spacing: 3) {
+                content
+                // onTapGesture is better than a Button here when adding to a form
+                Image(systemName: "multiply.circle.fill")
+                    .frame(alignment: .trailing)
+                    .foregroundColor(.white)
+                    .opacity(text == "" ? 0 : 1)
+                    .onTapGesture { self.text = "" }
+            }
+        }
     }
 }
 

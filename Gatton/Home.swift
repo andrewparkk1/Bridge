@@ -14,6 +14,8 @@ struct Home: View {
     @StateObject var set = SettingsViewModel()
     @State var color = Color(.red)
     
+    @StateObject var postData = PostViewModel()
+    
     
     var body: some View {
         
@@ -23,17 +25,22 @@ struct Home: View {
                 PostView()
                     .opacity(selectedTab == "house.fill" ? 1 : 0)
                 
+//                SearchTarget(color: $color)
+//                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
+                
+                Text("Post")
+                    .opacity(selectedTab == "pencil.circle" ? 1 : 0)
+                
                 Database()
                     .opacity(selectedTab == "network" ? 1 : 0)
                 
-                NewPost(selectedTab: $selectedTab)
-                    .opacity(selectedTab == "pencil.circle" ? 1 : 0)
-
-                SearchTarget(color: $color)
-                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
-
                 ProfileView()
                     .opacity(selectedTab == "person" ? 1 : 0)
+                
+                ProfileEditView()
+                    .opacity(selectedTab == "folder" ? 1 : 0)
+
+                
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -55,13 +62,16 @@ struct CustomTabbar: View {
         HStack(spacing: 10) {
             TabButton(image: "house.fill", selectedTab: $selectedTab)
             
-            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
-            
-            TabButton(image: "network", selectedTab: $selectedTab)
+//            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
             
             TabButton(image: "pencil.circle", selectedTab: $selectedTab)
 
+            TabButton(image: "network", selectedTab: $selectedTab)
+            
             TabButton(image: "person", selectedTab: $selectedTab)
+            
+            TabButton(image: "folder", selectedTab: $selectedTab)
+
             
         }
         .padding(.horizontal)
@@ -72,10 +82,14 @@ struct CustomTabbar: View {
 }
 
 struct TabButton: View{
+    @StateObject var postData = PostViewModel()
     var image: String
     @Binding var selectedTab: String
     var body: some View{
         Button(action: {
+            if image == "pencil.circle" {
+                postData.newPost.toggle()
+            }
             selectedTab = image
         }, label: {
             Image(systemName: image)
@@ -83,6 +97,9 @@ struct TabButton: View{
                 .foregroundColor(selectedTab == image ? .blue: .white)
                 .padding(.horizontal)
                 .padding(.vertical, 7)
+        })
+        .fullScreenCover(isPresented: $postData.newPost, content: {
+            NewPostTab(updateId: $postData.updateId, selectedTab: $selectedTab)
         })
     }
 }

@@ -13,7 +13,7 @@ import Firebase
 class NewPostModel: ObservableObject {
     @Published var postTxt = ""
     @Published var postTxtHead = ""
-    @Published var postTxtTarget = ""
+    @Published var postTxtTarget = "General"
     
     //image picker
     @Published var picker = false

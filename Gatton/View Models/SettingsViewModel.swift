@@ -101,9 +101,9 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    func updateYear(id: String, value: Int) {
+    func updateYear(value: Int) {
         ref.collection("Users").document(uid).updateData([
-            id: value,
+            "year": value,
         ]) { err in
             if err != nil{return}
             
@@ -113,6 +113,7 @@ class SettingsViewModel: ObservableObject {
             }
         }
     }
+    
 }
 
 

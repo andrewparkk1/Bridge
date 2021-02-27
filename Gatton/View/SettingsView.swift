@@ -39,17 +39,6 @@ struct SettingsView: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-                
-                Text("    ")
-                
-//                Button(action: {
-//                    settingsData.editing.toggle()
-//
-//                }, label: {
-//                    Text("Done")
-//                        .fontWeight(.bold)
-//                        .foregroundColor(.white)
-//                })
             }
             .padding()
             .padding(.top, edges!.top)
@@ -67,7 +56,7 @@ struct SettingsView: View {
                         
                         //edit button
                         Button(action: {settingsData.updateDetails(field: "Name")}) {
-                            Image(systemName: "pencil.circle.fill")
+                            Image(systemName: "pencil.tip")
                                 .font(.system(size: 24))
                                 .foregroundColor(.white)
                         }
@@ -80,8 +69,8 @@ struct SettingsView: View {
                             .foregroundColor(.white)
                         
                         //edit button
-                        Button(action: {settingsData.updateDetails(field: "Year")}) {
-                            Image(systemName: "pencil.circle.fill")
+                        Button(action: {settingsData.updateYear(value: 2022)}) {
+                            Image(systemName: "pencil.tip")
                                 .font(.system(size: 24))
                                 .foregroundColor(.white)
                         }
@@ -117,7 +106,7 @@ struct SettingsView: View {
                         
                         //edit button
                         Button(action: {settingsData.updateDetails(field: "City")}) {
-                            Image(systemName: "pencil.circle.fill")
+                            Image(systemName: "pencil.tip")
                                 .font(.system(size: 24))
                                 .foregroundColor(.white)
                         }
@@ -130,7 +119,7 @@ struct SettingsView: View {
                         
                         //edit button
                         Button(action: {settingsData.updateDetails(field: "State")}) {
-                            Image(systemName: "pencil.circle.fill")
+                            Image(systemName: "pencil.tip")
                                 .font(.system(size: 24))
                                 .foregroundColor(.white)
                         }
@@ -148,7 +137,7 @@ struct SettingsView: View {
                     
                     //edit button
                     Button(action: {settingsData.updateDetails(field: "Bio")}) {
-                        Image(systemName: "pencil.circle.fill")
+                        Image(systemName: "pencil.tip")
                             .font(.system(size: 24))
                             .foregroundColor(.white)
                     }
@@ -161,7 +150,7 @@ struct SettingsView: View {
                     
                     //edit button
                     Button(action: {settingsData.updateDetails(field: "Interests")}) {
-                        Image(systemName: "pencil.circle.fill")
+                        Image(systemName: "pencil.tip")
                             .font(.system(size: 24))
                             .foregroundColor(.white)
                     }
