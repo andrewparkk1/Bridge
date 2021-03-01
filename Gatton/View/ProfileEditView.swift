@@ -20,6 +20,7 @@ enum Action {
 }
 
 struct ProfileEditView: View {
+    var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @Environment(\.presentationMode) private var presentationMode
     @State var presentActionSheet = false
     @StateObject var viewModel = ProfileViewModel()
@@ -42,8 +43,23 @@ struct ProfileEditView: View {
     
     
     var body: some View {
-        NavigationView {
+        ScrollView {
             VStack {
+                HStack{
+                    cancelButton
+                    Spacer()
+                    Text("Settings")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                    Spacer(minLength: 0)
+                    saveButton
+                    
+                }
+                .padding()
+                .padding(.top, edges!.top)
+                .background(Color("bg"))
+                .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
                 
                 if viewModel.userInfo.pic != "" {
                     ZStack{
@@ -92,29 +108,25 @@ struct ProfileEditView: View {
                     
                 }
             }
-            .background(Color("bg")).edgesIgnoringSafeArea(.all)
-            .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(
-                leading: cancelButton,
-                trailing: saveButton
-            )
-            .sheet(isPresented: $viewModel.picker, content: {
-                ImagePicker(picker: $viewModel.picker, img_Data: $viewModel.img_Data)
-            })
-            .onChange(of: viewModel.img_Data) { newData in
-                viewModel.updateImage()
-            }
-            .actionSheet(isPresented: $presentActionSheet) {
-                ActionSheet(title: Text("Are you sure?"),
-                            buttons: [
-                                .destructive(Text("Delete User"),
-                                             action: { self.handleDeleteTapped() }),
-                                .cancel()
-                            ])
-            }
-            
         }
+        .navigationBarHidden(true)
+        .background(Color("bg")).edgesIgnoringSafeArea(.all)
+        .sheet(isPresented: $viewModel.picker, content: {
+            ImagePicker(picker: $viewModel.picker, img_Data: $viewModel.img_Data)
+        })
+        .onChange(of: viewModel.img_Data) { newData in
+            viewModel.updateImage()
+        }
+        .actionSheet(isPresented: $presentActionSheet) {
+            ActionSheet(title: Text("Are you sure?"),
+                        buttons: [
+                            .destructive(Text("Delete User"),
+                                         action: { self.handleDeleteTapped() }),
+                            .cancel()
+                        ])
+        }
+        
+        
         
     }
     

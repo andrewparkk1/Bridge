@@ -44,24 +44,46 @@ class ProfileViewModel: ObservableObject {
     
     
     private func updateUser(user: UserModel) {
-                guard let userId = user.id else {return}
+        guard let userId = user.id else {return}
         
         if img_Data.count == 0 {
             ref.collection("Users").document(userId).updateData([
                 "username" : user.username,
+                "bio" : user.bio,
+                "city" : user.city,
+                "state" : user.state,
+                "interests" : user.interests,
+                "year" : user.year
+                
             ]) { err in
                 if err != nil{
                     self.editing = false
                     return
                 }
             }
+        } else {
+            UploadImage(imageData: img_Data, path: "profile_Photos") { url in
+                self.ref.collection("Users").document(userId).updateData([
+                    "username" : user.username,
+                    "bio" : user.bio,
+                    "city" : user.city,
+                    "state" : user.state,
+                    "interests" : user.interests,
+                    "year" : user.year,
+                    "pic": url
+                    
+                ]) { err in
+                    if err != nil{
+                        self.editing = false
+                        return
+                    }
+                }
+            }
         }
         
-        //refreshing view
         fetchUser(uid: self.uid) { user in
             self.userInfo = user
         }
-        
     }
     
     func updateImage() {
@@ -113,7 +135,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     
-
-
-
+    
+    
+    
 }
