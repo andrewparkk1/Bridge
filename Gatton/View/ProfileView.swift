@@ -37,7 +37,7 @@ struct ProfileView: View {
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
                     NavigationLink(
-                        destination: SettingsView(),
+                        destination: ProfileEditView(),
                         label: {
                             Text("Edit")
                                 .fontWeight(.bold)

@@ -51,7 +51,6 @@ struct Register: View {
             HStack(spacing: 15) {
                 TextField("Name", text: $registerData.name)
                     .padding()
-                    .keyboardType(.numberPad)
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }
@@ -60,7 +59,6 @@ struct Register: View {
             HStack(spacing: 15) {
                 TextField("Bio", text: $registerData.bio)
                     .padding()
-                    .keyboardType(.numberPad)
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }
@@ -81,7 +79,6 @@ struct Register: View {
             HStack(spacing: 15) {
                 TextField("City", text: $registerData.city)
                     .padding()
-                    .keyboardType(.numberPad)
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }
@@ -91,7 +88,6 @@ struct Register: View {
             HStack(spacing: 15) {
                 TextField("State", text: $registerData.state)
                     .padding()
-                    .keyboardType(.numberPad)
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }
@@ -101,7 +97,6 @@ struct Register: View {
             HStack(spacing: 15) {
                 TextField("Interests", text: $registerData.interests)
                     .padding()
-                    .keyboardType(.numberPad)
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
             }

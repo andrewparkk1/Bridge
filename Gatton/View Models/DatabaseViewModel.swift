@@ -15,8 +15,6 @@ class DatabaseViewModel: ObservableObject {
     @Published var alumni: [UserModel] = []
     @Published var noPeople = false
 
-
-        
     
     
     init() {

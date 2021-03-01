@@ -37,7 +37,7 @@ struct Home: View {
                 ProfileView()
                     .opacity(selectedTab == "person" ? 1 : 0)
                 
-                ProfileEditView()
+                SettingsView()
                     .opacity(selectedTab == "folder" ? 1 : 0)
 
                 
