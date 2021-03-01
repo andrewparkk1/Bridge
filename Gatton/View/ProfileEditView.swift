@@ -1,0 +1,145 @@
+//
+//  ProfileEditView.swift
+//  Gatton
+//
+//  Created by Andrew Park on 2/25/21.
+//
+
+//my draft
+
+
+import SwiftUI
+import Firebase
+import SDWebImageSwiftUI
+
+
+enum Action {
+    case delete
+    case done
+    case cancel
+}
+
+struct ProfileEditView: View {
+    @Environment(\.presentationMode) private var presentationMode
+    @State var presentActionSheet = false
+    @StateObject var viewModel = ProfileViewModel()
+    
+    var completionHandler: ((Result<Action, Error>) -> Void)?
+    
+    
+    var cancelButton: some View {
+        Button(action: { self.handleCancelTapped() }) {
+            Text("Cancel")
+        }
+    }
+    
+    var saveButton: some View {
+        Button(action: { self.handleDoneTapped() }) {
+            Text("Done")
+        }
+        //.disabled(!viewModel.modified)
+    }
+    
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                
+                if viewModel.userInfo.pic != "" {
+                    ZStack{
+                        
+                        WebImage(url: URL(string: viewModel.userInfo.pic)!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 125, height: 125)
+                            .clipShape(Circle())
+                        
+                        if viewModel.isLoading {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                        }
+                    }
+                    .padding(.top, 25)
+                    .onTapGesture {
+                        viewModel.picker.toggle()
+                    }
+                }
+                
+                
+                Form {
+                    Section(header: Text("Name")) { // (3)
+                        TextField("Name", text: $viewModel.userInfo.username)
+                    }
+                    Section(header: Text("Year")) { // (3)
+                        TextField("Year", value: $viewModel.userInfo.year, formatter: NumberFormatter())
+                    }
+                    Section(header: Text("Bio")) { // (3)
+                        TextField("Bio", text: $viewModel.userInfo.bio) // (4)
+                    }
+                    Section(header: Text("City")) { // (3)
+                        TextField("City", text: $viewModel.userInfo.city) // (4)
+                    }
+                    Section(header: Text("State")) { // (3)
+                        TextField("State", text: $viewModel.userInfo.state) // (4)
+                    }
+                    Section(header: Text("Interests")) { // (3)
+                        TextField("Name", text: $viewModel.userInfo.interests) // (4)
+                    }
+                    Section {
+                        Button("Delete Account") { self.presentActionSheet.toggle() }
+                            .foregroundColor(.red)
+                    }
+                    
+                }
+            }
+            .background(Color("bg")).edgesIgnoringSafeArea(.all)
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationBarItems(
+                leading: cancelButton,
+                trailing: saveButton
+            )
+            .sheet(isPresented: $viewModel.picker, content: {
+                ImagePicker(picker: $viewModel.picker, img_Data: $viewModel.img_Data)
+            })
+            .onChange(of: viewModel.img_Data) { newData in
+                viewModel.updateImage()
+            }
+            .actionSheet(isPresented: $presentActionSheet) {
+                ActionSheet(title: Text("Are you sure?"),
+                            buttons: [
+                                .destructive(Text("Delete User"),
+                                             action: { self.handleDeleteTapped() }),
+                                .cancel()
+                            ])
+            }
+            
+        }
+        
+    }
+    
+    func handleCancelTapped() {
+        self.dismiss()
+    }
+    
+    func handleDoneTapped() {
+        self.viewModel.handleDoneTapped()
+        self.dismiss()
+    }
+    
+    func handleDeleteTapped() {
+        viewModel.handleDeleteTapped()
+        self.dismiss()
+        self.completionHandler?(.success(.delete))
+    }
+    
+    func dismiss() {
+        self.presentationMode.wrappedValue.dismiss()
+    }
+}
+
+struct ProfileEditView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileEditView()
+    }
+}
