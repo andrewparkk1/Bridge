@@ -43,7 +43,7 @@ struct ProfileEditView: View {
     
     
     var body: some View {
-        ScrollView {
+        NavigationView {
             VStack {
                 HStack{
                     cancelButton
@@ -60,27 +60,36 @@ struct ProfileEditView: View {
                 .padding(.top, edges!.top)
                 .background(Color("bg"))
                 .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
-                
+                                        
                 if viewModel.userInfo.pic != "" {
-                    ZStack{
-                        
-                        WebImage(url: URL(string: viewModel.userInfo.pic)!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 125, height: 125)
-                            .clipShape(Circle())
+                    
+                    ZStack {
                         
                         if viewModel.isLoading {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         }
+                        
+                        if viewModel.img_Data.count == 0 {
+                            WebImage(url: URL(string: viewModel.userInfo.pic)!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 125, height: 125)
+                                .clipShape(Circle())
+                        }
+                        else {
+                            Image(uiImage: UIImage(data: viewModel.img_Data)!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 115, height: 115)
+                                .clipShape(Circle())
+                        }
                     }
-                    .padding(.top, 25)
-                    .onTapGesture {
+                    .padding(.top)
+                    .onTapGesture(perform: {
                         viewModel.picker.toggle()
-                    }
+                    })
                 }
-                
                 
                 Form {
                     Section(header: Text("Name")) { // (3)
@@ -88,6 +97,7 @@ struct ProfileEditView: View {
                     }
                     Section(header: Text("Year")) { // (3)
                         TextField("Year", value: $viewModel.userInfo.year, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     Section(header: Text("Bio")) { // (3)
                         TextField("Bio", text: $viewModel.userInfo.bio) // (4)
@@ -105,18 +115,24 @@ struct ProfileEditView: View {
                         Button("Delete Account") { self.presentActionSheet.toggle() }
                             .foregroundColor(.red)
                     }
-                    
                 }
+                Spacer()
+                
             }
+            .background(Color("bg")).edgesIgnoringSafeArea(.all)
+            .navigationBarTitle(Text("Settings"))
+            .navigationBarHidden(true)
+            
         }
         .navigationBarHidden(true)
-        .background(Color("bg")).edgesIgnoringSafeArea(.all)
+        .navigationBarBackButtonHidden(true)
         .sheet(isPresented: $viewModel.picker, content: {
             ImagePicker(picker: $viewModel.picker, img_Data: $viewModel.img_Data)
         })
-        .onChange(of: viewModel.img_Data) { newData in
-            viewModel.updateImage()
-        }
+        
+        //        .onChange(of: viewModel.img_Data) { newData in
+        //            viewModel.updateImage()
+        //        }
         .actionSheet(isPresented: $presentActionSheet) {
             ActionSheet(title: Text("Are you sure?"),
                         buttons: [
@@ -125,6 +141,7 @@ struct ProfileEditView: View {
                             .cancel()
                         ])
         }
+        .background(Color("bg")).edgesIgnoringSafeArea(.all)
         
         
         

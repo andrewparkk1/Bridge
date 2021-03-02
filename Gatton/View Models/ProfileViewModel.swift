@@ -17,7 +17,7 @@ class ProfileViewModel: ObservableObject {
     
     // MARK: - Public properties
     
-    @Published var userInfo = UserModel(id: "", username: "", pic: "", bio: "", year : 0, city: "", state: "", interests: "")
+    @Published var userInfo = UserModel(id: "", username: "", pic: "", bio: "", year : Int("0")!, city: "", state: "", interests: "")
     @Published var modified = false
     
     //image picker for updating image
@@ -54,10 +54,11 @@ class ProfileViewModel: ObservableObject {
                 "state" : user.state,
                 "interests" : user.interests,
                 "year" : user.year
-                
+
             ]) { err in
                 if err != nil{
                     self.editing = false
+                    print(Text("o \(user.year)"))
                     return
                 }
             }
@@ -70,7 +71,7 @@ class ProfileViewModel: ObservableObject {
                     "state" : user.state,
                     "interests" : user.interests,
                     "year" : user.year,
-                    "pic": url
+                    "imageurl": url
                     
                 ]) { err in
                     if err != nil{
@@ -87,13 +88,14 @@ class ProfileViewModel: ObservableObject {
     }
     
     func updateImage() {
+//        self.userInfo.pic = url
         isLoading = true
         UploadImage(imageData: img_Data, path: "profile_Photos") { (url) in
             self.ref.collection("Users").document(self.uid).updateData([
                 "imageurl": url,
             ]) { (err) in
                 if err != nil{return}
-                
+
                 //updating view
                 self.isLoading = false
                 fetchUser(uid: self.uid) { (user) in

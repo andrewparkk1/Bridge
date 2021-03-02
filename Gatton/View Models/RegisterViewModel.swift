@@ -13,7 +13,7 @@ import Firebase
 class RegisterViewModel: ObservableObject{
     @Published var name = ""
     @Published var bio = ""
-    @Published var year: Int = 0
+    @Published var year = 0
     @Published var city = ""
     @Published var state = ""
     @Published var interests = ""

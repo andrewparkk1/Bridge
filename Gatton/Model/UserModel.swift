@@ -27,7 +27,7 @@ struct UserModel: Identifiable, Codable {
         case username
         case pic
         case bio
-        case year = "year"
+        case year
         case city
         case state
         case interests
