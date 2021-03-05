@@ -705,7 +705,7 @@
 				DEVELOPMENT_TEAM = RKCU7S6SV3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Gatton/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,7 +728,7 @@
 				DEVELOPMENT_TEAM = RKCU7S6SV3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Gatton/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,7 +15,7 @@ struct DatabaseUnit: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0, style: .continuous)
                 //.background(Color(UIColor.secondarySystemBackground))
-                .foregroundColor(person.year == 2022 || person.year == 2021 ? .green : Color(UIColor.lightGray))
+                .foregroundColor(person.year == "2022" || person.year == "2021" ? .green : Color(UIColor.lightGray))
                 .frame(width: 180, height: 180)
                 .clipped()
             
@@ -32,7 +32,7 @@ struct DatabaseUnit: View {
                 Text(person.username)
                     .font(Font.custom("Avenir Next Condensed", size: 30)).bold()
                     //.font(Font.custom("ヒラギノ角ゴシック W5", size: 20))
-                Text(String(person.year))
+                Text(person.year)
                     .font(Font.custom("Avenir", size: 20))
                 Text(person.city + ", " + person.state)
                     .font(Font.custom("Avenir", size: 20))

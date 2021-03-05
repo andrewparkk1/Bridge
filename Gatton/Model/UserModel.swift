@@ -17,7 +17,7 @@ struct UserModel: Identifiable, Codable {
     var pic: String
     var bio: String
     
-    var year: Int
+    var year: String
     var city: String
     var state: String
     var interests: String

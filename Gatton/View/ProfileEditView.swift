@@ -7,6 +7,7 @@
 
 //my draft
 
+//import Combine
 
 import SwiftUI
 import Firebase
@@ -25,8 +26,8 @@ struct ProfileEditView: View {
     @State var presentActionSheet = false
     @StateObject var viewModel = ProfileViewModel()
     
-    var completionHandler: ((Result<Action, Error>) -> Void)?
     
+    var completionHandler: ((Result<Action, Error>) -> Void)?
     
     var cancelButton: some View {
         Button(action: { self.handleCancelTapped() }) {
@@ -38,7 +39,7 @@ struct ProfileEditView: View {
         Button(action: { self.handleDoneTapped() }) {
             Text("Done")
         }
-        //.disabled(!viewModel.modified)
+        .disabled(!viewModel.modified)
     }
     
     
@@ -67,7 +68,7 @@ struct ProfileEditView: View {
                         
                         if viewModel.isLoading {
                             ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
                         }
                         
                         if viewModel.img_Data.count == 0 {
@@ -96,7 +97,7 @@ struct ProfileEditView: View {
                         TextField("Name", text: $viewModel.userInfo.username)
                     }
                     Section(header: Text("Year")) { // (3)
-                        TextField("Year", value: $viewModel.userInfo.year, formatter: NumberFormatter())
+                        TextField("Year", text: $viewModel.userInfo.year)
                             .keyboardType(.numberPad)
                     }
                     Section(header: Text("Bio")) { // (3)
@@ -167,8 +168,8 @@ struct ProfileEditView: View {
     }
 }
 
-struct ProfileEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileEditView()
-    }
-}
+//struct ProfileEditView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileEditView()
+//    }
+//}

@@ -21,7 +21,7 @@ func fetchUser(uid: String, completion: @escaping (UserModel) -> ()){
         let bio = user.data()?["bio"] as! String
         let id = user.documentID
         
-        let year = user.data()?["year"] as! Int
+        let year = user.data()?["year"] as! String
         let city = user.data()?["city"] as! String
         let state = user.data()?["state"] as! String
         let interests = user.data()?["interests"] as! String

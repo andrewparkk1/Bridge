@@ -41,22 +41,22 @@ class DatabaseViewModel: ObservableObject {
                     let pic = data["imageurl"] as! String
                     let bio = data["bio"] as! String
                     
-                    let year = data["year"] as! Int
+                    let year = data["year"] as! String
                     let city = data["city"] as! String
                     let state = data["state"] as! String
                     let interests = data["interests"] as! String
                     
                     self.users.append(UserModel(id: doc.document.documentID, username: username, pic: pic, bio: bio, year: year, city: city, state: state, interests: interests))
                     
-                    if year == 2022 {
+                    if year == "2022" {
                         self.user2022.append(UserModel(id: doc.document.documentID, username: username, pic: pic, bio: bio, year: year, city: city, state: state, interests: interests))
                     }
                     
-                    if year == 2021 {
+                    if year == "2021" {
                         self.user2021.append(UserModel(id: doc.document.documentID, username: username, pic: pic, bio: bio, year: year, city: city, state: state, interests: interests))
                     }
                     
-                    if year < 2021 {
+                    if year < "2021" {
                         self.alumni.append(UserModel(id: doc.document.documentID, username: username, pic: pic, bio: bio, year: year, city: city, state: state, interests: interests))
                     }
                     
