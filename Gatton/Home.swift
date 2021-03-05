@@ -34,7 +34,7 @@ struct Home: View {
                 Database()
                     .opacity(selectedTab == "network" ? 1 : 0)
                 
-                ProfileView()
+                Main()
                     .opacity(selectedTab == "person" ? 1 : 0)
                 
 
