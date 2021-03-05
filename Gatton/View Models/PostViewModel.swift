@@ -20,6 +20,7 @@ class PostViewModel: ObservableObject {
     @Published var research : [PostModel] = []
     @Published var qanda : [PostModel] = []
     @Published var colleges : [PostModel] = []
+    @Published var creative : [PostModel] = []
 
     
     
@@ -97,7 +98,15 @@ class PostViewModel: ObservableObject {
                             self.colleges.sort { (p1, p2) -> Bool in
                                 return p1.time > p2.time
                             }
-                        }  
+                        }
+                        
+                        if target == "Creative" {
+                            self.creative.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.creative.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
+                        }
                         
                     }
                 }

@@ -18,7 +18,7 @@ class ProfileViewModel: ObservableObject {
     // MARK: - Public properties
     
     @Published var userInfo = UserModel(id: "", username: "", pic: "", bio: "", year : "", city: "", state: "", interests: "")
-    
+        
     //        = UserModel(id: "", username: "", pic: "", bio: "", year : 1, city: "", state: "", interests: "")
     @Published var modified = false
     

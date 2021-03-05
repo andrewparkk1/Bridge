@@ -27,6 +27,7 @@ struct ProfileEditView: View {
     @StateObject var viewModel = ProfileViewModel()
     
     
+    
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
     var cancelButton: some View {
@@ -34,6 +35,7 @@ struct ProfileEditView: View {
             Text("Cancel")
         }
     }
+    
     
     var saveButton: some View {
         Button(action: { self.handleDoneTapped() }) {
@@ -61,7 +63,7 @@ struct ProfileEditView: View {
                 .padding(.top, edges!.top)
                 .background(Color("bg"))
                 .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
-                                        
+                
                 if viewModel.userInfo.pic != "" {
                     
                     ZStack {
@@ -94,23 +96,49 @@ struct ProfileEditView: View {
                 
                 Form {
                     Section(header: Text("Name")) { // (3)
-                        TextField("Name", text: $viewModel.userInfo.username)
+                        TextField("Name", text: $viewModel.userInfo.username, onEditingChanged: { (changed) in
+                            self.viewModel.modified = true
+                        }, onCommit: {
+                            self.viewModel.modified = true
+                        })
+                            .disableAutocorrection(true)
+                        
                     }
                     Section(header: Text("Year")) { // (3)
                         TextField("Year", text: $viewModel.userInfo.year)
                             .keyboardType(.numberPad)
                     }
                     Section(header: Text("Bio")) { // (3)
-                        TextField("Bio", text: $viewModel.userInfo.bio) // (4)
+                        TextField("Bio", text: $viewModel.userInfo.bio, onEditingChanged: { (changed) in
+                            self.viewModel.modified = true
+                        }, onCommit: {
+                            self.viewModel.modified = true
+                        })
+                        .disableAutocorrection(true)
                     }
                     Section(header: Text("City")) { // (3)
-                        TextField("City", text: $viewModel.userInfo.city) // (4)
+                        TextField("City", text: $viewModel.userInfo.city, onEditingChanged: { (changed) in
+                            self.viewModel.modified = true
+                        }, onCommit: {
+                            self.viewModel.modified = true
+                        })
+                        .disableAutocorrection(true)
                     }
                     Section(header: Text("State")) { // (3)
-                        TextField("State", text: $viewModel.userInfo.state) // (4)
+                        TextField("State", text: $viewModel.userInfo.state,onEditingChanged: { (changed) in
+                            self.viewModel.modified = true
+                        }, onCommit: {
+                            self.viewModel.modified = true
+                        })
+                        .disableAutocorrection(true)
                     }
                     Section(header: Text("Interests")) { // (3)
-                        TextField("Name", text: $viewModel.userInfo.interests) // (4)
+                        TextField("Name", text: $viewModel.userInfo.interests, onEditingChanged: { (changed) in
+                            self.viewModel.modified = true
+                        }, onCommit: {
+                            self.viewModel.modified = true
+                        })
+                        .disableAutocorrection(true)
                     }
                     Section {
                         Button("Delete Account") { self.presentActionSheet.toggle() }

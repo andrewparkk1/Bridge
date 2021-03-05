@@ -50,6 +50,7 @@ struct Register: View {
             
             HStack(spacing: 15) {
                 TextField("Name", text: $registerData.name)
+                    .disableAutocorrection(true)
                     .padding()
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
@@ -58,6 +59,7 @@ struct Register: View {
             
             HStack(spacing: 15) {
                 TextField("Bio", text: $registerData.bio)
+                    .disableAutocorrection(true)
                     .padding()
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
@@ -78,6 +80,7 @@ struct Register: View {
             
             HStack(spacing: 15) {
                 TextField("City", text: $registerData.city)
+                    .disableAutocorrection(true)
                     .padding()
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
@@ -87,6 +90,7 @@ struct Register: View {
             
             HStack(spacing: 15) {
                 TextField("State", text: $registerData.state)
+                    .disableAutocorrection(true)
                     .padding()
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)
@@ -96,6 +100,7 @@ struct Register: View {
             
             HStack(spacing: 15) {
                 TextField("Interests", text: $registerData.interests)
+                    .disableAutocorrection(true)
                     .padding()
                     .background(Color.white.opacity(0.06))
                     .cornerRadius(15)

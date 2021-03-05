@@ -25,8 +25,8 @@ struct Home: View {
                 PostView()
                     .opacity(selectedTab == "house.fill" ? 1 : 0)
                 
-//                SearchTarget(color: $color)
-//                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
+                SearchTarget(color: $color)
+                    .opacity(selectedTab == "magnifyingglass" ? 1 : 0)
                 
                 Text("Post")
                     .opacity(selectedTab == "pencil.circle" ? 1 : 0)
@@ -37,8 +37,6 @@ struct Home: View {
                 ProfileView()
                     .opacity(selectedTab == "person" ? 1 : 0)
                 
-                SettingsView()
-                    .opacity(selectedTab == "folder" ? 1 : 0)
 
                 
                 
@@ -62,16 +60,13 @@ struct CustomTabbar: View {
         HStack(spacing: 10) {
             TabButton(image: "house.fill", selectedTab: $selectedTab)
             
-//            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
+            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
             
             TabButton(image: "pencil.circle", selectedTab: $selectedTab)
 
             TabButton(image: "network", selectedTab: $selectedTab)
             
             TabButton(image: "person", selectedTab: $selectedTab)
-            
-            TabButton(image: "folder", selectedTab: $selectedTab)
-
             
         }
         .padding(.horizontal)
@@ -103,6 +98,8 @@ struct TabButton: View{
         })
     }
 }
+
+
 //
 //struct a: View {
 //    @State var selectedTab = "Posts"
