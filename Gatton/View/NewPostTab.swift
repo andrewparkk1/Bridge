@@ -13,6 +13,8 @@ struct NewPostTab: View {
     @StateObject var newPostData = NewPostModel()
     
     @Environment(\.presentationMode) var present
+    @Environment(\.colorScheme) var colorScheme
+
     @Binding var updateId: String
     @Binding var selectedTab: String
     
@@ -75,7 +77,7 @@ struct NewPostTab: View {
                 
                 
                 TextField("Title?", text: $newPostData.postTxtHead)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
                     .frame(height: 40, alignment: .center)
                     .cornerRadius(15)
                     .padding()
@@ -160,7 +162,7 @@ struct NewPostTab: View {
             
             //INFO
             TextEditor(text: $newPostData.postTxt)
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .light ? .black : .white)
                 .cornerRadius(15)
                 .frame(minHeight: 40, alignment: .center)
                 .padding()

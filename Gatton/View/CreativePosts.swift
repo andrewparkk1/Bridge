@@ -10,9 +10,11 @@ import SwiftUI
 struct CreativePosts: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
+    @GestureState private var dragOffset = CGSize.zero
+    
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical) {
             
             
             if postData.posts.isEmpty{
@@ -21,8 +23,10 @@ struct CreativePosts: View {
                 if postData.noPosts{
                     Text("No Posts")
                         .foregroundColor(.white)
-                } else {
-                    ProgressView()
+                }
+                else {
+                    Text(" ")                        .foregroundColor(Color("bg")).ignoresSafeArea(.all, edges: .all)
+                        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
                 }
                 Spacer(minLength: 0)
             }
@@ -38,7 +42,8 @@ struct CreativePosts: View {
             }
             
         }
-        .ignoresSafeArea()
+        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
+        
         
     }
 }

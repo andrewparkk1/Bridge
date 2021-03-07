@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct Main: View {
     @State var offset: CGFloat = 0
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    @State var top = 1
     
     var body: some View {
         GeometryReader{ proxy in

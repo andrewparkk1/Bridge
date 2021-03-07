@@ -13,10 +13,10 @@ import Firebase
 
 struct OthersProfileView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
-    @StateObject var profileData = ProfileViewModel()
     @StateObject var postData = PostViewModel()
     var user: UserModel
-    
+    @Environment(\.presentationMode) var mode
+    @GestureState private var dragOffset = CGSize.zero
     
     private var personalPosts: [PostModel] {
         postData.posts.filter { post in
@@ -30,10 +30,14 @@ struct OthersProfileView: View {
         VStack{
             //BANNER
             HStack{
-                Text("Profile")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
+                Button(action: {
+                    self.mode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Back")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                })
+                Spacer()
             }
             .padding()
             .padding(.top, edges!.top)
@@ -59,11 +63,6 @@ struct OthersProfileView: View {
                             .shadow(radius: 20)
                             .padding(.vertical)
                             .padding(.horizontal, 1)
-                        
-//                        if profileData.isLoading {
-//                            ProgressView()
-//                                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-//                        }
                     }
                     .padding(.horizontal, 3)
                 }
@@ -75,6 +74,7 @@ struct OthersProfileView: View {
                 .padding(.horizontal, 1)
                 .multilineTextAlignment(.center)
             }
+            
             
             Text(user.bio)
                 .padding(.top, 2)
@@ -101,6 +101,17 @@ struct OthersProfileView: View {
             }
             
         }
+        .navigationBarHidden(true)
+        .ignoresSafeArea().edgesIgnoringSafeArea(.top)
+        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
+        .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
+            
+            if(value.translation.width > 50) {
+                self.mode.wrappedValue.dismiss()
+            }
+            
+        }))
+        
     }
 }
 

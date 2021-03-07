@@ -12,17 +12,23 @@ import SwiftUI
 struct PostView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
+
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical) {
 
             if postData.posts.isEmpty{
                 Spacer(minLength: 0)
                 
                 if postData.noPosts{
                     Text("No Posts")
-                } else {
-                    ProgressView()
+                }
+                else {
+//                    ProgressView()
+//                        .foregroundColor(Color("bg")).ignoresSafeArea(.all, edges: .all)
+//                        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
+                    Text(" ")                        .foregroundColor(Color("bg")).ignoresSafeArea(.all, edges: .all)
+                        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
                 }
                 Spacer(minLength: 0)
             }
@@ -39,7 +45,9 @@ struct PostView: View {
             }
             
         }
-        .ignoresSafeArea()
+        .background(Color("bg").ignoresSafeArea(.all, edges: .all))
+
+
     }
 }
 

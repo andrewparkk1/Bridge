@@ -12,7 +12,6 @@ struct MyHome: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
     
-    
     var body: some View {
         VStack {
             HStack {
@@ -25,15 +24,37 @@ struct MyHome: View {
             
             ZStack {
                 if self.top == 0 {
-                    CreativePosts()
+                    NavigationView {
+                        CreativePosts()
+                            .navigationBarHidden(true)
+                    }
+                    .highPriorityGesture(
+                        DragGesture().onEnded({
+                            self.handleSwipe(translation: $0.translation.width)
+                        }))
                 } else if self.top == 1 {
-                    PostView()
+                    NavigationView {
+                        PostView()
+                            .navigationBarHidden(true)
+                    }
+                    .highPriorityGesture(
+                        DragGesture().onEnded({
+                            self.handleSwipe(translation: $0.translation.width)
+                        }))
                 }
             }
             Spacer()
             
         }
-
+        
+    }
+    
+    private func handleSwipe(translation: CGFloat) {
+        if translation > 50 && top == 1 {
+            top = 0
+        } else  if translation < -50 && top == 0 {
+            top = 1
+        }
     }
 }
 
