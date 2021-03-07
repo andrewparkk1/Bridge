@@ -20,8 +20,8 @@ class PostViewModel: ObservableObject {
     @Published var research : [PostModel] = []
     @Published var qanda : [PostModel] = []
     @Published var colleges : [PostModel] = []
-    @Published var creative : [PostModel] = []
-
+    @Published var creativity : [PostModel] = []
+    
     
     
     init() {
@@ -56,10 +56,13 @@ class PostViewModel: ObservableObject {
                     //getting user data
                     fetchUser(uid: userRef.documentID) { user in
                         
-                        self.posts.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
-                        //sorting all model while reading docs
-                        self.posts.sort { (p1, p2) -> Bool in
-                            return p1.time > p2.time
+                        if target != "Creativity" {
+                            
+                            self.posts.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                            //sorting all model while reading docs
+                            self.posts.sort { (p1, p2) -> Bool in
+                                return p1.time > p2.time
+                            }
                         }
                         
                         
@@ -100,10 +103,10 @@ class PostViewModel: ObservableObject {
                             }
                         }
                         
-                        if target == "Creative" {
-                            self.creative.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
+                        if target == "Creativity" {
+                            self.creativity.append(PostModel(id: doc.document.documentID, header: header, target: target, title: title, pic: pic, time: time.dateValue(), user: user))
                             //sorting all model while reading docs
-                            self.creative.sort { (p1, p2) -> Bool in
+                            self.creativity.sort { (p1, p2) -> Bool in
                                 return p1.time > p2.time
                             }
                         }

@@ -123,6 +123,13 @@ struct NewPostTab: View {
                         Text("Research").bold()
                             .foregroundColor(newPostData.postTxtTarget == "Research" ? .green : .gray)
                     }
+                    
+                    Button(action: {
+                        newPostData.postTxtTarget = "Creativity"
+                    }) {
+                        Text("Creativity").bold()
+                            .foregroundColor(newPostData.postTxtTarget == "Creativity" ? .green : .gray)
+                    }
                 }
                 VStack(spacing: 20) {
                     

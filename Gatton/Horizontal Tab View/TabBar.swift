@@ -20,12 +20,12 @@ struct TabBar: View {
             }
             
             return AnyView (
-                ZStack(alignment: .bottom) {
+                ZStack(alignment: .bottomLeading) { 
                     Capsule()
-                        .fill(Color.blue)
+                        .fill(Color.green)
                         .frame(width: equalWidth - 15, height: 4)
                         .offset(x: getOffset() + 7, y: 4)
-                     
+                    
                     HStack(spacing: 0) {
                         ForEach(tabs.indices, id: \.self) { index in
                             Text(tabs[index])
@@ -44,7 +44,7 @@ struct TabBar: View {
                 .frame(maxWidth: .infinity, maxHeight: 40, alignment: .center)
                 .clipShape(Capsule())
             )
-
+            
         }
         .padding()
         .frame(height: 40)

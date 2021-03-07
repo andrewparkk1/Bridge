@@ -213,9 +213,7 @@
 				49A37D3125DC893A000A3658 /* View */,
 				49A37D2E25DC892B000A3658 /* Model */,
 				49A5A78925E4CD39009ACAD5 /* helpers */,
-				494ACB8225F201940031123C /* Main.swift */,
-				494ACB8525F201AA0031123C /* ScrollableTabBar.swift */,
-				494ACB8825F201B40031123C /* TabBar.swift */,
+				4979E1E825F46ED300C52F75 /* Horizontal Tab View */,
 				494ACB8B25F202060031123C /* Image.swift */,
 				496B9C2C25AB765200430AD3 /* Assets.xcassets */,
 				496A40A525C3D58500C68D81 /* GoogleService-Info.plist */,
@@ -244,6 +242,16 @@
 				496B9C6625ABA46900430AD3 /* ClassProfessor.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4979E1E825F46ED300C52F75 /* Horizontal Tab View */ = {
+			isa = PBXGroup;
+			children = (
+				494ACB8225F201940031123C /* Main.swift */,
+				494ACB8825F201B40031123C /* TabBar.swift */,
+				494ACB8525F201AA0031123C /* ScrollableTabBar.swift */,
+			);
+			path = "Horizontal Tab View";
 			sourceTree = "<group>";
 		};
 		497EECBE25D8E96A009C7599 /* Posts */ = {
@@ -293,8 +301,6 @@
 		49A37D2D25DC88DA000A3658 /* My home */ = {
 			isa = PBXGroup;
 			children = (
-				497EECC625D8F937009C7599 /* MyHome.swift */,
-				492548B225AC082900A82CD0 /* Topbanner.swift */,
 			);
 			path = "My home";
 			sourceTree = "<group>";
@@ -324,6 +330,8 @@
 				49A37D3325DC896A000A3658 /* PostView.swift */,
 				493F204525DCEA71002B2F27 /* NewPostTab.swift */,
 				49A4BE0425E94F0C00646E0A /* NewPostHome.swift */,
+				497EECC625D8F937009C7599 /* MyHome.swift */,
+				492548B225AC082900A82CD0 /* Topbanner.swift */,
 				497EECBF25D8E97C009C7599 /* Database */,
 			);
 			path = View;

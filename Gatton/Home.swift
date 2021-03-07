@@ -22,7 +22,7 @@ struct Home: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
             ZStack{
-                PostView()
+                MyHome()
                     .opacity(selectedTab == "house.fill" ? 1 : 0)
                 
                 SearchTarget(color: $color)
@@ -34,7 +34,7 @@ struct Home: View {
                 Database()
                     .opacity(selectedTab == "network" ? 1 : 0)
                 
-                Main()
+                ProfileView()
                     .opacity(selectedTab == "person" ? 1 : 0)
                 
 
