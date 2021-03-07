@@ -11,7 +11,6 @@ import SwiftUI
 
 struct Home: View {
     @State var selectedTab = "house.fill"
-    @StateObject var set = SettingsViewModel()
     @State var color = Color(.red)
     
     @StateObject var postData = PostViewModel()

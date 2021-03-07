@@ -32,8 +32,6 @@ class ProfileViewModel: ObservableObject {
     
         
     let uid = Auth.auth().currentUser!.uid
-
-    
     let ref = Firestore.firestore()
     
 

@@ -26,7 +26,7 @@ struct MyHome: View {
             ZStack {
                 if self.top == 0 {
                     NavigationView {
-                        CreativePosts()
+                        PostView(top: $top)
                             .navigationBarHidden(true)
                     }
                     .highPriorityGesture(
@@ -35,7 +35,7 @@ struct MyHome: View {
                         }))
                 } else if self.top == 1 {
                     NavigationView {
-                        PostView()
+                        PostView(top: $top)
                             .navigationBarHidden(true)
                     }
                     .highPriorityGesture(

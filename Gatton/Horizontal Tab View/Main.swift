@@ -12,6 +12,7 @@ struct Main: View {
     @State var offset: CGFloat = 0
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @State var top = 1
+
     
     var body: some View {
         GeometryReader{ proxy in
@@ -36,14 +37,14 @@ struct Main: View {
                         HStack(spacing: 0) {
                             ForEach(0..<2) { index in
                                 if index == 1{
-                                    PostView()
+                                    PostView(top: $top)
                                         .padding()
                                         .frame(width: rect.width, height: rect.height)
                                         .cornerRadius(0)
                                         .ignoresSafeArea()
 
                                 } else {
-                                    CreativePosts()
+                                    PostView(top: $top)
                                         .padding()
                                         .frame(width: rect.width, height: rect.height)
                                         .cornerRadius(0)
