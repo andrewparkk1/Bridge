@@ -215,8 +215,7 @@
 				49A5A78925E4CD39009ACAD5 /* helpers */,
 				4979E1E825F46ED300C52F75 /* Horizontal Tab View */,
 				494ACB8B25F202060031123C /* Image.swift */,
-				498073E825F5436C00D2BA5B /* NewPostHome.swift */,
-				494ACB7F25F200440031123C /* CreativePosts.swift */,
+				498073F725F547FC00D2BA5B /* can delete */,
 				496B9C2C25AB765200430AD3 /* Assets.xcassets */,
 				496A40A525C3D58500C68D81 /* GoogleService-Info.plist */,
 				496B9C3125AB765200430AD3 /* Info.plist */,
@@ -320,6 +319,17 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		498073F725F547FC00D2BA5B /* can delete */ = {
+			isa = PBXGroup;
+			children = (
+				498073E825F5436C00D2BA5B /* NewPostHome.swift */,
+				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
+				49A37D3625DC8979000A3658 /* SettingsView.swift */,
+				494ACB7F25F200440031123C /* CreativePosts.swift */,
+			);
+			path = "can delete";
+			sourceTree = "<group>";
+		};
 		4980E90025C921BC00ED7390 /* z */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,8 +397,6 @@
 			children = (
 				493F204825DCEA7E002B2F27 /* PostRow.swift */,
 				49967C3925DBA88A00F9104D /* ImagePicker.swift */,
-				49A37D3D25DC94FF000A3658 /* SettingsViewModel.swift */,
-				49A37D3625DC8979000A3658 /* SettingsView.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
