@@ -22,7 +22,7 @@ struct Database: View {
             
             //BANNER
             HStack{
-                Text("Database")
+                Text("People")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)

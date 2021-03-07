@@ -17,6 +17,7 @@ struct Topbanner: View {
     @Binding var top: Int
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
+    @Binding var selectedTab: String
     
     
     var body: some View {
@@ -51,14 +52,14 @@ struct Topbanner: View {
             })
             Spacer()
             Button(action: {postData.newPost.toggle()}) {
-                Image(systemName: "square.and.pencil")
+                Image(systemName: "pencil.circle")
                     .font(.title)
                     .foregroundColor(.white)
             }
             
         }
         .fullScreenCover(isPresented: $postData.newPost, content: {
-            NewPostHome(updateId: $postData.updateId)
+            NewPostTab(updateId: $postData.updateId, selectedTab: $selectedTab)
         })
         /*
          .padding()

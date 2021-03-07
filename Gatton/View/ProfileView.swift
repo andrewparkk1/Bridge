@@ -111,9 +111,6 @@ struct ProfileView: View {
             }
             
         }
-        .fullScreenCover(isPresented: $postData.newPost, content: {
-            NewPostHome(updateId: $postData.updateId)
-        })
     }
 }
 

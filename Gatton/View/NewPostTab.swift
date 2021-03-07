@@ -11,17 +11,16 @@ import SwiftUI
 
 struct NewPostTab: View {
     @StateObject var newPostData = NewPostModel()
-    
     @Environment(\.presentationMode) var present
     @Environment(\.colorScheme) var colorScheme
-
+    
     @Binding var updateId: String
     @Binding var selectedTab: String
     
     
     var body: some View {
-        VStack{
-            HStack(spacing: 15){
+        VStack(spacing: 15){
+            HStack {
                 Button(action: {
                     self.updateId = ""
                     selectedTab = "house.fill"
@@ -43,10 +42,15 @@ struct NewPostTab: View {
                     })
                 }
                 
-                Button(action: {newPostData.post(updateId: updateId, present: present)}, label: {
+                Button(action: {
+                    newPostData.post(updateId: updateId, present: present)
+                    self.updateId = ""
+                    selectedTab = "house.fill"
+                    present.wrappedValue.dismiss()
+                }, label: {
                     Text("Post")
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .light ? .white : .black)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 25)
                         .background(Color(.green))
@@ -62,11 +66,11 @@ struct NewPostTab: View {
                 
             }
             .padding()
-            .opacity(newPostData.isPosting ? 0.5: 1)
+            .background(Color("bg"))
+            .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
+            .opacity(newPostData.isPosting ? 0.5 : 1)
             .disabled(newPostData.isPosting ? true: false)
-            
-            
-            
+
             //HEADER
             HStack(spacing: 20) {
                 Text("Title")
@@ -74,21 +78,24 @@ struct NewPostTab: View {
                     .font(.title)
                     .bold()
                     .frame(alignment: .leading)
+                    .padding(.leading)
                 
                 
                 TextField("Title?", text: $newPostData.postTxtHead)
-                    .foregroundColor(colorScheme == .light ? .black : .white)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .frame(height: 40, alignment: .center)
                     .cornerRadius(15)
-                    .padding()
+                    .padding(.trailing)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .modifier(ClearButton(text: $newPostData.postTxtHead))
-                    .opacity(newPostData.isPosting ? 0.9 : 1)
+                    .opacity(newPostData.isPosting ? 0.5 : 1)
                     .disabled(newPostData.isPosting ? true : false)
             }
-            .padding()
+            .padding(.all, 3)
+            .padding(.vertical, 15)
+
             
-            
+            // TARGETS
             HStack(spacing: 20) {
                 VStack(spacing: 20) {
                     
@@ -157,19 +164,22 @@ struct NewPostTab: View {
                     .frame(alignment: .trailing)
                 
             }
-            .padding()
+            .padding(.all, 3)
+            .padding(.vertical, 10)
+
+
             
-            
+
             //INFO
             TextEditor(text: $newPostData.postTxt)
-                .foregroundColor(colorScheme == .light ? .black : .white)
+                .foregroundColor(colorScheme == .dark ? .white : .black)
                 .cornerRadius(15)
                 .frame(minHeight: 40, alignment: .center)
                 .padding()
                 .opacity(newPostData.isPosting ? 0.5 : 1)
                 .disabled(newPostData.isPosting ? true : false)
             
-            //display image if its selected
+            //IMAGE
             if newPostData.img_Data.count != 0{
                 ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                     Image(uiImage: UIImage(data: newPostData.img_Data)!)
@@ -193,13 +203,14 @@ struct NewPostTab: View {
                 
             }
         }
+        .navigationBarHidden(true)
         .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         .sheet(isPresented: $newPostData.picker) {
             ImagePicker(picker: $newPostData.picker, img_Data: $newPostData.img_Data)
         }
         
+        
     }
-    
     
     public struct ClearButton: ViewModifier {
         @Binding var text: String
@@ -214,12 +225,15 @@ struct NewPostTab: View {
                 // onTapGesture is better than a Button here when adding to a form
                 Image(systemName: "multiply.circle.fill")
                     .frame(alignment: .trailing)
+                    .padding(.trailing)
                     .foregroundColor(.white)
                     .opacity(text == "" ? 0 : 1)
                     .onTapGesture { self.text = "" }
             }
         }
+
     }
+    
 }
 
 

@@ -11,11 +11,12 @@ struct MyHome: View {
     @State var top = 1
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var postData = PostViewModel()
+    @State var selectedTab: String = "house.fill"
     
     var body: some View {
         VStack {
             HStack {
-                Topbanner(top: $top)
+                Topbanner(top: $top, selectedTab: $selectedTab)
             }
             .padding()
             .padding(.top, edges!.top)
