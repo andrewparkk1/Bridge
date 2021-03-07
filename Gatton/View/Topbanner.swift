@@ -30,7 +30,7 @@ struct Topbanner: View {
                 
             }, label: {
                 Text("Creativity")
-                    .font(.title)
+                    .font(.title2)
                     .foregroundColor(self.top == 0 ? .green : Color.gray.opacity(0.45))
                     .fontWeight(self.top == 0 ? .bold : .none)
                     .padding(.trailing, 5)
@@ -43,7 +43,7 @@ struct Topbanner: View {
                 self.top = 1
             }, label: {
                 Text("Feed")
-                    .font(.title)
+                    .font(.title2)
                     .foregroundColor(self.top == 1 ? .green : Color.gray.opacity(0.45))
                     .fontWeight(self.top == 1 ? .bold : .none)
                     .padding(.leading, 5)

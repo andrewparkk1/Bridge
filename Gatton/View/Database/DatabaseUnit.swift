@@ -31,11 +31,14 @@ struct DatabaseUnit: View {
             VStack {
                 Text(person.username)
                     .font(Font.custom("Avenir Next Condensed", size: 30)).bold()
+                    .foregroundColor(.white)
                     //.font(Font.custom("ヒラギノ角ゴシック W5", size: 20))
                 Text(person.year)
                     .font(Font.custom("Avenir", size: 20))
+                    .foregroundColor(.white)
                 Text(person.city + ", " + person.state)
                     .font(Font.custom("Avenir", size: 20))
+                    .foregroundColor(.white)
             }
             .frame(maxWidth: 180, maxHeight: 30, alignment: .center)
             .fixedSize(horizontal: true, vertical: true)

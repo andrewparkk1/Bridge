@@ -12,8 +12,8 @@ struct CreativePosts: View {
     @StateObject var postData = PostViewModel()
     
     var body: some View {
-        LazyVStack{
-
+        ScrollView {
+            
             
             if postData.posts.isEmpty{
                 Spacer(minLength: 0)
@@ -27,22 +27,22 @@ struct CreativePosts: View {
                 Spacer(minLength: 0)
             }
             else {
-                ScrollView {
-                    VStack(spacing: 15) {
-                        ForEach(postData.creativity) { post in
-                            PostRow(post: post, postData: postData)
-                            Divider().ignoresSafeArea()
-                        }
+                VStack(spacing: 15) {
+                    ForEach(postData.creativity) { post in
+                        PostRow(post: post, postData: postData)
+                        Divider().ignoresSafeArea()
                     }
-                    .padding()
-                    .padding(.bottom, 55)
                 }
-
+                .padding()
+                .padding(.bottom, 55)
             }
             
         }
+        .ignoresSafeArea()
+        
     }
 }
+
 
 //        .fullScreenCover(isPresented: $postData.newPost, content: {
 //            NewPostHome(updateId: $postData.updateId)

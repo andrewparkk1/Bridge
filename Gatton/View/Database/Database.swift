@@ -9,14 +9,15 @@ import SwiftUI
 
 struct Database: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
-
+    
     @StateObject var databaseData = DatabaseViewModel()
-
+    
     
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 2)
     
     
     var body: some View {
+        
         VStack {
             
             //BANNER
@@ -43,32 +44,43 @@ struct Database: View {
                     Section(header: Text("2022").font(.title).bold()) {
                         ForEach(databaseData.user2022) { person in
                             //Navigation link to specified person
-                            DatabaseUnit(person: person)
+                            NavigationLink(destination: OthersProfileView(user: person)) {
+                                DatabaseUnit(person: person)
+                            }
+                            .navigationBarHidden(true)
+                            
                         }
                     }
-            
+                    
                     Divider().background(Color.gray).frame(height: 50)
                     Divider().background(Color.gray).frame(height: 50)
-            
-            
+                    
+                    
                     Section(header: Text("2021").font(.title).bold()) {
                         ForEach(databaseData.user2021) { person in
-                            DatabaseUnit(person: person)
+                            NavigationLink(destination: comments()) {
+                                DatabaseUnit(person: person)
+                            }
+                            .navigationBarHidden(true)
+                            
                         }
                     }
-            
+                    
                     Divider().background(Color.gray).frame(height: 50)
                     Divider().background(Color.gray).frame(height: 50)
-            
+                    
                     Section(header: Text("Alumni").font(.title).bold()) {
                         ForEach(databaseData.alumni) { person in
-                            DatabaseUnit(person: person)
+                            NavigationLink(destination: comments()) {
+                                DatabaseUnit(person: person)
+                            }
+                            .navigationBarHidden(true)
                         }
                     }
                 }
             }
         }
-
+        
         
     }
 }

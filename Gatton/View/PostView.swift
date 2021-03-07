@@ -14,8 +14,8 @@ struct PostView: View {
     @StateObject var postData = PostViewModel()
     
     var body: some View {
-        LazyVStack{
-            
+        ScrollView {
+
             if postData.posts.isEmpty{
                 Spacer(minLength: 0)
                 
@@ -27,7 +27,6 @@ struct PostView: View {
                 Spacer(minLength: 0)
             }
             else {
-                ScrollView {
                     VStack(spacing: 15) {
                         ForEach(postData.posts) { post in
                             PostRow(post: post, postData: postData)
@@ -36,8 +35,7 @@ struct PostView: View {
                     }
                     .padding()
                     .padding(.bottom, 55)
-                }
-                .ignoresSafeArea()
+
             }
             
         }
