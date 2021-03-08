@@ -28,6 +28,7 @@ struct DatabaseUnit: View {
                 .shadow(radius: 7)
                 .offset(x: 0, y: -80.0)
             
+            
             VStack {
                 Text(person.username)
                     .font(Font.custom("Avenir Next Condensed", size: 30)).bold()

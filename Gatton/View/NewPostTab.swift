@@ -16,6 +16,7 @@ struct NewPostTab: View {
     
     @Binding var updateId: String
     @Binding var selectedTab: String
+    @State var name: String = "Me"
     
     
     var body: some View {
@@ -33,6 +34,19 @@ struct NewPostTab: View {
                 
                 Spacer(minLength: 0)
                 
+                Button(action: {
+                    if self.name == "Anonymous" {
+                        self.name = "Me"
+                    } else {
+                        self.name = "Anonymous"
+                    }
+                }, label: {
+                    Text(self.name)
+                })
+                
+                Spacer(minLength: 0)
+
+                
                 if updateId == ""{
                     //only for new posts
                     Button(action: {newPostData.picker.toggle()}, label: {
@@ -43,7 +57,11 @@ struct NewPostTab: View {
                 }
                 
                 Button(action: {
-                    newPostData.post(updateId: updateId, present: present)
+                    if self.name == "Me" {
+                        newPostData.post(updateId: updateId, present: present)
+                    } else {
+                        newPostData.postAnonymous(updateId: updateId, present: present)
+                    }
                     self.updateId = ""
                     selectedTab = "house.fill"
                     present.wrappedValue.dismiss()

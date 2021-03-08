@@ -58,7 +58,7 @@ struct Database: View {
                     
                     Section(header: Text("2021").font(.title).bold()) {
                         ForEach(databaseData.user2021) { person in
-                            NavigationLink(destination: comments()) {
+                            NavigationLink(destination: OthersProfileView(user: person)) {
                                 DatabaseUnit(person: person)
                             }
                             .navigationBarHidden(true)
@@ -71,7 +71,7 @@ struct Database: View {
                     
                     Section(header: Text("Alumni").font(.title).bold()) {
                         ForEach(databaseData.alumni) { person in
-                            NavigationLink(destination: comments()) {
+                            NavigationLink(destination: OthersProfileView(user: person)) {
                                 DatabaseUnit(person: person)
                             }
                             .navigationBarHidden(true)

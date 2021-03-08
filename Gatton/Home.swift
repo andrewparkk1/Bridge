@@ -57,15 +57,15 @@ struct CustomTabbar: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            TabButton(image: "house.fill", selectedTab: $selectedTab)
+            TabButton(image: "house.fill", selectedTab: $selectedTab )
             
-            TabButton(image: "magnifyingglass", selectedTab: $selectedTab)
+            TabButton(image: "magnifyingglass", selectedTab: $selectedTab )
             
-            TabButton(image: "pencil.circle", selectedTab: $selectedTab)
+            TabButton(image: "pencil.circle", selectedTab: $selectedTab )
 
-            TabButton(image: "network", selectedTab: $selectedTab)
+            TabButton(image: "network", selectedTab: $selectedTab )
             
-            TabButton(image: "person", selectedTab: $selectedTab)
+            TabButton(image: "person", selectedTab: $selectedTab )
             
         }
         .padding(.horizontal)
@@ -79,6 +79,7 @@ struct TabButton: View{
     @StateObject var postData = PostViewModel()
     var image: String
     @Binding var selectedTab: String
+    
     var body: some View{
         Button(action: {
             if image == "pencil.circle" {
