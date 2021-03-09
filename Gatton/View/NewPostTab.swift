@@ -32,6 +32,7 @@ struct NewPostTab: View {
                         .foregroundColor(.white)
                 })
                 
+               
                 Spacer(minLength: 0)
                 
                 Button(action: {
@@ -42,20 +43,11 @@ struct NewPostTab: View {
                     }
                 }, label: {
                     Text(self.name)
+                        .foregroundColor(self.name == "Anonymous" ? .gray : .white)
                 })
                 
                 Spacer(minLength: 0)
 
-                
-                if updateId == ""{
-                    //only for new posts
-                    Button(action: {newPostData.picker.toggle()}, label: {
-                        Image(systemName: "photo.fill")
-                            .font(.title)
-                            .foregroundColor(.white)
-                    })
-                }
-                
                 Button(action: {
                     if self.name == "Me" {
                         newPostData.post(updateId: updateId, present: present)
@@ -155,7 +147,7 @@ struct NewPostTab: View {
                         newPostData.postTxtTarget = "Creativity"
                     }) {
                         Text("Creativity").bold()
-                            .foregroundColor(newPostData.postTxtTarget == "Creativity" ? .green : .gray)
+                            .gradientForeground(colors: newPostData.postTxtTarget == "Creativity" ? [.red, .blue, .green, .yellow] : [.gray])
                     }
                 }
                 VStack(spacing: 20) {
@@ -175,12 +167,23 @@ struct NewPostTab: View {
                     }
                 }
                 
-                Text("Target")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .bold()
-                    .frame(alignment: .trailing)
-                
+                VStack {
+                    Text("Target")
+                        .foregroundColor(.white)
+                        .font(.title2)
+                        .bold()
+                        .frame(alignment: .trailing)
+                    Spacer()
+                    if updateId == ""{
+                        //only for new posts
+                        Button(action: {newPostData.picker.toggle()}, label: {
+                            Image(systemName: "photo.fill")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        })
+                    }
+                    
+                }
             }
             .padding(.all, 3)
             .padding(.vertical, 10)
@@ -252,6 +255,15 @@ struct NewPostTab: View {
 
     }
     
+}
+
+extension View {
+    public func gradientForeground(colors: [Color]) -> some View {
+        self.overlay(LinearGradient(gradient: .init(colors: colors),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing))
+            .mask(self)
+    }
 }
 
 

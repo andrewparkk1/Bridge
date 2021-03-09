@@ -62,7 +62,6 @@ struct Database: View {
                                 DatabaseUnit(person: person)
                             }
                             .navigationBarHidden(true)
-                            
                         }
                     }
                     

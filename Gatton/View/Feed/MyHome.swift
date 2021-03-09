@@ -23,32 +23,38 @@ struct MyHome: View {
             .background(Color("bg"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
             
-            ZStack {
-                if self.top == 0 {
-                    NavigationView {
-                        PostView(top: $top)
-                            .navigationBarHidden(true)
-                    }
-                    .highPriorityGesture(
-                        DragGesture().onEnded({
-                            self.handleSwipe(translation: $0.translation.width)
-                        }))
-                } else if self.top == 1 {
-                    NavigationView {
-                        PostView(top: $top)
-                            .navigationBarHidden(true)
-                    }
-                    .highPriorityGesture(
-                        DragGesture().onEnded({
-                            self.handleSwipe(translation: $0.translation.width)
-                        }))
-                }
+            NavigationView {
+                PostView(top: $top)
+                    .navigationBarHidden(true)
             }
-            Spacer()
+            .highPriorityGesture(
+                DragGesture().onEnded({
+                    self.handleSwipe(translation: $0.translation.width)
+                }))
+            //            VStack {
+            //                if self.top == 0 {
+            ////                    NavigationView {
+            //                        PostView(top: $top)
+            ////                            .navigationBarHidden(true)
+            ////                    }
+            ////                    .highPriorityGesture(
+            ////                        DragGesture().onEnded({
+            ////                            self.handleSwipe(translation: $0.translation.width)
+            ////                        }))
+            //                } else if self.top == 1 {
+            ////                    NavigationView {
+            //                        PostView(top: $top)
+            ////                            .navigationBarHidden(true)
+            ////                    }
+            ////                    .highPriorityGesture(
+            ////                        DragGesture().onEnded({
+            ////                            self.handleSwipe(translation: $0.translation.width)
+            ////                        }))
             
         }
-        
     }
+    
+    
     
     private func handleSwipe(translation: CGFloat) {
         if translation > 50 && top == 1 {
@@ -58,6 +64,7 @@ struct MyHome: View {
         }
     }
 }
+
 
 //struct MyHome_Previews: PreviewProvider {
 //    static var previews: some View {
